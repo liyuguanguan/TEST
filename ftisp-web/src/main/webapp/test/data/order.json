@@ -1,0 +1,46 @@
+{
+	"code": 200,
+	"message": "success",
+	"data": {
+		"id": 115,
+		"createDt": "2016-11-21 19:04:53",
+		"orderStatus": "draft",
+		"tNums": 1.0,
+		"skuNums": 1.0,
+		"tGoodsNums": 1.0,
+		"pickupType": "pickup",
+		"pickupDate": "",
+		"pickupTime": "07:00-09:00",
+		"logisticsName": "空运特快",
+		"logisticsId": 2,
+		"address": "文一西路522号",
+		"pickupAddressId": 1013,
+		"logisticsPlanId": 2,
+		"logisticsPlanName": "物流计划空运普快",
+		"collectWarehouseId": 4,
+		"collectWarehouseName": "义乌集货仓",
+		"toWarehouseId": 3,
+		"toWarehouseName": "AU WAREHOUSE",
+		"orderNo": "00041611326000016",
+		"customOrderNo": "",
+		"importerId": "",
+		"exporterId": "",
+		"orderOpts": [{
+			"optDt": "2016-10-26 10:00:00",
+			"opsStatus": "commit",
+			"warehouseName": "HKwarehouse"
+		},{
+			"optDt": "2016-10-26 10:00:00",
+			"opsStatus": "c_receive",
+			"warehouseName": "HK warehouse"
+		},{
+			"optDt": "2016-10-26 10:00:00",
+			"opsStatus": "c_check",
+			"warehouseName": "HK warehouse"
+		},{
+			"optDt": "2016-10-26 10:00:00",
+			"opsStatus": "p_outroom",
+			"warehouseName": "HK warehouse"
+		}]
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"code": "200",
+	"message": "string",
+	"data": {
+		"page": 1,
+		"count": 1,
+		"total": 1,
+		"rows": [
+			{
+				"id": 1,
+				"orderNo": "0003170427000234",
+				"warehouseName": "FR WAREHOUSE",
+				"platType": "amazon",
+				"recipientName": "Arely Parks",
+				"deliveryWayId": 0,
+				"deliveryWayName": "usps",
+				"deliveryCode": "LW197542438CN",
+				"status": "uncommit",
+				"createDt": "2017-4-27 15:51:55",
+				"outroomDate": "2017-04-28 10:13:51.0",
+				"deliveryWeight": "11"
+			}
+		]
+	}
+}

@@ -1,0 +1,240 @@
+#set($menuKey ="后台企业管理")
+#extends("/page/layout/frame-backstage.vm")
+#block("content")
+#script()
+require(["./back-enterprise-detail.js"])
+#end
+<div class="content-top">
+    <input type="hidden" id="pageName" value="index">
+    <span class="title">企业详情</span>
+    <button class="btn btn-fix btn-primary" onclick="history.go(-1)">返回</button>
+</div>
+
+<div class="content-bottom col-xs-12">
+    <div class="form-box">
+        <form>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">企业信息</h4>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人：</label>
+                    <div class="col-xs-7">
+                        <input name="linkMan" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人手机号：</label>
+                    <div class="col-xs-7">
+                        <input name="linkPhone" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>固定电话：</label>
+                    <div class="col-xs-2">
+                        <input name="linkTel" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-5">
+                        <input name="linkTel1" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>国家：</label>
+                    <div class="col-xs-7">
+                        <select id="countryId" name="countryId" class="form-control" disabled></select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>所在地区：</label>
+                    <div class="col-xs-2">
+                        <select id="provinceId" name="provinceId" class="form-control" disabled>
+                        </select>
+                    </div>
+                    <div class="col-xs-2">
+                        <select id="cityId" name="cityId" class="form-control" disabled>
+                        </select>
+                    </div>
+                    <div class="col-xs-3">
+                        <select id="areaId" name="areaId" class="form-control" disabled>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>详细地址：</label>
+                    <div class="col-xs-7">
+                        <input name="address" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>邮编：</label>
+                    <div class="col-xs-7">
+                        <input name="zipcode" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">社会征信号：</label>
+                    <div class="col-xs-7">
+                        <input name="corpSocialNo" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">客户信息</h4>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>开户类型：</label>
+                    <div class="col-xs-7">
+                        <select name="type" class="form-control" disabled>
+                            <option value="E">企业客户</option>
+                            <option value="P">个人客户</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>客户名称：</label>
+                    <div class="col-xs-7">
+                        <input name="name" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人职务：</label>
+                    <div class="col-xs-7">
+                        <input name="linkmanDuty" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">QQ：</label>
+                    <div class="col-xs-7">
+                        <input name="qq" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人邮箱：</label>
+                    <div class="col-xs-7">
+                        <input name="email" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i></i>联系人传真：</label>
+                    <div class="col-xs-7">
+                        <input name="fax" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>紧急联系人：</label>
+                    <div class="col-xs-7">
+                        <input name="emergencyLinkMan" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>紧急联系人电话：</label>
+                    <div class="col-xs-7">
+                        <input name="emergencyLinkTel" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">销售代表邮箱：</label>
+                    <div class="col-xs-7">
+                        <input name="saleEmail" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">上传信息<span class="h4tip"></span></h4>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>营业执照-注册号：</label>
+                    <div class="col-xs-7">
+                        <input type="text" name="busiLicense" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i>*</i>营业执照：</label>
+                    <div class="iteam col-xs-6">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-4.png"></div>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">税务登记证：</label>
+                    <div class="iteam col-xs-4">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-1.png" width="100%"></div>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="iteam col-xs-4">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-1.png" width="100%"></div>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">组织机构代码证：</label>
+                    <div class="iteam col-xs-6">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-1.png"></div>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 ">
+            </div>
+            <div class="col-xs-11 text-center submit-box">
+            </div>
+        </form>
+    </div>
+</div>
+#end## end of body
+#end

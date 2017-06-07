@@ -1,0 +1,106 @@
+#set($menuKey = "海外仓订单")
+#extends("page/layout/frame-user-center.vm")
+#block("content")
+
+#script()
+require(["page/user-center/domestic/in-order/in-order"])
+#end
+<div class="content-top">
+    <input type="hidden" id="pageName" value="inOut">
+    <span class="title">入库单列表</span>
+    <button id="add" role="button" class="btn btn-fix btn-primary" onclick="window.location.href='$!{request.contextPath}/in-order-add'">新增
+    </button>
+</div>
+<div class="content-search">
+    <form class="form-inline" id="instoreList_form" method="post">
+        <input type="hidden" name="boxes">
+        <div class="form-group">
+            <label>入库单号：</label>
+            <input name="orderNo" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>海外仓：</label>
+            <select name="toWarehouseId" class="form-control">
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label>验货仓：</label>
+            <select name="collectWarehouseId" class="form-control">
+
+            </select>
+        </div>
+        <div class="form-group date-search">
+            <label>筛选时间：</label>
+            <!-- 年月日 -->
+            <span class="date form_date " for="starDate" data-date="" data-date-format="yyyy MM dd"
+                  data-link-field="starDate" data-link-format="yyyy-mm-dd">
+            <input id="starDate" class="form-control" style="width: 100%" type="text" value="" readonly>
+            <span class="input-group-addon delete"><span class="glyphicon glyphicon-remove"></span></span>
+            <span class="input-group-addon time"><span class="glyphicon glyphicon-calendar"></span></span>
+        </span>
+            -
+            <!-- 年月日 -->
+            <span class=" date form_date " for="endDate" data-date="" data-date-format="yyyy MM dd"
+                  data-link-field="endDate" data-link-format="yyyy-mm-dd">
+            <input id="endDate" class="form-control" style="width: 100%" size="16" type="text" value="" readonly>
+            <span class="input-group-addon delete"><span class="glyphicon glyphicon-remove"></span></span>
+            <span class="input-group-addon time"><span class="glyphicon glyphicon-calendar"></span></span>
+        </span>
+        </div>
+        <div class="form-group">
+            <label>物流产品：</label>
+            <select name="logisticsId" class="form-control">
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label>订单状态：</label>
+            <select name="orderStatus" class="form-control">
+                <option value="">全部</option>
+                <option value="draft">新建</option>
+                <option value="commit">已提交</option>
+                <option value="c_collect">揽收</option>
+                <option value="c_receive">收货</option>
+                <option value="c_ourtoom">集货出库</option>
+                <option value="p_inroom">转运入库</option>
+                <option value="p_outroom">转运出库</option>
+                <option value="o_inroom">海外入库</option>
+                <option value="o_shelve">海外上架</option>
+                <option value="cancelled">报废</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button id="instoreList_search" type="button" class="btn btn-fix btn-primary">查询</button>
+        </div>
+    </form>
+</div>
+<div class="content-body">
+    <table id="main-table" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th><input type="checkbox" id="checkAll"></th>
+            <th>入库单号</th>
+            <th>下单日期</th>
+            <th>路线</th>
+            <th>物流产品</th>
+            <th>包裹数</th>
+            <th>重量(Kg)</th>
+            <th>体积（CBM）</th>
+            <th>计费重量（Kg）</th>
+            <th>单品数</th>
+            <th>订单状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+#end## end of body
+
+  ## auto inject by fis3-preprocess-extlang
+  #require("page/user-center/domestic/in-order/in-order.vm")
+#end

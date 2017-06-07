@@ -1,0 +1,50 @@
+#set($menuKey ="海外仓库存")
+#extends("/page/layout/frame-user-center.vm")
+#block("content")
+#script()
+require(["./stock.js"])
+#end
+<div class="content-top">
+    <span class="title">库存查询</span>
+</div>
+<div class="content-search">
+    <form class="form-inline" id="goodsStock_form">
+        <div class="form-group">
+            <label>海外仓：</label>
+            <select class="form-control" name="warehouseId">
+            </select>
+        </div>
+        <div class="form-group">
+            <label>中文名称：</label>
+            <input class="form-control" name="goodsName">
+        </div>
+        <div class="form-group">
+            <label>商品编码：</label>
+            <input class="form-control" name="goodsCode">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-fix btn-primary">查询</button>
+        </div>
+    </form>
+</div>
+<div class="content-body">
+    <table id="main-table" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th><input type="checkbox" id="checkAll">
+            <th>海外仓</th>
+            <th>商品编码</th>
+            <th>中文名称</th>
+            <th>规格，型号</th>
+            <th>库存数量</th>
+            <th>在途数量</th>
+            <th>历史销量</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+#end## end of body
+#end

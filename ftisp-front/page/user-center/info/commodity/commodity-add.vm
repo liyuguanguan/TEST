@@ -1,0 +1,372 @@
+#set($menuKey ="商品管理")
+#extends("/page/layout/frame-user-center.vm")
+#block("content")
+#script()
+require(["./commodity-add.js"])
+#end
+<div class="content-top col-xs-12">
+    <input type="hidden" id="pageName" value="inOut">
+    <span class="title">商品备案</span>
+    <button role="button" class="btn btn-fix btn-primary" onclick="history.go(-1)">返回</button>
+</div>
+<div class="content-bottom col-xs-12">
+    <div class="form-box">
+        <form id="goodsAdd_form">
+            <input type="hidden" id="id" name="id">
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">基础信息</h4>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>中文名称：</label>
+                    <div class="col-xs-7">
+                        <input name="chName" type="text" class="form-control" placeholder="中文名称">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>英文名称：</label>
+                    <div class="col-xs-7">
+                        <input name="enName" type="text" class="form-control" placeholder="英文名称">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>商品编码：</label>
+                    <div class="col-xs-7">
+                        <input name="code" type="text" class="form-control" placeholder="商品编码">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">规格：</label>
+                    <div class="col-xs-7">
+                        <input name="spec" type="text" class="form-control" placeholder="规格">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">型号：</label>
+                    <div class="col-xs-7">
+                        <input name="model" type="text" class="form-control" placeholder="型号">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">品牌：</label>
+                    <div class="col-xs-7">
+                        <input name="brand" type="text" class="form-control" placeholder="品牌">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">是否带电：</label>
+                    <div class="col-xs-7">
+                        <span class="radio radio_on"><input type="radio" name="hasBattery" value="N"/>不带电<i></i></span>
+                        <span class="radio"><input type="radio" name="hasBattery"  value="Y"/>带电<i></i></span>
+                        <span style="display: none; padding-left: 50px; " id="batteryType">
+                        电池类型：
+                        <span class="radio radio_on"><input type="radio" name="batteryType" value="alkaline"/>碱性电池，不含汞<i></i></span>
+                        <span class="radio"><input type="radio" name="batteryType" value="lithium"/>锂电池<i></i></span>
+                    </span>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">关键词：</label>
+                    <div class="col-xs-7">
+                        <input name="keyWord" type="hidden" class="form-item">
+                        <div class="list_box tag-select">
+                            <span class="btn btn-primary tag-select-btn">添加关键词</span>
+                            <div class="tag-select-box">
+                                <div class="info-box col-xs-12">
+                                    <div class="col-xs-9"><input id="goodsKey" class="text" placeholder="不能包含@#%&等特殊字符和空格"></div>
+                                    <div class="col-xs-3"><span class="btn btn-primary">创建</span></div>
+                                </div>
+                                <div class="col-xs-12 list-body">
+                                </div>
+                                <div class="contral-box col-xs-12">
+                                    <span class="btn btn-default colsed">关闭</span>
+                                </div>
+                            </div>
+                            <span class="show-list">
+
+                        </span>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">上传图片</h4>
+                <div class="col-xs-12 pic-upload">
+                    <div class="pic-up">
+                    <span>
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">包装信息<span class="h4tip">合理填写包装信息</span></h4>
+                <div id="section3"></div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>产品包装重量：</label>
+                    <div class="col-xs-7 input-group">
+                        <input type="text" name="regGrossWeight" class="form-control" placeholder="产品包装重量">
+                        <div class="input-group-addon">kg/件</div>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>产品包装尺寸：</label>
+                    <div class="col-xs-2 input-group">
+                        <input name="regLength" type="text" class="form-control" placeholder="长度">
+                        <div class="input-group-addon">cm</div>
+                    </div>
+                    <div class="col-xs-2 input-group">
+                        <input name="regWidth" type="text" class="form-control" placeholder="宽度">
+                        <div class="input-group-addon">cm</div>
+                    </div>
+                    <div class="col-xs-2 input-group">
+                        <input name="regHeight" type="text" class="form-control" placeholder="高度">
+                        <div class="input-group-addon">cm</div>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">海关信息</h4>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">H.S.编码：</label>
+                    <div class="col-xs-7 ">
+                        <input name="hsCode" type="text" class="form-control" placeholder="HS编码">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">监管证书代码：</label>
+                    <div class="col-xs-7 ">
+                        <input name="manageType" type="text" class="form-control" placeholder="监管证书代码">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">出口退税率：</label>
+                    <div class="col-xs-7">
+                        <input name="exportGoodsTax" type="text" class="form-control" placeholder="如17%，请输入0.17">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">进出口信息</h4>
+                <div id="section5"></div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>进口国：</label>
+                    <div class="col-xs-7 unit-box">
+                        <select name="importCountryId" id="importCountryId" class="form-control">
+
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>出口申报价：</label>
+                    <div class="col-xs-7 input-group">
+                        <div class="input-group-addon">$</div>
+                        <input name="declaredPrice" type="text" class="form-control" placeholder="出口申报价">
+                        <div class="input-group-addon">USD/件</div>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>进口申报价：</label>
+                    <div class="col-xs-7 input-group">
+                        <div class="input-group-addon">$</div>
+                        <input name="importGoodsPrice" type="text" class="form-control" placeholder="进口申报价">
+                        <div class="input-group-addon">USD/件</div>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter" >
+                <h4 class="col-xs-12">其他信息</h4>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">交货周期：</label>
+                    <div class="col-xs-7 input-group">
+                        <input name="deliveryCycle" type="text" class="form-control" placeholder="交货周期">
+                        <div class="input-group-addon">天</div>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>商品网址：</label>
+                    <div class="col-xs-7 unit-box">
+                        <input name="detailWebsite" type="text" class="form-control" placeholder="http://或https://">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">备注：</label>
+                    <div class="col-xs-7 unit-box">
+                        <div id="summernote"></div>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-11 text-center submit-box">
+                <button id="submit_form" type="button" class="btn btn-primary btn-lg">保存</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- 添加地址 -->
+<div class="modal fade bs-example-modal-lg" id="addres" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增地址</h4>
+            </div>
+            <form>
+                <div class="modal-body row form-box">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">国家：</label>
+                        <div class="col-xs-6">
+                            <select class="form-control">
+                                <option>中国</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">省份/州：</label>
+                        <div class="col-xs-6">
+                            <select class="form-control">
+                                <option>浙江</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">城市：</label>
+                        <div class="col-xs-6 unit-box">
+                            <select class="form-control">
+                                <option>杭州</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">区域：</label>
+                        <div class="col-xs-6 unit-box">
+                            <select class="form-control">
+                                <option>西湖区</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">详细地址：</label>
+                        <div class="col-xs-6 unit-box">
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 添加地址END -->
+
+<!-- 添加表格 -->
+<div class="modal fade bs-example-modal-lg" id="tableAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加商品</h4>
+            </div>
+            <form id="tableAdd_form"><input type="hidden" id="flagTr" value=""/><input id="goodsCount" type="hidden"
+                                                                                       value=""/>
+                <div class="modal-body row form-box">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">箱号：</label>
+                        <div class="col-xs-6">
+                            <input name="boxNo" type="text" class="form-control" placeholder="请输入箱号">
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">包裹重量：</label>
+                        <div class="col-xs-6 unit-box">
+                            <input name="boxweight" type="text" class="form-control" placeholder="请输入重量">
+                            <div class="unit">Kg</div>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">尺寸：</label>
+                        <div class="col-xs-2 unit-box">
+                            <input name="regLength" type="text" class="form-control" placeholder="长度">
+                            <div class="unit">cm</div>
+                        </div>
+                        <div class="col-xs-2 unit-box">
+                            <input name="regWidth" type="text" class="form-control" placeholder="宽度">
+                            <div class="unit">cm</div>
+                        </div>
+                        <div class="col-xs-2 unit-box">
+                            <input name="regHigh" type="text" class="form-control" placeholder="高度">
+                            <div class="unit">cm</div>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-3 form-label">商品编码：</label>
+                        <div class="col-xs-6">
+                            <input id="autocomplete" type="text" class="form-control" placeholder="输入商品名称或商品编码">
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="col-xs-12">
+                        <table class="tableStyle-1">
+                            <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>商品名称</th>
+                                <th width="100">数量</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">添加并关闭</button>
+                    <button type="button" class="btn btn-primary">添加下一个裹</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+#widget("/widget/modal/uploadModal.vm")
+<!-- 添加表格END -->
+#end## end of body
+#end

@@ -1,0 +1,35 @@
+## 两栏布局有左边栏 ##
+#set($platform = "后台管理")
+#extends("page/layout/frame.vm")
+#style()
+#require("static/modules/dataTables/css/dataTables.bootstrap.min.css");
+#require("static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css");
+#require("page/backstage/backstage.scss");
+#end
+    #block("body")
+        #block("header")
+            #widget("widget/header/header-user-center.vm")
+        #end
+
+        <div id="middle" class="user-container">
+            <div class="row">
+                <div id="left-menu" class="left-menu">
+                    #block("sidebar")
+                        #widget("widget/sidebarmenus/sidebarmenus.vm")
+                    #end
+                </div>
+                <div id="content" class="content">
+                    #block("content")#end
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    #end
+#script()
+##启用 bootstrap
+require(['static/modules/dataTables/js/jquery.dataTables.min','static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min','static/modules/summernote/summernote','static/libs/global']);
+#end
+
+  ## auto inject by fis3-preprocess-extlang
+  #require("page/layout/frame-backstage.vm")
+#end

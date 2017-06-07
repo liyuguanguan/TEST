@@ -1,0 +1,278 @@
+@import "../assets/scss/variable";
+
+.wrapper-top {
+  margin-bottom: 30px;
+  padding: 50px 25px 0 25px;
+  height: 402px;
+}
+.wrapper-middle {
+  padding: 0 25px;
+}
+.article-category {
+  float: left;
+  margin-right: 30px;
+  width: 290px;
+  height: 350px;
+  border: 1px solid $gray-color;
+  .item {
+    display: block;
+    height: 45px;
+    padding: 0 15px;
+    line-height: 43px;
+    border: 0 solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $gray-color;
+    &:hover {
+      text-decoration: none!important;
+      -webkit-box-shadow:0 0 5px rgba(0, 0, 0, .5);
+      -moz-box-shadow:0 0 5px rgba(0, 0, 0, .5);
+      box-shadow:0 0 5px rgba(0, 0, 0, .5);
+    }
+    &:visited {
+      text-decoration: none!important;
+    }
+    &:link {
+      text-decoration: none!important;
+    }
+    span {
+      font-size: 14px;
+      font-family: $head-font-famliy;
+      margin-left: 15px;
+      color: $font-black-color;
+    }
+    small {
+      display: inline-block;
+      font-size:10px;
+      -webkit-transform:scale(0.8);
+      color: $deep-gray-color;
+    }
+    i {
+      display: inline-block;
+      height: 45px;
+      float: right;
+      font-style: normal;
+      font-size: 20px;
+      color: $deep-gray-color;
+    }
+  }
+  .active {
+    text-decoration: none!important;
+    -webkit-box-shadow:0 0 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow:0 0 5px rgba(0, 0, 0, .5);
+    box-shadow:0 0 5px rgba(0, 0, 0, .5);
+  }
+}
+.main-pic {
+  position: relative;
+  float: left;
+  width: 700px;
+  @media screen and (max-width: 1199px) {
+    width: 500px;
+  }
+  @media screen and (max-width: 991px) {
+    width: 300px;
+  }
+  @media screen and (max-width: 719px) {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+.hot-article {
+  float: left;
+  width: 290px;
+  margin-right: 30px;
+  @media screen and (max-width: 1199px) {
+    width: 100%;
+  }
+  h4 {
+    padding-bottom: 5px;
+    font-family: $head-font-famliy;
+    font-size: 16px;
+  }
+  .item {
+    display: block;
+    padding: 18px 5px;
+    border: 0 solid;
+    border-top-width: 1px;
+    border-top-color: $gray-color;
+    font-family: $head-font-famliy;
+    font-size: 14px;
+    color: $font-black-color;
+    line-height: 20px;
+    &:hover {
+      text-decoration: none!important;
+      border-top-width: 1px;
+      border-top-color: transparent;
+      -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+    &:visited {
+      text-decoration: none!important;
+    }
+    &:link {
+      text-decoration: none!important;
+    }
+    small {
+      display: block;
+      color: $deep-gray-color;
+    }
+  }
+  .hot-article-footer {
+    padding: 18px 5px;
+    border: 0 solid;
+    border-top-width: 1px;
+    border-top-color: $gray-color;
+  }
+}
+.main-article {
+  float: left;
+  width: 70%;
+}
+.main-article-row {
+  width: 100%;
+}
+.main-article,.main-article-row {
+  @media screen and (max-width: 1199px) {
+    width: 100%;
+  }
+  h4 {
+    padding-bottom: 10px;
+    font-family: $head-font-famliy;
+    font-size: 20px;
+    border: 0 solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $gray-color;
+  }
+  .item {
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    line-height: 24px;
+    border: 0 solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $gray-color;
+    .title {
+      color: $font-black-color;
+      font-size: 15px;
+    }
+    .date {
+      display: block;
+      color: $deep-gray-color;
+      small {
+        float: right;
+      }
+    }
+    .summary {
+      margin-top: 5px;
+      font-family: $foot-font-famliy;
+      font-size: 13px;
+      color: $super-deep-gray-color;
+    }
+    .one-pic {
+      float: left;
+      display: inline-block;
+      width: 150px;
+      margin-right: 3%;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    .right {
+      float: left;
+      display: inline-block;
+      width: 740px;
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 540px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        width: 340px;
+      }
+      @media screen and (max-width: 767px) {
+        margin-top: 10px;
+        width: 90%
+      }
+    }
+    .three-pic {
+      img {
+        display: inline-block;
+        margin-right: 1%;
+        max-width: 31%;
+        height: auto;
+        @media screen and (max-width: 767px) {
+          margin-top: 5px;
+          max-width: 96%;
+        }
+      }
+    }
+    .index {
+      width: 150px;
+    }
+    .index-right {
+      float: left;
+      display: inline-block;
+      width: 560px;
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 680px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        width: 470px;
+      }
+      @media screen and (max-width: 767px) {
+        margin-top: 10px;
+        width: 90%
+      }
+    }
+  }
+  .item-index {
+    padding-bottom: 10px;
+  }
+}
+
+.items {
+  padding: 6px 8px;
+}
+.default-button-fix {
+  -webkit-background-image: none;
+  -moz-background-image: none;
+  background-image: none;
+  background-color: transparent;
+}
+.pager {
+  text-align: right;
+  margin-right: 20px;
+  .page-num {
+    display: inline-block;
+    margin: 0 3px;
+    border: 1px solid $gray-color;
+    text-align: center;
+    color: $super-deep-gray-color;
+    font-family: $head-font-famliy;
+    font-size: 13px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    &:hover {
+      cursor: hand;
+      cursor: pointer;
+      -webkit-box-shadow:0 0 2px rgba(0, 0, 0, .5);
+      -moz-box-shadow:0 0 2px rgba(0, 0, 0, .5);
+      box-shadow:0 0 2px rgba(0, 0, 0, .5);
+    }
+  }
+  .top,.end {
+    @extend .page-num;
+    width: 50px;
+  }
+  .active {
+    cursor: hand;
+    cursor: pointer;
+    -webkit-box-shadow:0 0 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow:0 0 2px rgba(0, 0, 0, .5);
+    box-shadow:0 0 2px rgba(0, 0, 0, .5);
+  }
+  .disabled:hover {
+    cursor: not-allowed;
+  }
+}

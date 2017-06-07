@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygjt.gdn.ftisp.persistence.AreaDao">
+     <resultMap id="BaseResultMap" type="com.ygjt.gdn.ftisp.model.AreaDo">
+          <id column="id" jdbcType="INTEGER" property="id" />
+          <result column="code" jdbcType="VARCHAR" property="code" />
+          <result column="name" jdbcType="VARCHAR" property="name" />
+          <result column="name_en" jdbcType="VARCHAR" property="nameEn" />
+          <result column="level" jdbcType="INTEGER" property="level" />
+          <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+          <result column="code_two" jdbcType="VARCHAR" property="codeTwo" />
+          <result column="code_three" jdbcType="VARCHAR" property="codeThree" />
+          <result column="created_dt" jdbcType="TIMESTAMP" property="createdDt" />
+          <result column="created_by" jdbcType="INTEGER" property="createdBy" />
+          <result column="last_update_dt" jdbcType="TIMESTAMP" property="lastUpdateDt" />
+          <result column="last_update_by" jdbcType="INTEGER" property="lastUpdateBy" />
+          <result column="sts" jdbcType="CHAR" property="sts" />
+     </resultMap>
+     <sql id="Query_Where_Clause">
+          <where>
+               <foreach collection="oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Update_By_Query_Where_Clause">
+          <where>
+               <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Base_Column_List">
+          id, code, name, name_en, level, parent_id, code_two, code_three, created_dt, created_by, 
+          last_update_dt, last_update_by, sts
+     </sql>
+     <select id="selectByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.AreaQuery" resultMap="BaseResultMap">
+          select
+          <if test="distinct">
+               distinct
+          </if>
+          <include refid="Base_Column_List" />
+          from p_area
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+          <if test="orderByClause != null">
+               order by ${orderByClause}
+          </if>
+     </select>
+     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+          select 
+          <include refid="Base_Column_List" />
+          from p_area
+          where id = #{id,jdbcType=INTEGER}
+     </select>
+     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+          delete from p_area
+          where id = #{id,jdbcType=INTEGER}
+     </delete>
+     <delete id="deleteByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.AreaQuery">
+          delete from p_area
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </delete>
+     <insert id="insert" parameterType="com.ygjt.gdn.ftisp.model.AreaDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into p_area (code, name, name_en, 
+               level, parent_id, code_two, 
+               code_three, created_dt, created_by, 
+               last_update_dt, last_update_by, sts
+               )
+          values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{nameEn,jdbcType=VARCHAR}, 
+               #{level,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{codeTwo,jdbcType=VARCHAR}, 
+               #{codeThree,jdbcType=VARCHAR}, #{createdDt,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=INTEGER}, 
+               #{lastUpdateDt,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=INTEGER}, #{sts,jdbcType=CHAR}
+               )
+     </insert>
+     <insert id="insertSelective" parameterType="com.ygjt.gdn.ftisp.model.AreaDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into p_area
+          <trim prefix="(" suffix=")" suffixOverrides=",">
+               <if test="code != null">
+                    code,
+               </if>
+               <if test="name != null">
+                    name,
+               </if>
+               <if test="nameEn != null">
+                    name_en,
+               </if>
+               <if test="level != null">
+                    level,
+               </if>
+               <if test="parentId != null">
+                    parent_id,
+               </if>
+               <if test="codeTwo != null">
+                    code_two,
+               </if>
+               <if test="codeThree != null">
+                    code_three,
+               </if>
+               <if test="createdDt != null">
+                    created_dt,
+               </if>
+               <if test="createdBy != null">
+                    created_by,
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt,
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by,
+               </if>
+               <if test="sts != null">
+                    sts,
+               </if>
+          </trim>
+          <trim prefix="values (" suffix=")" suffixOverrides=",">
+               <if test="code != null">
+                    #{code,jdbcType=VARCHAR},
+               </if>
+               <if test="name != null">
+                    #{name,jdbcType=VARCHAR},
+               </if>
+               <if test="nameEn != null">
+                    #{nameEn,jdbcType=VARCHAR},
+               </if>
+               <if test="level != null">
+                    #{level,jdbcType=INTEGER},
+               </if>
+               <if test="parentId != null">
+                    #{parentId,jdbcType=INTEGER},
+               </if>
+               <if test="codeTwo != null">
+                    #{codeTwo,jdbcType=VARCHAR},
+               </if>
+               <if test="codeThree != null">
+                    #{codeThree,jdbcType=VARCHAR},
+               </if>
+               <if test="createdDt != null">
+                    #{createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="createdBy != null">
+                    #{createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="sts != null">
+                    #{sts,jdbcType=CHAR},
+               </if>
+          </trim>
+     </insert>
+     <select id="countByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.AreaQuery" resultType="java.lang.Long">
+          select count(*) from p_area
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </select>
+     <update id="updateByQuerySelective" parameterType="map">
+          update p_area
+          <set>
+               <if test="record.id != null">
+                    id = #{record.id,jdbcType=INTEGER},
+               </if>
+               <if test="record.code != null">
+                    code = #{record.code,jdbcType=VARCHAR},
+               </if>
+               <if test="record.name != null">
+                    name = #{record.name,jdbcType=VARCHAR},
+               </if>
+               <if test="record.nameEn != null">
+                    name_en = #{record.nameEn,jdbcType=VARCHAR},
+               </if>
+               <if test="record.level != null">
+                    level = #{record.level,jdbcType=INTEGER},
+               </if>
+               <if test="record.parentId != null">
+                    parent_id = #{record.parentId,jdbcType=INTEGER},
+               </if>
+               <if test="record.codeTwo != null">
+                    code_two = #{record.codeTwo,jdbcType=VARCHAR},
+               </if>
+               <if test="record.codeThree != null">
+                    code_three = #{record.codeThree,jdbcType=VARCHAR},
+               </if>
+               <if test="record.createdDt != null">
+                    created_dt = #{record.createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.createdBy != null">
+                    created_by = #{record.createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.lastUpdateDt != null">
+                    last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.lastUpdateBy != null">
+                    last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.sts != null">
+                    sts = #{record.sts,jdbcType=CHAR},
+               </if>
+          </set>
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByQuery" parameterType="map">
+          update p_area
+          set id = #{record.id,jdbcType=INTEGER},
+               code = #{record.code,jdbcType=VARCHAR},
+               name = #{record.name,jdbcType=VARCHAR},
+               name_en = #{record.nameEn,jdbcType=VARCHAR},
+               level = #{record.level,jdbcType=INTEGER},
+               parent_id = #{record.parentId,jdbcType=INTEGER},
+               code_two = #{record.codeTwo,jdbcType=VARCHAR},
+               code_three = #{record.codeThree,jdbcType=VARCHAR},
+               created_dt = #{record.createdDt,jdbcType=TIMESTAMP},
+               created_by = #{record.createdBy,jdbcType=INTEGER},
+               last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               sts = #{record.sts,jdbcType=CHAR}
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByPrimaryKeySelective" parameterType="com.ygjt.gdn.ftisp.model.AreaDo">
+          update p_area
+          <set>
+               <if test="code != null">
+                    code = #{code,jdbcType=VARCHAR},
+               </if>
+               <if test="name != null">
+                    name = #{name,jdbcType=VARCHAR},
+               </if>
+               <if test="nameEn != null">
+                    name_en = #{nameEn,jdbcType=VARCHAR},
+               </if>
+               <if test="level != null">
+                    level = #{level,jdbcType=INTEGER},
+               </if>
+               <if test="parentId != null">
+                    parent_id = #{parentId,jdbcType=INTEGER},
+               </if>
+               <if test="codeTwo != null">
+                    code_two = #{codeTwo,jdbcType=VARCHAR},
+               </if>
+               <if test="codeThree != null">
+                    code_three = #{codeThree,jdbcType=VARCHAR},
+               </if>
+               <if test="createdDt != null">
+                    created_dt = #{createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="createdBy != null">
+                    created_by = #{createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="sts != null">
+                    sts = #{sts,jdbcType=CHAR},
+               </if>
+          </set>
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+     <update id="updateByPrimaryKey" parameterType="com.ygjt.gdn.ftisp.model.AreaDo">
+          update p_area
+          set code = #{code,jdbcType=VARCHAR},
+               name = #{name,jdbcType=VARCHAR},
+               name_en = #{nameEn,jdbcType=VARCHAR},
+               level = #{level,jdbcType=INTEGER},
+               parent_id = #{parentId,jdbcType=INTEGER},
+               code_two = #{codeTwo,jdbcType=VARCHAR},
+               code_three = #{codeThree,jdbcType=VARCHAR},
+               created_dt = #{createdDt,jdbcType=TIMESTAMP},
+               created_by = #{createdBy,jdbcType=INTEGER},
+               last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               sts = #{sts,jdbcType=CHAR}
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+</mapper>

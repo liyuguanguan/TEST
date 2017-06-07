@@ -1,0 +1,23 @@
+<div class="modal fade" id="goodsExport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Excel文件导入</h4>
+            </div>
+            <div class="modal-body">
+                <div id="fileQueue"></div>
+                <input type="file" name="uploadify" id="uploadify" />
+                <p class="fileUpload-contral">
+                    <!-- 上传第一个未上传的文件 -->
+                    <a href="javascript:$('#uploadify').uploadify('upload')" class="btn btn-default">上传</a>
+                    <!-- 取消第一个未取消的文件 -->
+                    <a href="javascript:$('#uploadify').uploadify('cancel')" class="btn btn-default">取消上传</a>
+
+                    <a href="javascript:$('#uploadify').uploadify('upload','*')" class="btn btn-default">开始上传所有文件</a>&nbsp;
+                    <a href="javascript:$('#uploadify').uploadify('cancel','*')" class="btn btn-default">取消所有上传</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

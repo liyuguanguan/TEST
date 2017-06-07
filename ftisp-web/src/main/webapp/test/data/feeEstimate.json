@@ -1,0 +1,100 @@
+{
+  "code": "200",
+  "message": "success",
+  "data": {
+    "currency": "CNY",
+    "totalAmount": 100,
+    "rows": [
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 1,
+        "currency": "CNY1"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 2,
+        "currency": "CNY2"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 3,
+        "currency": "CNY3"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 4,
+        "currency": "CNY4"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 5,
+        "currency": "CNY5"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 6,
+        "currency": "CNY6"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 7,
+        "currency": "CNY7"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 8,
+        "currency": "CNY8"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 9,
+        "currency": "CNY9"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 10,
+        "currency": "CNY10"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 11,
+        "currency": "CNY11"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 12,
+        "currency": "CNY12"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 13,
+        "currency": "CNY13"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 14,
+        "currency": "CNY14"
+      },
+      {
+        "billProdName": "揽收费",
+        "productCatalogName": "揽收",
+        "amount": 15,
+        "currency": "CNY15"
+      }
+    ]
+  }
+}

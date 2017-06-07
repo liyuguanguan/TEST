@@ -1,0 +1,193 @@
+#extends("page/layout/frame-white.vm")
+    #style()
+        #require("page/start/register-and-forget-password.scss")
+        #require("page/assets/scss/drag.scss")
+            .top-padding7 {
+            padding-top: 7px;
+            }
+            .top-padding10 {
+            padding-top: 10px;
+            }
+    #end
+    #script()
+        require(['page/start/register'])
+    #end
+    #block("content")
+    <div class="bg-title">
+        <div class="title">新用户注册</div>
+    </div>
+    <div class="container">
+        <div class="tab-steps">
+            <!-- Nav tabs -->
+            <ul id="myTabs" class="nav nav-tabs four-step" role="tablist">
+                <li role="presentation" class="item"><a href="#step1" aria-controls="step1" role="tab">01/填写邮箱</a></li>
+                <li role="presentation" class="item"><a href="#step2" aria-controls="step2" role="tab">02/邮箱验证</a></li>
+                <li role="presentation" class="item"><a href="#step3" aria-controls="step3" role="tab">03/完善信息</a></li>
+                <li role="presentation" class="item"><a href="#step4" aria-controls="step4" role="tab">04/完成注册</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade" id="step1">
+                    <form class="form-horizontal my-block" style="padding-top: 65px">
+                        <input type="hidden" name="mailType" value="register">
+                        <div class="form-group has-error">
+                            <label for="email" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label">邮箱：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input class="form-control" id="email" name="email" placeholder="请输入邮箱">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error"></div>
+                        </div>
+                        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5">
+                            <div class="text" id="drag"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="agreement">同意“天津跨境电商外贸综合服务平台用户使用协议”
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5">
+                                <button type="submit" class="btn btn-block blue-button-fix">发送验证邮件</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="step2">
+                    <div class="my-block" style="padding-top: 65px">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <img class="pull-right" src="/ftisp/static/img/email_icon.png" alt="email-icon">
+                                <img class='pull-right' src='/ftisp/static/img/link_rot.png' alt='link-rot' style="display: none">
+                            </div>
+                            <div class="col-xs-8">
+                                <strong>邮件已经发出</strong>
+                                <p style="margin-top: 10px">请前往邮箱查看</p>
+                                <p>请在24小时内点击邮箱中的链接继续完成注册</p>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 80px">
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5">
+                                <button id="resend" type="button" class="btn btn-block transparent-button-fix" disabled><span>(60)</span>重新发送</button>
+                            </div>
+                            #*<div class="col-xs-offset-1 col-xs-10 col-sm-4">
+                                <button type="button" class="btn btn-block blue-button-fix">注册</button>
+                            </div>*#
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="step3">
+                    <input type="hidden" name="message" id="message" value="${message}">
+                    <input type="hidden" name="validStatus" id="validStatus" value="${validStatus}">
+                    <form class="form-horizontal my-block">
+                        <input type="hidden" name="code" id="code" value="${code}">
+                        <div class="row" style="padding: 0 4%;margin-bottom: 25px;">
+                            <div class="text-center col-xs-12 success-stock">
+                                <div class="col-xs-3 text-right">
+                                    <img src="/ftisp/static/img/success_icon_lg.png">
+                                </div>
+                                <div class="col-xs-8 text-left">
+                                    <div class="success-text-stock">
+                                        邮箱已验证成功，请设置登录密码，填写企业信息。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input1" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label"><i class="required"></i>姓名：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input class="form-control" id="input1" name="name" placeholder="请输入姓名">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input2" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label"><i class="required"></i>密码：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input type="password" class="form-control" id="input2" name="password" placeholder="请输入密码">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label"><i class="required"></i>重复密码：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input type="password" class="form-control" id="password" name="passwordAgain" placeholder="请重复输入新密码">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input4" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label">企业类型：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input class="form-control" id="input4" name="type" placeholder="请输入企业类型">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input5" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label">企业名称：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input class="form-control" id="input5" name="entName" placeholder="请输入企业名称">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input6" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label"><i class="required"></i>联系电话：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input class="form-control" id="input6" name="mobile" placeholder="请输入联系电话">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input7" class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-3 control-label">企业传真：</label>
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+                                <input class="form-control" id="input7" name="fax" placeholder="请输入企业传真">
+                            </div>
+                            <div class="col-xs-offset-1 col-xs-12 col-sm-offset-0 col-sm-4 error">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 50px">
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-5">
+                                <button type="submit" class="btn btn-block blue-button-fix">注册</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="step4">
+                    <div class="my-block">
+                        <div class="row" style="padding: 0 4%">
+                            <div class="text-center col-xs-12 success-stock">
+                                <div class="col-xs-3 text-right">
+                                    <img src="/ftisp/static/img/success_icon_lg.png">
+                                </div>
+                                <div class="col-xs-8 text-left">
+                                    <div class="success-text-stock">
+                                        恭喜您！成功注册天津跨境电商外贸综合服务平台
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center top-padding10">
+                            您在平台的登录账号为<span></span>，请妥善保管您的账号资料。
+                        </p>
+                        <p class="text-center">
+                            您现在可以进入：<a href="#">我的用户中心</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    #end
+
+  ## auto inject by fis3-preprocess-extlang
+  #require("page/start/register.vm")
+#end

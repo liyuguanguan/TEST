@@ -1,0 +1,12 @@
+{
+  "protocol": "github",
+  "gihub": {
+    "author": "fis-components"
+  },
+  "dependencies": [
+    "jquery@^1.11.3",
+    "bootstrap@^3.0.0",
+    "compass-mixins",
+    "jquery-validation"
+  ]
+}

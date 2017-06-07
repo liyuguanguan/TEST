@@ -1,0 +1,47 @@
+{
+	"code": "200",
+	"message": "success",
+	"data": {
+		"page": 1,
+		"count": 10,
+		"total": 22,
+		"rows": [
+			{
+				"id": "1",
+				"linkMan": "王先生",
+				"linkPhone": 15858112234,
+				"type": "pickup",
+				"zipCode": 100000,
+				"address": "西湖区文一西路522号",
+				"isDefault":"N",
+				"province":"浙江省",
+				"city":"杭州市",
+				"area":"西湖区"
+			},{
+				"id": "2",
+				"linkMan": "王先生",
+				"linkPhone": 15858112234,
+				"type": "pickup",
+				"zipCode": 100000,
+				"address": "14号",
+				"isDefault":"Y",
+				"province":"浙江省",
+				"city":"杭州市",
+				"area":"萧山区"
+			},
+			{
+				"id": "3",
+				"linkMan": "王先生",
+				"linkPhone": 15858112234,
+				"type": "pickup",
+				"zipCode": 100000,
+				"address": "路522号",
+				"isDefault":"N",
+				"province":"浙江省",
+				"city":"杭州市",
+				"area":"西湖区"
+			}
+		]
+	}
+}
+

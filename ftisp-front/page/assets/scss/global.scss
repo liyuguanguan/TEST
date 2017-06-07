@@ -1,0 +1,318 @@
+@import "variable";
+
+body {
+  height: 100%;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: $head-font-famliy;
+  color: $font-black-color;
+}
+
+select:disabled {
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+select:disabled::-ms-expand {
+  display: none;
+}
+
+/************ header:start **************/
+nav {
+  .container {
+    .navbar-brand {
+      height: $head-height;
+      padding: 0px auto;
+    }
+    ul li {
+      margin-top: 20px;
+      a {
+        text-align: center;
+        font-family: $head-font-famliy;
+        font-size: $head-font-size;
+        color: $font-black-color;
+      }
+    }
+  }
+}
+
+/*
+.head {
+  height: $head-height;
+  line-height:$head-height;
+  text-align: center;
+
+  .center {
+    width: $middle-top-width;
+    height: $head-height;
+    margin: 0 auto;
+  }
+  .iteam {
+    position: relative;
+    float: right;
+    letter-spacing: 1px;
+    margin: 0 14px;
+  }
+  ul li{
+    list-style-type:none;
+  }
+  a{
+    font-family:$head-font-famliy;
+    font-size:$head-font-size;
+    color: $font-black-color;
+  }
+  img{
+    line-height:$head-height;
+  }*/
+/*********** header:end *************/
+
+/************ footer:start ************/
+footer {
+  .footer-white {
+    text-align: center;
+    font-family: $foot-font-famliy;
+    font-size: $foot-font-size-white;
+    hr {
+      max-width: $middle-top-width;
+    }
+    a {
+      color: $font-black-color;
+    }
+  }
+  .footer-blue {
+    width: inherit;
+    background-color: #012349;
+    .container {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      height: $foot-height;
+      color: $font-white-color;
+      font-size: $foot-font-size-blue;
+      font-family: $foot-font-famliy;
+      & > div {
+        height: inherit;
+      }
+      & > div:first-child {
+        padding-top: 2%;
+        & > div:last-child {
+          padding-top: 4%;
+        }
+      }
+      & > div:last-child {
+        padding-top: 5%;
+        h4 {
+          padding-bottom: 5%;
+          font-family: 微软雅黑;
+        }
+        & > div:last-child {
+          padding-top: 10%;
+          padding-bottom: 5%;
+          img {
+            padding-right: 1%;
+          }
+        }
+        a {
+          color: $font-white-color;
+        }
+      }
+    }
+  }
+
+}
+
+/************ footer:end ************/
+.blue-button-fix {
+  @include border-radius(0px);
+  background-color: $blue-color;
+  color: white;
+  font-family: 微软雅黑;
+  font-size: 18px;
+  letter-spacing: 20px;
+  text-indent: 20px;
+}
+
+.transparent-button-fix {
+  @include border-radius(0px);
+  background-color: transparent;
+  color: $font-black-color;
+  font-family: 微软雅黑;
+  font-size: 14px;
+  border: 1px solid $gray-color;
+}
+
+/************* 表单验证 ************/
+.form-group {
+  .error {
+    padding-top: 7px;
+  }
+}
+
+.has-error {
+  div:last-child {
+    color: $deep-red-color
+  }
+}
+
+.required {
+  &:before {
+    content: '*';
+    position: relative;
+    top: 3px;
+    right: 5px;
+    color: $deep-red-color;
+  }
+}
+
+/************* 表单验证end ************/
+/************* 用户中心 ************/
+.head-right {
+  position: relative;
+  float: right;
+  .user-icon {
+    position: relative;
+    top: -5px;
+    color: $font-black-color;
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    @include border-radius(50%);
+    border: 1px solid $font-black-color;
+    font-size: 22px;
+    line-height: 50px;
+  }
+  .user-text {
+    position: relative;
+    left: 5px;
+    top: 1px;
+    color: $font-black-color;
+    display: inline-block;
+    a:first-child {
+      color: inherit;
+    }
+    a:last-child {
+      color: $deep-gray-color;
+    }
+  }
+}
+.user-head {
+  position: relative;
+  height: 75px;
+  padding: 7px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 1679px) {
+    width: 1600px;
+  }
+  img {
+    height: 54px;
+  }
+  .user-head-right {
+    position: relative;
+    float: right;
+    top: 5px;
+    .user-icon {
+      position: relative;
+      color: $font-black-color;
+      display: inline-block;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      @include border-radius(50%);
+      border: 1px solid $font-black-color;
+      font-size: 22px;
+      line-height: 50px;
+    }
+    .user-text {
+      position: relative;
+      left: 5px;
+      top: 1px;
+      color: $font-black-color;
+      display: inline-block;
+      a:first-child {
+        color: inherit;
+      }
+      a:last-child {
+        color: $deep-gray-color;
+      }
+    }
+  }
+}
+.left-menu {
+  position: absolute;
+  width: 180px;
+  height: 760px;
+  border-right: 1px solid #dedede;
+  .title {
+    height: 62px;
+    line-height: 60px;
+    font-size: 19px;
+    border: 0 dotted transparent;
+    border-bottom-width: 1px;
+    border-bottom-color: #dedede;
+  }
+  .item {
+    display: block;
+    padding-left: 20px;
+    height: 51px;
+    line-height: 50px;
+    font-size: 15px;
+    color: $font-black-color;
+    border-bottom: 1px solid #dedede;
+    font-weight: 700;
+    cursor: default;
+    &:hover {
+      text-decoration: none;
+    }
+    &:link {
+      text-decoration: none !important;
+    }
+    i {
+      margin-right: 7px;
+    }
+  }
+  .child {
+    @extend .item;
+    cursor: hand;
+    cursor: pointer;
+    height: 46px;
+    line-height: 45px;
+    font-size: 13px;
+    padding-left: 40px;
+    font-weight: normal;
+    border-bottom: 1px dotted #dedede;
+    &:hover {
+      text-decoration: none;
+      color: $blue-color;
+    }
+    &:link {
+      text-decoration: none !important;
+    }
+  }
+  .active {
+    border-bottom: 1px solid transparent;
+    text-decoration: none !important;
+    background-color: $user-main-color;
+    color: #fff;
+    &:hover {
+      color: #fff;
+      background-color: rgba(36, 113, 200, .8);
+    }
+    /*    -webkit-box-shadow:0 0 5px rgba(36,113,200, .5);
+        -moz-box-shadow:0 0 5px rgba(36,113,200, .5);
+        box-shadow:0 0 5px rgba(36,113,200, .5);*/
+  }
+}
+
+.content {
+  position: relative;
+  margin-left: 179px;
+  border: 0 solid transparent;
+  border-left-width: 1px;
+  border-left-color: #dedede;
+}
+
+/************* 用户中心END ************/
+
+

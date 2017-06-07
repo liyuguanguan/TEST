@@ -1,0 +1,130 @@
+#extends("page/layout/frame-blue.vm")
+    #style()
+        #require("page/index.scss")
+        #require("static/css/animate.min.css")
+    #end
+    #script()
+        require(['page/index'])
+    #end
+    #block("content")
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="/ftisp/static/img/bg_index2.png" alt="main">
+                    <div class="carousel-caption">
+                        <p class="text"><span>认知、习得、创见、预想、实现Boc Network保有对未知的敬畏并一路探索</span><a class="arrow" href="#"></a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/ftisp/static/img/bg_index2.png" alt="main2">
+                    <div class="carousel-caption">
+                        <p class="text"><span>认知、习得、创见、预想、实现Boc Network保有对未知的敬畏并一路探索</span><a class="arrow" href="#"></a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/ftisp/static/img/bg_index2.png" alt="main2">
+                    <div class="carousel-caption">
+                        <p class="text"><span>认知、习得、创见、预想、实现Boc Network保有对未知的敬畏并一路探索</span><a class="arrow" href="#"></a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="container">
+            <p class="title1">ABOUT US</p>
+            <p class="title2">关于我们</p>
+            <p class="title3"><small>服务于天津跨境电商外贸综合事业</small></p>
+        </div>
+        <div class="about-us">
+            <div class="about-us-left">
+                <p>天津跨境电商外贸综合服务平台通过互联网与线下服务相结合为电商企业提供通关、物流、检验、退税、外汇、金融等所有外贸交易所需的各环节服务，改变传统外贸经营模式，通过集约化改变跨境电商因小而散带来的个体在整体市场环境中所处的不利地位，为电商企业防范交易风险、降低经营成本、解决融资难题，从而达到共同成长、共享价值的目标。平台的使命是解决跨境电商的一切困难，通过先进的商业模式和优质的快捷服务赢得客户信任，后发先至，实现成为国内外跨境电商综合服务提供商行业领先者的宏大愿景。
+
+                </p>
+                <a href="$!{request.contextPath}/about-us"><img src="/ftisp/static/img/index_more_blue_btn.png" alt="button"></a>
+            </div>
+            <div class="about-us-right"><img src="/ftisp/static/img/index_about_us_bg.png" alt="bg"></div>
+        </div>
+        <div class="service">
+            <div class="container">
+                <p class="title1">SERVICE CENTER</p>
+                <p class="title2">服务中心</p>
+                <p class="title3"><small>服务于天津跨境电商外贸综合事业</small></p>
+            </div>
+            <div class="container text-center" style="margin-top: 120px;">
+                <div class="service-cards" style="position: relative;height: 340px">
+                    <div class="service-card first">
+                        <div class="radius-lg-blue">
+                            <a href="$!{request.contextPath}/service" class="radius-blue">
+                                <img src="/ftisp/static/img/service_icon1.png">
+                            </a>
+                        </div>
+                        <div class="card-text-title">
+                            通关/外汇/退税
+                        </div>
+                        <div class="card-text">
+                            为您留住更多利润
+                            <br>
+                            让外贸更加安全、快速、便捷
+                        </div>
+                    </div>
+                    <div class="service-card second">
+                        <div class="radius-lg-green">
+                            <a href="$!{request.contextPath}/service" class="radius-green">
+                                <img src="/ftisp/static/img/service_icon2.png">
+                            </a>
+                        </div>
+                        <div class="card-text-title">
+                            金融服务
+                        </div>
+                        <div class="card-text">
+                            风险更低、资金有保障
+                            <br>
+                            为您一站式解决外贸各环节的融资需求
+                        </div>
+                    </div>
+                    <div class="service-card last">
+                        <div class="radius-lg-blue">
+                            <a href="$!{request.contextPath}/service" class="radius-blue">
+                                <img src="/ftisp/static/img/service_icon3.png">
+                            </a>
+                        </div>
+                        <div class="card-text-title">
+                            物流服务
+                        </div>
+                        <div class="card-text">
+                            让物流更便捷
+                            <br>
+                            100%费用透明、100%全程监管、100%安全保障
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="top-article" class="container">
+        </div>
+        <div class="news-more"><a href="$!{request.contextPath}/article"><img src="/ftisp/static/img/index_more_gray_btn.png"></a></div>
+        <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=157269566&amp;site=qq&amp;menu=yes" class="right-bar">
+            <div class="iconfont icon-kefu"></div>
+            <div class="text">客服中心</div>
+        </a>
+    #end
+
+  ## auto inject by fis3-preprocess-extlang
+  #require("page/index.vm")
+#end

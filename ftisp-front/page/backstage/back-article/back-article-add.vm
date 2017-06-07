@@ -1,0 +1,94 @@
+#set($menuKey ="后台文章管理")
+#extends("/page/layout/frame-backstage.vm")
+#block("content")
+#script()
+require(["./back-article-add.js"])
+#end
+<div class="content-top col-xs-12">
+    <input type="hidden" id="pageName" value="inOut">
+    <span class="title">文章新增</span>
+    <button role="button" class="btn btn-fix btn-primary" onclick="history.go(-1)">返回</button>
+</div>
+<div class="content-bottom col-xs-12">
+    <div class="form-box">
+        <form id="main_form" method="post" enctype="multipart/form-data" action="api/v1/p/ftisp/manage/article/create">
+            <div class="col-xs-12 form-chapter" >
+                <div class="form-group col-xs-12" >
+                    <label class="col-xs-2 form-label"><i>*</i>标题：</label>
+                    <div class="col-xs-7">
+                        <input id="title" name="title" type="text" class="form-control" placeholder="标题">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12" >
+                    <label class="col-xs-2 form-label">版图：</label>
+                    <div class="col-xs-2 file-upload">
+                        <img class="file-view" src='page/assets/img/add_ftisp.png' alt="无图">
+                        <input type="file" class="file-input" id="one-pic" name="topPic"/>
+                        <div id="file-cancel"></div>
+                    </div>
+                    <label class="col-xs-2 form-label" for="is-head">是否头条：</label>
+                    <div class="col-xs-2" style="margin-top: 8px">
+                        <input type="checkbox" id="is-head" name="idHead" value="0">
+                    </div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">来源：</label>
+                    <div class="col-xs-7">
+                        <input id="url" name="url" type="text" class="form-control" placeholder="来源">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">作者：</label>
+                    <div class="col-xs-7">
+                        <input id="auther" name="author" type="text" class="form-control" placeholder="作者">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">模块：</label>
+                    <div class="col-xs-7">
+                        <select id="category" name="category" type="text" class="form-control">
+                            <option value="1">资讯中心</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">类别：</label>
+                    <div class="col-xs-7">
+                        <select id="type" name="type" type="text" class="form-control">
+                            <option value="1">平台公告</option>
+                            <option value="2">平台动态</option>
+                            <option value="3">行业动态</option>
+                            <option value="4">行业知识库</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">概要：</label>
+                    <div class="col-xs-7">
+                        <textarea id="summary" name="summary" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">文章内容：</label>
+                    <div class="col-xs-7">
+                        <textarea id="editor" name="content"></textarea>
+                    </div>
+                    <div class="col-xs-3 error">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-11 text-center submit-box">
+                <button id="submit" type="button" class="btn btn-primary btn-lg">保存</button>
+            </div>
+        </form>
+    </div>
+</div>
+#end## end of body
+#end

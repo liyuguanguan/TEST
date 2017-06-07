@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index"><img class="img-responsive" src="page/assets/img/logo.png" alt=""></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="iteam"><a href="$!{request.contextPath}/" >首页</a></li>
+                <li class="iteam"><a href="$!{request.contextPath}/service">服务中心</a></li>
+                <li class="iteam"><a href="$!{request.contextPath}/article">资讯中心</a></li>
+                <li class="iteam"><a href="$!{request.contextPath}/about-us">关于我们</a></li>
+                #if(${sec.authenticated})<li class="iteam">
+                    <div class="head-right">
+                        <a class="user-icon" href="$!{request.contextPath}/enterprise">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </a>
+                        <div class="user-text">
+                            <a href="#">#if(${sec.authenticated}) ${sec.userName}#end</a>
+                            <br>
+                            <a href="$!{request.contextPath}/logout">注销</a>
+                        </div>
+                    </div>
+                    </li>
+                #else
+                    <li class="iteam"><a href="$!{request.contextPath}/login"><img src="page/assets/img/btn_login.png"></a></li>
+                    <li class="iteam"><a href="$!{request.contextPath}/register"><img src="page/assets/img/btn_register.png"></a></li>
+                #end
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+

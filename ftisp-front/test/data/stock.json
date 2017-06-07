@@ -1,0 +1,31 @@
+{
+	"code": "200",
+	"message": "success",
+	"data": {
+		"page": 1,
+		"count": 10,
+		"total": 100,
+		"rows": [
+			{
+				"id": 1,
+				"warehouseName": "HK WAREHOUSE",
+				"goodsName": "联想笔记本电脑 T440p",
+				"goodsCode": 1111,
+				"spec": "T440",
+				"stockNums": 100,
+				"wayNums": 200,
+				"totalSales": 1000
+			},
+			{
+				"id": 2,
+				"warehouseName": "HK WAREHOUSE",
+				"goodsName": "联想笔记本电脑 T440p",
+				"goodsCode": 1111,
+				"spec": "T440",
+				"stockNums": 100,
+				"wayNums": 200,
+				"totalSales": 1000
+			}
+		]
+	}
+}

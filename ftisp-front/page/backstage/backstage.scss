@@ -1,0 +1,574 @@
+@import "../assets/scss/variable";
+$main-color: #414a5b;
+$color2: #f6f7fb;
+$bg-color: #8895b4;
+$form-label-font-color: #7f8797;
+$color6: #f9f9f9;
+$colorRed3: #e3491f;
+$line-color1: #dedede;
+$line-color2: #ccced9;
+$height-form: 36px;
+
+@mixin line-1 {
+  border-bottom: 1px solid $line-color1;
+}
+
+@mixin line-2 {
+  border: 1px solid $line-color2;
+}
+
+@mixin height60 {
+  height: 60px;
+  line-height: 60px;
+  @include line-1;
+}
+
+@mixin display-inline {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+/************* public ************/
+body {
+  font-family: "microsoft yahei", sans-serif;
+  font-size: 12px;
+  color: $main-color;
+}
+
+.btn-fix {
+  font-size: 12px;
+  box-shadow: none;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.btn-default {
+  border: 1px solid #ccced9;
+  background: none;
+  color: $main-color;
+}
+
+.btn-default:hover {
+  background: #f6f7fb;
+  border: 1px solid $user-main-color;
+  color: $user-main-color;
+}
+
+.btn-primary {
+  border: 1px solid #ccced9;
+  background: $user-main-color;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: $user-main-color;
+  color: #fff;
+  border: 1px solid $main-color;
+}
+
+.date-search .form_datetime {
+  width: 210px;
+  display: inline-block;
+}
+
+.date-search .form_date {
+  width: 31%;
+  display: inline-block;
+  position: relative
+}
+
+.date-search .form_time {
+  width: 100px;
+}
+
+.date-search .input-group-addon {
+  z-index: 5;
+  background: none;
+  border: 0px;
+  font-size: 12px
+}
+
+.date-search .delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: #ededed;
+}
+
+.date-search .delete:hover {
+  color: #ccc
+}
+
+.date-search .time {
+  position: absolute;
+  top: 4px;
+  left: -2px;
+  color: #1893fd
+}
+
+.input-group .form-control {
+  float: none;
+  border-radius: 5px;
+}
+
+.date-search .form-control {
+  padding-left: 30px;
+  font-size: 12px
+}
+
+.date-search .form-control[disabled], .date-search .form-control[readonly], .date-search fieldset[disabled] .form-control {
+  background: #fff;
+}
+
+.form-chapter .form_date {
+  width: 100%;
+}
+
+.form-chapter .delete, .form-chapter .time {
+  top: 8px;
+}
+
+.form-box .form-group .timetext {
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+.user-container {
+  min-width: $minWidth;
+  min-height: 760px;
+  border: 1px solid #dedede;
+  border-top-width: 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 1679px) {
+    width: 1600px;
+  }
+}
+
+.head-container {
+  min-width: $minWidth;
+  border-bottom: 2px solid $user-main-color;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.dataTable th {
+  white-space: nowrap !important;
+}
+
+.file-upload{
+  position: relative;
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  margin-left: 15px;
+  overflow: hidden;
+  .file-view{
+    position: absolute;
+    width: 88px;
+    height: auto;
+    vertical-align: middle;
+  }
+  .file-input{
+    position: absolute;
+    display: block;
+    top: -30px;
+    left: -1px;
+    width: 90px;
+    height: 120px;
+    opacity: 1;
+    &:hover{
+      cursor: hand;
+      cursor: pointer;
+    }
+  }
+  .file-cancel{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    background: url("#{$image-url}/x_alt.png") no-repeat;
+    background-position: center;
+    &:hover{
+      cursor: hand;
+      cursor: pointer;
+    }
+  }
+  .disabled{
+    &:hover{
+      cursor: not-allowed;
+    }
+  }
+}
+
+/************* public end ************/
+/************* 列表页面右边content ************/
+.content-top {
+  padding: 0 30px;
+  height: 62px;
+  line-height: 60px;
+  font-size: 19px;
+  border: 0 dotted transparent;
+  border-bottom-width: 1px;
+  border-bottom-color: #dedede;
+  .title {
+    margin-right: 20px;
+  }
+}
+
+.content-search {
+  padding: 5px 30px 15px 30px;
+  border: 0 dotted transparent;
+  border-bottom-width: 1px;
+  border-bottom-color: #dedede;
+  .form-group {
+    margin-top: 10px;
+    margin-right: 15px;
+  }
+  #search {
+    margin-top: 10px;
+  }
+}
+
+.content-table-top {
+  padding: 0 30px;
+  height: 55px;
+  line-height: 53px;
+  border: 0 dotted transparent;
+  border-bottom-width: 1px;
+  border-bottom-color: #dedede;
+}
+
+.content-body {
+  padding: 0 30px;
+}
+
+.row-fix {
+  height: 40px;
+  line-height: 40px;
+}
+
+.paginate-fix {
+  .paginate_button {
+    border-radius: 2px;
+    border: 1px solid #e0e2ec;
+    padding: 4px 9px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: $form-label-font-color;
+    &:hover {
+      border-color: #8895b4;
+      color: #8895b4;
+      text-decoration: none;
+    }
+  }
+  .disabled {
+    background: #ededed;
+    cursor: no-drop;
+    color: #999
+  }
+  .current {
+    border-color: #f0ad4e;
+    color: #f0ad4e;
+  }
+}
+
+.length-fix {
+  label {
+    font-weight: normal
+  }
+  select {
+    width: 50px !important;
+    padding: 3px 5px;
+    border-color: #e0e2ec;
+    margin: 0 5px;
+  }
+}
+
+#main-table .btn-default {
+  padding: 3px 8px;
+  font-size: 12px;
+  margin-top: 4px;
+  color: #088BD1;
+  border-color: #088BD1;
+}
+
+/************* 列表页面右边content ************/
+
+/******* start 详情页面右边content ************/
+//content-bottom
+.submit-box{
+  margin-top: 10px;
+}
+.form-box {
+  padding: 15px;
+  .form-group {
+    margin-top: 3px;
+    margin-bottom: 0;
+    .form-label {
+      font-weight: normal;
+      line-height: $height-form;
+      font-size: 15px;
+      color: $form-label-font-color;
+      text-align: right;
+      i {
+        color: red;
+        font-style: normal;
+        font-size: 17px;
+        @include display-inline;
+      }
+    }
+    .form-control {
+      padding: 5px 15px;
+      color: $main-color;
+      box-shadow: none;
+      &:disabled {
+        border: 0;
+        border-bottom: 1px solid #ededed;
+        width: 100%;
+        font-size: 15px;
+        padding-left: 15px;
+        background: none;
+      }
+    }
+    .form-control:not(textarea){
+      height: $height-form;
+    }
+  }
+  .form-goods-info {
+    .add-control {
+      padding: 15px 15px 15px 150px;
+      position: relative;
+      .btn {
+        position: absolute;
+        left: 15px;
+      }
+      p {
+        line-height: 32px;
+        padding-left: 15px;
+        color: #985f0d
+      }
+    }
+
+  }
+
+}
+
+.form-box {
+  .h4tip {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+    color: $form-label-font-color;
+    font-size: 12px;
+    padding-left: 20px;
+  }
+  .form-group {
+    .radio, .checkbox {
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid #ccced9;
+      border-radius: 5px;
+      margin: 0;
+      line-height: 36px;
+      padding: 0 25px 0 15px;
+      margin-right: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      i {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: url("#{$image-url}/checked.png");
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+      input {
+        display: none;
+      }
+    }
+    .radio_on, .checkbox_on {
+      border-color: #a94442;
+      i {
+        background-position: 0 -40px;
+      }
+    }
+  }
+
+  .tag-select {
+    position: relative;
+    .tag-select-box {
+      position: absolute;
+      width: 400px;
+      height: 300px;
+      background: #fff;
+      box-shadow: 2px 3px 5px;
+      z-index: 99;
+      display: none;
+      border: 1px solid $line-color2;
+      .info-box {
+        @include line-1;
+        padding: 10px;
+        .text {
+          line-height: 30px;
+          border: 1px solid $line-color2;
+          height: 30px;
+          width: 100%;
+        }
+      }
+      .contral-box {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        background: $color6;
+      }
+      .list-body {
+        height: 206px;
+        overflow-y: auto;
+        padding: 0;
+        .iteam {
+          position: relative;
+          padding: 0 20px;
+          line-height: 30px;
+          .delete {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            cursor: pointer;
+          }
+        }
+        .iteam:hover {
+          background: $color2;
+        }
+      }
+    }
+    .show-list {
+      .iteam {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        background: $color2;
+        color: $bg-color;
+        border: 1px solid $bg-color;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 30px 0 10px;
+        margin-right: 5px;
+        i {
+          width: 20px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-left: 1px solid $bg-color;
+        }
+        i:hover {
+          color: $colorRed3
+        }
+      }
+    }
+  }
+  .pic-upload {
+    .pic-up {
+      float: left;
+      width: 160px;
+      height: 160px;
+      text-align: center;
+      line-height: 190px;
+      background: #dedede;
+      border: 3px dotted $bg-color;
+      cursor: pointer;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      span {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+        background: $color2;
+        color: #dedede;
+        line-height: 103px;
+        i {
+          font-size: 40px;
+        }
+      }
+    }
+    .pic-list {
+      float: left;
+      width: 160px;
+      height: 160px;
+      line-height: 160px;
+      text-align: center;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      position: relative;
+      border: 1px solid $line-color2;
+      background: $color2;
+      img {
+        max-width: 158px;
+        max-height: 158px;
+      }
+      i {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        font-size: 20px;
+        color: #dedede;
+        cursor: pointer;
+      }
+      i:hover {
+        color: $colorRed3;
+      }
+    }
+  }
+  .input-group {
+    float: left;
+    padding: 0 15px;
+  }
+}
+
+/************* 列表页面右边content ************/
+#review {
+  .modal-body {
+    padding: 15px 50px;
+  }
+  .modal-footer {
+    label,select {
+      display: inline-block;
+    }
+    select {
+      vertical-align: bottom;
+      margin-right: 5px;
+    }
+  }
+  .left-body,.right-body {
+    .item {
+      margin-bottom: 5px;
+    }
+    label,p {
+      display: inline-block;
+    }
+  }
+  .bottom-body {
+    label,.error {
+      display: inline-block;
+    }
+  }
+  .has-error {
+    .error {
+      color: #a94442;
+    }
+  }
+}

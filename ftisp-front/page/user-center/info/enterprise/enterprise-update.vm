@@ -1,0 +1,273 @@
+#set($menuKey ="企业信息管理")
+#extends("/page/layout/frame-user-center.vm")
+#block("content")
+
+#script()
+require(["./enterprise-update.js"])
+#end
+<div class="content-top">
+    <input type="hidden" id="pageName" value="index">
+    <span class="title">企业资料修改</span>
+    <button id="company_back" class="btn btn-fix btn-primary">返回</button>
+</div>
+
+<div class="content-bottom col-xs-12">
+    <div class="form-box">
+        <form id="company_form" action="api/v1/p/ftisp/enterpriseInfo/create">
+            <input type="hidden" name="id">
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">企业信息</h4>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人：</label>
+                    <div class="col-xs-7">
+                        <input name="linkMan" type="text" class="form-control" placeholder="联系人">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人手机号：</label>
+                    <div class="col-xs-7">
+                        <input name="linkPhone" type="text" class="form-control" placeholder="联系人手机号">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>固定电话：</label>
+                    <div class="col-xs-2">
+                        <input name="linkTel" type="text" class="form-control" placeholder="区号" maxlength="4">
+                    </div>
+                    <div class="col-xs-5">
+                        <input name="linkTel1" type="text" class="form-control" placeholder="固定电话">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>国家：</label>
+                    <div class="col-xs-7">
+                        <select id="countryId" name="countryId" class="form-control"></select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>所在地区：</label>
+                    <div class="col-xs-2">
+                        <select id="provinceId" name="provinceId" class="form-control">
+                        </select>
+                    </div>
+                    <div class="col-xs-2">
+                        <select id="cityId" name="cityId" class="form-control">
+                        </select>
+                    </div>
+                    <div class="col-xs-3">
+                        <select id="areaId" name="areaId" class="form-control">
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>详细地址：</label>
+                    <div class="col-xs-7">
+                        <input name="address" type="text" class="form-control" placeholder="例如：文一西路255号西溪科创园5幢2单元6楼">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>邮编：</label>
+                    <div class="col-xs-7">
+                        <input name="zipcode" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">社会征信号：</label>
+                    <div class="col-xs-7">
+                        <input name="corpSocialNo" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">客户信息</h4>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>开户类型：</label>
+                    <div class="col-xs-7">
+                        <select name="type" class="form-control">
+                            <option value="E">企业客户</option>
+                            <option value="P">个人客户</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>客户名称：</label>
+                    <div class="col-xs-7">
+                        <input name="name" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人职务：</label>
+                    <div class="col-xs-7">
+                        <input name="linkmanDuty" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">QQ：</label>
+                    <div class="col-xs-7">
+                        <input name="qq" type="text" class="form-control" placeholder="QQ">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>联系人邮箱：</label>
+                    <div class="col-xs-7">
+                        <input name="email" type="text" class="form-control" placeholder="联系人邮箱">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i></i>联系人传真：</label>
+                    <div class="col-xs-7">
+                        <input name="fax" type="text" class="form-control" placeholder="联系人传真">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>紧急联系人：</label>
+                    <div class="col-xs-7">
+                        <input name="emergencyLinkMan" type="text" class="form-control" placeholder="紧急联系人">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>紧急联系人电话：</label>
+                    <div class="col-xs-7">
+                        <input name="emergencyLinkTel" type="text" class="form-control" placeholder="紧急联系人电话">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">销售代表邮箱：</label>
+                    <div class="col-xs-7">
+                        <input name="saleEmail" type="text" class="form-control" placeholder="销售代表邮箱">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">上传信息<span class="h4tip"></span></h4>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i class="import">*</i>营业执照-注册号：</label>
+                    <div class="col-xs-7">
+                        <input type="text" name="busiLicense" class="form-control" placeholder="营业执照-注册号">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label"><i>*</i>营业执照：</label>
+                    <div class="iteam col-xs-6">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-4.png"></div>
+                                <span class="btn btn-default" id="uploadEnterBsLicense">点击上传</span>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <div>
+                            1、请上传营业执照证的正面。<br>
+                            2、照片要求格式为jpg、jpeg、gif、png图片大小不得超过3M。<br>
+                            注：您的证件信息不会被泄露，我们将严格保密，请放心上传。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">税务登记证：</label>
+                    <div class="iteam col-xs-3">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-1.png"></div>
+                                <span class="btn btn-default" id="uploadEnterTax1">点击上传</span>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="iteam col-xs-3">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-1.png"></div>
+                                <span class="btn btn-default" id="uploadEnterTax2">点击上传</span>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div>
+                            1、请上传税务登记证的第一面和第二面。<br>
+                            2、照片要求格式为jpg、jpeg、gif、png图片大小不得超过3M。<br>
+                            注：您的证件信息不会被泄露，我们将严格保密，请放心上传。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label class="col-xs-2 form-label">组织机构代码证：</label>
+                    <div class="iteam col-xs-6">
+                        <div class="up-credentials">
+                            <div class="example">
+                                <div><img src="page/assets/img/certificates-1.png"></div>
+                                <span class="btn btn-default" id="uploadEnterOrganCode">点击上传</span>
+                            </div>
+                            <div class="certificates" style="display: none">
+                                <img src="">
+                                <span class="btn btn-primary">删除</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <div>
+                            1、请上传组织结构代码证的第一面和第二面。<br>
+                            2、照片要求格式为jpg、jpeg、gif、png图片大小不得超过3M。<br>
+                            注：您的证件信息不会被泄露，我们将严格保密，请放心上传。
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 ">
+                <input type="checkbox" checked disabled> 我已阅读并接受 供应链管理协议和承诺书（合同期限：2016.09.18 - 2017.09.18） 的所有内容
+                备注：勾选并接受此协议，系统将为你自动开放ISP（国际直发）服务
+            </div>
+            <div class="col-xs-11 text-center submit-box">
+                <button id="submit_form" type="button" class="btn btn-primary btn-lg">提交信息</button>
+            </div>
+        </form>
+    </div>
+</div>
+#widget("/widget/modal/uploadCompanyModal.vm")
+#end## end of body
+#end

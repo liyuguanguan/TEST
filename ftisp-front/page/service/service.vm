@@ -1,0 +1,82 @@
+#extends("layout/frame-blue.vm")
+#style()
+#require("./service.scss")
+#end
+#block("content")
+<div class="service-top">
+    <div class="container">
+        <div class="title">
+            <span>
+                <p>服务中心</p>
+                <p>SERVICE CENTER</p>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="container service-content">
+    <div class="item1">
+        <div class="left">
+            <h4 class="title">
+                通关/外汇/退税
+            </h4>
+            <p class="summary">
+                通关：
+                <br>
+                顶级资质、绿色通道。完成全国各大口岸海关、商检的申报，专业通关部门，快速完成报关、报检
+                <br>
+                <br>
+                外汇：
+                <br>
+                安全高效、费用低。帮助客户完成进出口收付汇结算业务，最快一日结算
+                <br>
+                <br>
+                退税：
+                <br>
+                合规办理，快速退税。快速规范办理退税垫付、简化操作环节，加快资金周转
+            </p>
+        </div>
+        <div class="right">
+            <img src="page/assets/img/service1.png" alt="img">
+        </div>
+    </div>
+    <div class="item2">
+        <div class="left">
+            <h4 class="title">
+                物流
+            </h4>
+            <p class="summary">
+                提供国际直发小包业务、海外仓头程业务。
+                <br>
+                <br>
+                直发小包业务，平台提供50多个物流产品，覆盖全球200个国家。
+                <br>
+                海外仓头程业务，平台提供海运、国际空运、陆运等多种方式为电商企业解决头程运输。
+            </p>
+        </div>
+        <div class="right">
+            <img src="page/assets/img/service2.png" alt="img">
+        </div>
+    </div>
+    <div class="item3">
+        <div class="left">
+            <h4 class="title">
+                金融
+            </h4>
+            <p class="summary">
+                提供流水贷、抵押贷、物流金融。
+                <br>
+                <br>
+                流水贷根据电商企业的”三单“数据，无抵押、无担保，按日计息不支用永不收费，备用金首选。
+                <br>
+                抵押贷专业团队根据海外仓货物信息，满足条件即可进行抵押物融资。
+                <br>
+                物流金融平台为电商企业垫付物流费用，电商企业收款后进行还款，加速资金周转。
+            </p>
+        </div>
+        <div class="right">
+            <img src="page/assets/img/service3.png" alt="img">
+        </div>
+    </div>
+</div>
+#end
+#end

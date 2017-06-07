@@ -1,0 +1,117 @@
+{
+  "code": 200,
+  "message": "string",
+  "data": {
+    "page": 1,
+    "count": 10,
+    "total": 3,
+    "rows": [
+      {
+        "id": 1,
+        "linkMan": "大熊",
+        "linkPhone": 15858143333,
+        "linkTel": "057163923938",
+        "countryId": 14,
+        "country": "中国",
+        "provinceId": 14,
+        "province": "浙江",
+        "cityId": 1,
+        "city": "杭州市",
+        "areaId": 1,
+        "area": "西湖区",
+        "address": "浙江永康市市辖区创业园225号4幢一单元",
+        "zipcode": "string",
+        "corpSocialNo": "33030100112230223",
+        "type": "E",
+        "name": "燕文欧洲专线",
+        "linkmanDuty": "string",
+        "qq": "string",
+        "email": "string",
+        "fax": "string",
+        "emergencyLinkMan": "string",
+        "emergencyLinkTel": "string",
+        "saleEmail": "string",
+        "busiLicense": "string",
+        "sts": "string",
+        "auditSts": "R",
+        "enterPics": [
+          {
+            "id": 11,
+            "objectType": "EnterBsLicense",
+            "filePath": "/attachments/pic1.png"
+          }
+        ]
+      },{
+        "id": 2,
+        "linkMan": "卢冬梅",
+        "linkPhone": 15858143333,
+        "linkTel": "057163923938",
+        "countryId": 14,
+        "country": "中国",
+        "provinceId": 14,
+        "province": "浙江",
+        "cityId": 1,
+        "city": "杭州市",
+        "areaId": 1,
+        "area": "西湖区",
+        "address": "浙江永康市市辖区温州市龙湾区龙兴大道10001号",
+        "zipcode": "string",
+        "corpSocialNo": "33030100112230223",
+        "type": "E",
+        "name": "温州建安基建有限公司",
+        "linkmanDuty": "string",
+        "qq": "string",
+        "email": "string",
+        "fax": "string",
+        "emergencyLinkMan": "string",
+        "emergencyLinkTel": "string",
+        "saleEmail": "string",
+        "busiLicense": "string",
+        "sts": "string",
+        "auditSts": "P",
+        "enterPics": [
+          {
+            "id": 11,
+            "objectType": "EnterBsLicense",
+            "filePath": "/attachments/pic1.png"
+          }
+        ]
+      },{
+        "id": 3,
+        "linkMan": "黄腾",
+        "linkPhone": 15858143333,
+        "linkTel": "057163923938",
+        "countryId": 14,
+        "country": "中国",
+        "provinceId": 14,
+        "province": "浙江",
+        "cityId": 1,
+        "city": "杭州市",
+        "areaId": 1,
+        "area": "西湖区",
+        "address": "浙江杭州市西湖区杭州市西湖区文一西路522号",
+        "zipcode": "string",
+        "corpSocialNo": "33030100112230223",
+        "type": "E",
+        "name": "阳光捷通",
+        "linkmanDuty": "string",
+        "qq": "string",
+        "email": "string",
+        "fax": "string",
+        "emergencyLinkMan": "string",
+        "emergencyLinkTel": "string",
+        "saleEmail": "string",
+        "busiLicense": "string",
+        "sts": "string",
+        "auditSts": "C",
+        "enterPics": [
+          {
+            "id": 11,
+            "objectType": "EnterBsLicense",
+            "filePath": "/attachments/pic1.png"
+          }
+        ]
+      }
+    ]
+  }
+}

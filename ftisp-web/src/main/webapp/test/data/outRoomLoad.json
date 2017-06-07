@@ -1,0 +1,44 @@
+{
+	"code": "200",
+	"message": "string",
+	"data": {
+		"id": 1,
+		"orderNo": 10001,
+		"status": "uncommit",
+		"warehouseId": 1,
+		"platOrderNo": "string",
+		"platType": "string",
+		"deliveryWayId": 1,
+		"doorplateNumbers": "string",
+		"recipientName": "string",
+		"recipientphone": "string",
+		"recipientAddress1": "string",
+		"recipientAddress2": "string",
+		"recipientCountryId": 1,
+		"recipientRegionId": 1,
+		"recipientCityId": 1,
+		"recipientZipcode": "string",
+		"deliveryCode": "string",
+		"createDt": "string",
+		"outroomDate": "string",
+		"goods": [
+			{
+				"goodsId": 12,
+				"code": "string",
+				"chName": "string",
+				"model": "string",
+				"memo": "string",
+				"nums": 12,
+				"weightKg": 12,
+				"weightLbs": 12,
+				"inCodeList": [
+					{"inCode":12},
+					{"inCode":12},
+					{"inCode":12},
+					{"inCode":12}
+				],
+				"spec": "string"
+			}
+		]
+	}
+}

@@ -1,0 +1,38 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "page": 1,
+    "count": 3,
+    "total": 4,
+    "rows": [
+      {
+        "id": 1,
+        "title": "titleA",
+        "auther": "tom",
+        "summary": "hello world",
+        "releaseTime": "2017-01-01",
+        "type": 1,
+        "isHead": 1
+      },
+      {
+        "id": 2,
+        "title": "titleB",
+        "auther": "tom",
+        "summary": "hello world",
+        "releaseTime": "2017-01-02",
+        "type": 1,
+        "isHead": 1
+      },
+      {
+        "id": 3,
+        "title": "titleC",
+        "auther": "tom",
+        "summary": "hello world",
+        "releaseTime": "2017-01-03",
+        "type": 1,
+        "isHead": 1
+      }
+    ]
+  }
+}

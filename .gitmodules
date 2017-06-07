@@ -1,0 +1,9 @@
+[submodule "ftisp-front"]
+	path = ftisp-front
+	url = https://dev.gie360.com/git/dev/ftisp-front.git
+[submodule "ftisp-web"]
+	path = ftisp-web
+	url = https://dev.gie360.com/git/dev/ftisp-web.git
+[submodule "mybatis-generator"]
+	path = mybatis-generator
+	url = https://dev.gie360.com/git/dev/mybatis-generator.git

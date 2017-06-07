@@ -1,0 +1,123 @@
+#set($menuKey ="企业信息管理")
+#extends("layout/frame-user-center.vm")
+#block("content")
+#script()
+require(["./enterprise.js"])
+#end
+#style()
+.item img{ display:none }
+#end
+<div class="content-top">
+    <input id="id" type="hidden" value="$!id">
+    <input type="hidden" id="pageName" value="index">
+    <span class="title">企业信息</span>
+    <button id="company_update" class="btn btn-fix btn-primary" style="display: none">修改企业</button>
+</div>
+<div class="content-body">
+            <!-- 企业信息为空时 -->
+            <div class="no-messages" style="display: none">
+                <div class="col-xs-5 text-right"><img src="page/assets/img/no_message.png" alt="no_message"/></div>
+                <div class="col-xs-7">
+                    <div class="text">
+                        sorry！ 您还未填写企业信息<br>
+                        立即完善企业信息<br>
+                        <button id="company_add" class="btn btn-primary">填写企业信息</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 企业信息为不空时 -->
+            <div id="info_company" class="company-info" style="display: none">
+                <div class="info-box">
+                    <div class="item">
+                        <span>联系人：<strong></strong></span>
+                        <span><i class="glyphicon glyphicon-phone"></i><span id="linkPhone"></span></span>
+                        <span name="linkTel"></span>
+                    </div>
+                    <div class="item">
+                        <span><i class="glyphicon glyphicon-map-marker"></i></span>
+                        <span name="address"></span>
+                        <span name="zipCode"></span>
+                    </div>
+                    <div name="corpSocialNo" class="item">
+                    </div>
+                </div>
+                <div class="col-xs-12" style="padding-top: 30px;">
+                    <h4>客户信息</h4>
+                    <hr>
+                </div>
+                <div class="col-xs-12">
+                    <div class="item col-xs-6">
+                        <label>开户类型：</label><span name="type"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>客户名称：</label><span name="name"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>联系人职务：</label><span name="linkmanDuty"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>QQ：</label><span name="QQ"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>联系人邮箱：</label><span name="email"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>联系人传真：</label><span name="fax"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>紧急联系人：</label><span name="emergencyLinkMan"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>紧急联系人电话：</label><span name="emergencyLinkTel"></span>
+                    </div>
+                    <div class="item col-xs-6">
+                        <label>销售代表邮箱：</label><span name="saleEmail"></span>
+                    </div>
+                </div>
+                <div class="col-xs-12" style="padding-top: 30px;">
+                    <h4>上传资料</h4>
+                    <hr>
+                </div>
+                    <div class="col-xs-12">
+                        <div class="item col-xs-12">
+                            <label>营业执照-注册号：</label><span name="busiLicense"></span>
+                        </div>
+                        <div class="item col-xs-2">
+                            <label>营业执照：</label>
+                        </div>
+
+                        <div class="item col-xs-5">
+                            <img name="enterBsLicense1" src="page/assets/img/no_picture.jpg" width="180"/>
+                        </div>
+                        <div class="item col-xs-5">
+                            <img name="enterBsLicense2" src="page/assets/img/no_picture.jpg" width="180"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="item col-xs-2">
+                            <label>税务登记证：</label>
+                        </div>
+                        <div class="item col-xs-5">
+                            <img name="enterTax1" src="page/assets/img/no_picture.jpg" width="180"/>
+                        </div>
+                        <div class="item col-xs-5">
+                            <img name="enterTax2" src="page/assets/img/no_picture.jpg" width="180"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="item col-xs-2">
+                            <label>组织机构代码证：</label>
+                        </div>
+                        <div class="item col-xs-5">
+                            <img name="enterOrganCode1" src="page/assets/img/no_picture.jpg" width="180"/>
+                        </div>
+                        <div class="item col-xs-5">
+                            <img name="enterOrganCode2" src="page/assets/img/no_picture.jpg" width="180"/>
+                        </div>
+
+                </div>
+        </div>
+</div>
+##widget("/page/modalpage/uploadModal.vm")
+#end## end of body
+#end

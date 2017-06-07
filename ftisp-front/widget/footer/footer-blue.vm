@@ -1,0 +1,27 @@
+##尾部
+<footer>
+    <div class="footer-blue">
+        <div class="container">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <img class="img-responsive" src="page/assets/img/logo_white.png" alt="">
+                <hr/>
+                <div>服务热线：022-84887020<br/>邮箱：wangxl@tjhxwl.com<br/>地址：天津空港经济区机场货运路第二大街1号</div>
+                <div>Copyright © 2016-2017 天津航空物流发展有限公司 版权所有<br/>ICP备案号：津15005767号</div>
+            </div>
+            <div class="col-xs-offset-2 col-xs-4 col-sm-offset-2 col-sm-4 col-md-offset-2 col-md-4">
+                <h4>友情链接</h4>
+                <div><a href="http://www.tjftz.gov.cn/">天津港保税区</a>|
+                    <a href="http://www.tianjin2world.com/">天津航空物流区跨境电子商务信息服务平台</a>|
+                    <a href="http://www.tatcargo.com/">天津华宇航空货运站</a>|
+                    <a href="http://www.tbia.cn/cn/index.do">天津滨海国际机场</a>|
+                    <a href="http://www.tjcoc.gov.cn/">中国天津商务</a>|
+                </div>
+               #* <div><img src="page/assets/img/footer_microblog.png" alt="">
+                    <img src="page/assets/img/footer_webchat.png" alt="">
+                    <img src="page/assets/img/footer_email_icon.png" alt="">
+                </div>*#
+            </div>
+        </div>
+    </div>
+</footer>
+

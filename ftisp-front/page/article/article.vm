@@ -1,0 +1,138 @@
+#extends("layout/frame-blue.vm")
+    #style()
+        #require("./article.scss")
+    #end
+    #script()
+        require(['./article.js'])
+    #end
+    #block("content")
+        <div class="container">
+            <div class="wrapper-top">
+                <div id="article-category" class="article-category">
+                    <a id="notice" href="javascript:;" class="item">
+                        <img src="../assets/img/gray_dot.png" alt="·"><span>平台公告</span><small>NOTICE</small><i>>></i>
+                    </a>
+                    <a id="news" href="javascript:;" class="item">
+                        <img src="../assets/img/gray_dot.png" alt="·"><span>平台动态</span><small>NEWS</small><i>>></i>
+                    </a>
+                    <a id="industry" href="javascript:;" class="item">
+                        <img src="../assets/img/gray_dot.png" alt="·"><span>行业动态</span><small>INDUSTRY NEWS</small><i>>></i>
+                    </a>
+                    <a id="knowledge" href="javascript:;" class="item">
+                        <img src="../assets/img/gray_dot.png" alt="·"><span>行业知识库</span><small>KNOWLEDGE BASE</small><i>>></i>
+                    </a>
+                </div>
+                <div class="main-pic" style="visibility: hidden">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="" alt="无图">
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="" alt="无图">
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="" alt="无图">
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-middle">
+                <div id="dynamic-block">
+                        <div id="hot-article" class="hot-article">
+                            #*<h4>最新公告</h4>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <a class="item" href="#">西北最经典玩法，青海甘肃七日大环线详解！<small>2017-12-12</small></a>
+                            <div class="hot-article-footer">
+                                <button class="btn btn-default default-button-fix">更多公告</button>
+                            </div>*#
+                        </div>
+                        <div id="main-article" class="main-article">
+                            #*<h4>推荐新闻</h4>
+                            <div class="items">
+                                <div class="item item-index">
+                                    <div class="one-pic index">
+                                        <img src="../assets/img/main_pic.png" alt="demo">
+                                    </div>
+                                    <div class="index-right">
+                                        <a href="article-detail" class="title">西北最经典玩法，青海甘肃七日大环线详解！</a>
+                                        <small class="date">来自：<a href="#">平台动态</a><small>2017-12-12</small><small>日期：</small></small>
+                                        <p class="summary">
+                                            我个人对大西北情有独钟，特别是青海和甘肃，在他们还没被大众追捧的时候，我就已经走遍了这片土地，几乎可以说每一处都有我的足迹。这
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item item-index">
+                                    <div class="one-pic index">
+                                        <img src="../assets/img/main_pic.png" alt="demo">
+                                    </div>
+                                    <div class="index-right">
+                                        <a href="article-detail" class="title">西北最经典玩法，青海甘肃七日大环线详解！</a>
+                                        <small class="date">来自：<a href="#">平台动态</a><small>2017-12-12</small><small>日期：</small></small>
+                                        <p class="summary">
+                                            我个人对大西北情有独钟，特别是青海和甘肃，在他们还没被大众追捧的时候，我就已经走遍了这片土地，几乎可以说每一处都有我的足迹。这
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item item-index">
+                                    <div class="one-pic index">
+                                        <img src="../assets/img/main_pic.png" alt="demo">
+                                    </div>
+                                    <div class="index-right">
+                                        <a href="article-detail" class="title">西北最经典玩法，青海甘肃七日大环线详解！</a>
+                                        <small class="date">来自：<a href="#">平台动态</a><small>2017-12-12</small><small>日期：</small></small>
+                                        <p class="summary">
+                                            我个人对大西北情有独钟，特别是青海和甘肃，在他们还没被大众追捧的时候，我就已经走遍了这片土地，几乎可以说每一处都有我的足迹。这
+                                        </p>
+                                    </div>
+                                </div>
+                            *##*                        <div class="pager">
+                                                        <div class="page-num top">首页</div>
+                                                        <div class="page-num active">2</div>
+                                                        <div class="page-num disabled">33</div>
+                                                        <div class="page-num end">尾页</div>
+                                                    </div>*##*
+                            </div>*#
+                        </div>
+                </div>
+                <div id="pagination" class="pager">
+                    #*<div class="page-num top">首页</div>
+                    <div class="page-num active">2</div>
+                    <div class="page-num disabled">33</div>
+                    <div class="page-num end">尾页</div>*#
+                </div>
+            </div>
+        </div>
+    #end
+#end

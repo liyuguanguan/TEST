@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://api.csp.ygjt.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="WSRecvService" targetNamespace="http://api.csp.ygjt.com/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://api.csp.ygjt.com/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://api.csp.ygjt.com/">
+  <xsd:element name="receivebyDecryption" type="tns:receivebyDecryption"/>
+  <xsd:complexType name="receivebyDecryption">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="arg1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="receivebyDecryptionResponse" type="tns:receivebyDecryptionResponse"/>
+  <xsd:complexType name="receivebyDecryptionResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="receive" type="tns:receive"/>
+  <xsd:complexType name="receive">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="receiveResponse" type="tns:receiveResponse"/>
+  <xsd:complexType name="receiveResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="receiveOrder" type="tns:receiveOrder"/>
+  <xsd:complexType name="receiveOrder">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arg0" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="arg1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="receiveOrderResponse" type="tns:receiveOrderResponse"/>
+  <xsd:complexType name="receiveOrderResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="receivebyDecryption">
+    <wsdl:part element="tns:receivebyDecryption" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveOrderResponse">
+    <wsdl:part element="tns:receiveOrderResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receivebyDecryptionResponse">
+    <wsdl:part element="tns:receivebyDecryptionResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveResponse">
+    <wsdl:part element="tns:receiveResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receive">
+    <wsdl:part element="tns:receive" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveOrder">
+    <wsdl:part element="tns:receiveOrder" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WSRecvServicePortType">
+    <wsdl:operation name="receivebyDecryption">
+      <wsdl:input message="tns:receivebyDecryption" name="receivebyDecryption">
+    </wsdl:input>
+      <wsdl:output message="tns:receivebyDecryptionResponse" name="receivebyDecryptionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receive">
+      <wsdl:input message="tns:receive" name="receive">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveResponse" name="receiveResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveOrder">
+      <wsdl:input message="tns:receiveOrder" name="receiveOrder">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveOrderResponse" name="receiveOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSRecvServiceSoapBinding" type="tns:WSRecvServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="receivebyDecryption">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receivebyDecryption">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receivebyDecryptionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receive">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receive">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSRecvService">
+    <wsdl:port binding="tns:WSRecvServiceSoapBinding" name="WSRecvServicePort">
+      <soap:address location="http://114.215.221.67:8085/com.ygjt.csp.api.WSRecvService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

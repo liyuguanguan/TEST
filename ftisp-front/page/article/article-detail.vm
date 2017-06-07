@@ -1,0 +1,43 @@
+#extends("layout/frame-blue.vm")
+#style()
+#require("./article-detail.scss")
+#end
+#script()
+require(['./article-detail.js'])
+#end
+#block("content")
+<div class="container">
+    <div class="article-detail">
+        <ol class="breadcrumb" style="background-color:#fff; ">
+            <li><a href="$!{request.contextPath}/">首页</a></li>
+            <li><a href="$!{request.contextPath}/article">资讯中心</a></li>
+            <li id="categary" class="active"></li>
+        </ol>
+        <div class="article-detail-main">
+            <h2 id="title"></h2>
+            <small>来源：</small>
+            <small id="article-from"></small>
+            <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>
+            <small>日期：</small>
+            <small id="date"></small>
+            <div id="content" class="article-content">
+                #*<p>
+                    当天会议决定，破除行政区划、财政投入、医保支付、人事管理等方面存在的壁垒，全面启动多种形式的医联体建设试点，因地制宜探索由三级公立医院或业务能力较强的医院、县级医院牵头，组建不同级别、不同类别城乡医疗机构或专科之间优势互补、分工协作的医联体，大力发展面向基层和边远贫困地区的远程医疗协作网。医务人员在医联体内流动执业一般不需办理相关手续。
+                </p>*#
+            </div>
+        </div>
+        <div class="article-detail-hot">
+            <div><h4>热点资讯</h4></div>
+            <div>
+                <ul id="top-article">
+                    #*<li><p><a href="#">西北最经典玩法，青海甘肃七日大环线西北最经典玩法，青海甘肃七日大环线</a></p></li>
+                    <li><p><a href="#">西北最经典玩法，青海甘肃七日大环线</a></p></li>
+                    <li><p><a href="#">西北最经典玩法，青海甘肃七日大环线</a></p></li>*#
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+#end
+#end

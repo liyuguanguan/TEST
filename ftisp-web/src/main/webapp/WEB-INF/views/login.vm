@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+#html()
+
+    #head()
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>登陆</title>
+    #end
+    #body()
+    <form action="/login.do" method="post">
+        <table>
+            <tr>
+                <td> 用户名：</td>
+                <td><input type="text" name="username"/></td>
+            </tr>
+            <tr>
+                <td> 密码：</td>
+                <td><input type="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td> 验证码：</td>
+                <td><input  type="text" placeholder="验证码" maxlength="4" id="validateCode" name="validateCode" ></td>
+                <td><span class="code_img">
+                        <b> <img id="captcha"
+                                 src='/getCode' onClick="this.src='/getCode?t=' + Math.random();" ></b>
+                 </span></td>
+            </tr>
+            <tr>
+                <td> remember：</td>
+                <td><input id="remember_me" name="remember_me" type="checkbox" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value=" 登录 "/>
+                    <input type="reset" value=" 重置 "/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    #end
+#end

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+  <classPathEntry location=".\lib\mysql-connector-java-5.1.25.jar" />
+
+  <context id="frms-mgr" targetRuntime="MyBatis3">
+
+    <property name="javaFileEncoding" value="UTF-8"/>
+    <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+    <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+
+    <!-- <plugin type="org.mybatis.generator.plugins.MapperConfigPlugin"> <property name="targetPackage" value="mybatis"
+      /> <property name="targetProject" value="../rtms-orm/src/main/resources" /> </plugin> -->
+    <commentGenerator>
+      <property name="suppressDate" value="true" />
+      <property name="suppressAllComments" value="false" />
+      <property name="addRemarkComments" value="true"/>
+	  <property name="javaFileEncoding" value="UTF-8"/>
+    </commentGenerator>
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://118.178.18.239:3306/ftisp?useInformationSchema=true&amp;characterEncoding=utf8"
+      userId="dev" password="gdn2016">
+    </jdbcConnection>
+
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator  targetPackage="com.ygjt.gdn.ftisp.model" targetProject="../ftisp-web/src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+
+    <sqlMapGenerator targetPackage="mapper" targetProject="../ftisp-web/src/main/resources/META-INF">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ygjt.gdn.ftisp.persistence"
+      targetProject="../ftisp-web/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <table schema="tms" tableName="auth_authority" domainObjectName="Authority">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_authority_resource" domainObjectName="AuthorityResource">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_module" domainObjectName="Module">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_resource" domainObjectName="Resource">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_role" domainObjectName="Role">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_role_authority" domainObjectName="RoleAuthority">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_role_module" domainObjectName="RoleModule">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_system" domainObjectName="AuthSystem">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_user" domainObjectName="User">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_user_role" domainObjectName="UserRole">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_user_module" domainObjectName="UserModule">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_authority" domainObjectName="Authority">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+
+
+    <table schema="tms" tableName="auth_resource" domainObjectName="Resource">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_role" domainObjectName="Role">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+
+    <table schema="tms" tableName="auth_access_token" domainObjectName="AccessToken">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_client_details" domainObjectName="ClientDetails">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_code" domainObjectName="AuthCode">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+    <table schema="tms" tableName="auth_refresh_token" domainObjectName="RefreshToken">
+      <property name="useActualColumnNames" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <property name="constructorBased" value="false" />
+      <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true" />
+    </table>
+
+  </context>
+</generatorConfiguration>

@@ -1,0 +1,61 @@
+{
+  "code": "200",
+  "message": "string",
+  "data": [
+    {
+      "id": 1,
+      "moduleName": "基本信息管理",
+      "moduleUrl": "javascript:;",
+      "priority": 1,
+      "childs": [
+        {
+          "id": 11,
+          "moduleName": "企业信息管理",
+          "moduleUrl": "enterprise",
+          "priority": 1
+        },{
+          "id": 12,
+          "moduleName": "商品管理",
+          "moduleUrl": "commodity",
+          "priority": 2
+        },{
+          "id": 13,
+          "moduleName": "地址管理",
+          "moduleUrl": "address",
+          "priority": 3
+        }
+      ]
+    },{
+      "id": 2,
+      "moduleName": "订单管理",
+      "moduleUrl": "javascript:;",
+      "priority": 2,
+      "childs": [
+        {
+          "id": 21,
+          "moduleName": "海外仓订单",
+          "moduleUrl": "in-order",
+          "priority": 1
+        }
+      ]
+    },{
+      "id": 3,
+      "moduleName": "海外仓管理",
+      "moduleUrl": "javascript:;",
+      "priority": 3,
+      "childs": [
+        {
+          "id": 31,
+          "moduleName": "海外仓发货订单",
+          "moduleUrl": "deliver-order",
+          "priority": 1
+        },{
+          "id": 32,
+          "moduleName": "海外仓库存",
+          "moduleUrl": "stock",
+          "priority": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygjt.gdn.ftisp.persistence.EntInfoDao">
+     <resultMap id="BaseResultMap" type="com.ygjt.gdn.ftisp.model.EntInfoDo">
+          <id column="id" jdbcType="INTEGER" property="id" />
+          <result column="name" jdbcType="VARCHAR" property="name" />
+          <result column="busi_license" jdbcType="VARCHAR" property="busiLicense" />
+          <result column="corp_social_no" jdbcType="VARCHAR" property="corpSocialNo" />
+          <result column="type" jdbcType="VARCHAR" property="type" />
+          <result column="link_phone" jdbcType="VARCHAR" property="linkPhone" />
+          <result column="link_man" jdbcType="VARCHAR" property="linkMan" />
+          <result column="link_tel" jdbcType="VARCHAR" property="linkTel" />
+          <result column="country_id" jdbcType="INTEGER" property="countryId" />
+          <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+          <result column="city_id" jdbcType="INTEGER" property="cityId" />
+          <result column="area_id" jdbcType="INTEGER" property="areaId" />
+          <result column="address" jdbcType="VARCHAR" property="address" />
+          <result column="qq" jdbcType="VARCHAR" property="qq" />
+          <result column="email" jdbcType="VARCHAR" property="email" />
+          <result column="fax" jdbcType="VARCHAR" property="fax" />
+          <result column="zipcode" jdbcType="VARCHAR" property="zipcode" />
+          <result column="emergency_link_man" jdbcType="VARCHAR" property="emergencyLinkMan" />
+          <result column="emergency_link_tel" jdbcType="VARCHAR" property="emergencyLinkTel" />
+          <result column="create_by" jdbcType="INTEGER" property="createBy" />
+          <result column="create_dt" jdbcType="TIMESTAMP" property="createDt" />
+          <result column="last_update_by" jdbcType="INTEGER" property="lastUpdateBy" />
+          <result column="last_update_dt" jdbcType="TIMESTAMP" property="lastUpdateDt" />
+          <result column="sts" jdbcType="CHAR" property="sts" />
+          <result column="linkman_duty" jdbcType="VARCHAR" property="linkmanDuty" />
+          <result column="sale_email" jdbcType="VARCHAR" property="saleEmail" />
+          <result column="user_id" jdbcType="INTEGER" property="userId" />
+          <result column="audit_sts" jdbcType="CHAR" property="auditSts" />
+          <result column="reject_reason" jdbcType="VARCHAR" property="rejectReason" />
+     </resultMap>
+     <sql id="Query_Where_Clause">
+          <where>
+               <foreach collection="oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Update_By_Query_Where_Clause">
+          <where>
+               <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Base_Column_List">
+          id, name, busi_license, corp_social_no, type, link_phone, link_man, link_tel, country_id, 
+          province_id, city_id, area_id, address, qq, email, fax, zipcode, emergency_link_man, 
+          emergency_link_tel, create_by, create_dt, last_update_by, last_update_dt, sts, linkman_duty, 
+          sale_email, user_id, audit_sts, reject_reason
+     </sql>
+     <select id="selectByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.EntInfoQuery" resultMap="BaseResultMap">
+          select
+          <if test="distinct">
+               distinct
+          </if>
+          <include refid="Base_Column_List" />
+          from crm_ent_info
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+          <if test="orderByClause != null">
+               order by ${orderByClause}
+          </if>
+     </select>
+     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+          select 
+          <include refid="Base_Column_List" />
+          from crm_ent_info
+          where id = #{id,jdbcType=INTEGER}
+     </select>
+     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+          delete from crm_ent_info
+          where id = #{id,jdbcType=INTEGER}
+     </delete>
+     <delete id="deleteByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.EntInfoQuery">
+          delete from crm_ent_info
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </delete>
+     <insert id="insert" parameterType="com.ygjt.gdn.ftisp.model.EntInfoDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into crm_ent_info (name, busi_license, corp_social_no, 
+               type, link_phone, link_man, 
+               link_tel, country_id, province_id, 
+               city_id, area_id, address, 
+               qq, email, fax, 
+               zipcode, emergency_link_man, emergency_link_tel, 
+               create_by, create_dt, last_update_by, 
+               last_update_dt, sts, linkman_duty, 
+               sale_email, user_id, audit_sts, 
+               reject_reason)
+          values (#{name,jdbcType=VARCHAR}, #{busiLicense,jdbcType=VARCHAR}, #{corpSocialNo,jdbcType=VARCHAR}, 
+               #{type,jdbcType=VARCHAR}, #{linkPhone,jdbcType=VARCHAR}, #{linkMan,jdbcType=VARCHAR}, 
+               #{linkTel,jdbcType=VARCHAR}, #{countryId,jdbcType=INTEGER}, #{provinceId,jdbcType=INTEGER}, 
+               #{cityId,jdbcType=INTEGER}, #{areaId,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
+               #{qq,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+               #{zipcode,jdbcType=VARCHAR}, #{emergencyLinkMan,jdbcType=VARCHAR}, #{emergencyLinkTel,jdbcType=VARCHAR}, 
+               #{createBy,jdbcType=INTEGER}, #{createDt,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=INTEGER}, 
+               #{lastUpdateDt,jdbcType=TIMESTAMP}, #{sts,jdbcType=CHAR}, #{linkmanDuty,jdbcType=VARCHAR}, 
+               #{saleEmail,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{auditSts,jdbcType=CHAR}, 
+               #{rejectReason,jdbcType=VARCHAR})
+     </insert>
+     <insert id="insertSelective" parameterType="com.ygjt.gdn.ftisp.model.EntInfoDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into crm_ent_info
+          <trim prefix="(" suffix=")" suffixOverrides=",">
+               <if test="name != null">
+                    name,
+               </if>
+               <if test="busiLicense != null">
+                    busi_license,
+               </if>
+               <if test="corpSocialNo != null">
+                    corp_social_no,
+               </if>
+               <if test="type != null">
+                    type,
+               </if>
+               <if test="linkPhone != null">
+                    link_phone,
+               </if>
+               <if test="linkMan != null">
+                    link_man,
+               </if>
+               <if test="linkTel != null">
+                    link_tel,
+               </if>
+               <if test="countryId != null">
+                    country_id,
+               </if>
+               <if test="provinceId != null">
+                    province_id,
+               </if>
+               <if test="cityId != null">
+                    city_id,
+               </if>
+               <if test="areaId != null">
+                    area_id,
+               </if>
+               <if test="address != null">
+                    address,
+               </if>
+               <if test="qq != null">
+                    qq,
+               </if>
+               <if test="email != null">
+                    email,
+               </if>
+               <if test="fax != null">
+                    fax,
+               </if>
+               <if test="zipcode != null">
+                    zipcode,
+               </if>
+               <if test="emergencyLinkMan != null">
+                    emergency_link_man,
+               </if>
+               <if test="emergencyLinkTel != null">
+                    emergency_link_tel,
+               </if>
+               <if test="createBy != null">
+                    create_by,
+               </if>
+               <if test="createDt != null">
+                    create_dt,
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by,
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt,
+               </if>
+               <if test="sts != null">
+                    sts,
+               </if>
+               <if test="linkmanDuty != null">
+                    linkman_duty,
+               </if>
+               <if test="saleEmail != null">
+                    sale_email,
+               </if>
+               <if test="userId != null">
+                    user_id,
+               </if>
+               <if test="auditSts != null">
+                    audit_sts,
+               </if>
+               <if test="rejectReason != null">
+                    reject_reason,
+               </if>
+          </trim>
+          <trim prefix="values (" suffix=")" suffixOverrides=",">
+               <if test="name != null">
+                    #{name,jdbcType=VARCHAR},
+               </if>
+               <if test="busiLicense != null">
+                    #{busiLicense,jdbcType=VARCHAR},
+               </if>
+               <if test="corpSocialNo != null">
+                    #{corpSocialNo,jdbcType=VARCHAR},
+               </if>
+               <if test="type != null">
+                    #{type,jdbcType=VARCHAR},
+               </if>
+               <if test="linkPhone != null">
+                    #{linkPhone,jdbcType=VARCHAR},
+               </if>
+               <if test="linkMan != null">
+                    #{linkMan,jdbcType=VARCHAR},
+               </if>
+               <if test="linkTel != null">
+                    #{linkTel,jdbcType=VARCHAR},
+               </if>
+               <if test="countryId != null">
+                    #{countryId,jdbcType=INTEGER},
+               </if>
+               <if test="provinceId != null">
+                    #{provinceId,jdbcType=INTEGER},
+               </if>
+               <if test="cityId != null">
+                    #{cityId,jdbcType=INTEGER},
+               </if>
+               <if test="areaId != null">
+                    #{areaId,jdbcType=INTEGER},
+               </if>
+               <if test="address != null">
+                    #{address,jdbcType=VARCHAR},
+               </if>
+               <if test="qq != null">
+                    #{qq,jdbcType=VARCHAR},
+               </if>
+               <if test="email != null">
+                    #{email,jdbcType=VARCHAR},
+               </if>
+               <if test="fax != null">
+                    #{fax,jdbcType=VARCHAR},
+               </if>
+               <if test="zipcode != null">
+                    #{zipcode,jdbcType=VARCHAR},
+               </if>
+               <if test="emergencyLinkMan != null">
+                    #{emergencyLinkMan,jdbcType=VARCHAR},
+               </if>
+               <if test="emergencyLinkTel != null">
+                    #{emergencyLinkTel,jdbcType=VARCHAR},
+               </if>
+               <if test="createBy != null">
+                    #{createBy,jdbcType=INTEGER},
+               </if>
+               <if test="createDt != null">
+                    #{createDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="sts != null">
+                    #{sts,jdbcType=CHAR},
+               </if>
+               <if test="linkmanDuty != null">
+                    #{linkmanDuty,jdbcType=VARCHAR},
+               </if>
+               <if test="saleEmail != null">
+                    #{saleEmail,jdbcType=VARCHAR},
+               </if>
+               <if test="userId != null">
+                    #{userId,jdbcType=INTEGER},
+               </if>
+               <if test="auditSts != null">
+                    #{auditSts,jdbcType=CHAR},
+               </if>
+               <if test="rejectReason != null">
+                    #{rejectReason,jdbcType=VARCHAR},
+               </if>
+          </trim>
+     </insert>
+     <select id="countByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.EntInfoQuery" resultType="java.lang.Long">
+          select count(*) from crm_ent_info
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </select>
+     <update id="updateByQuerySelective" parameterType="map">
+          update crm_ent_info
+          <set>
+               <if test="record.id != null">
+                    id = #{record.id,jdbcType=INTEGER},
+               </if>
+               <if test="record.name != null">
+                    name = #{record.name,jdbcType=VARCHAR},
+               </if>
+               <if test="record.busiLicense != null">
+                    busi_license = #{record.busiLicense,jdbcType=VARCHAR},
+               </if>
+               <if test="record.corpSocialNo != null">
+                    corp_social_no = #{record.corpSocialNo,jdbcType=VARCHAR},
+               </if>
+               <if test="record.type != null">
+                    type = #{record.type,jdbcType=VARCHAR},
+               </if>
+               <if test="record.linkPhone != null">
+                    link_phone = #{record.linkPhone,jdbcType=VARCHAR},
+               </if>
+               <if test="record.linkMan != null">
+                    link_man = #{record.linkMan,jdbcType=VARCHAR},
+               </if>
+               <if test="record.linkTel != null">
+                    link_tel = #{record.linkTel,jdbcType=VARCHAR},
+               </if>
+               <if test="record.countryId != null">
+                    country_id = #{record.countryId,jdbcType=INTEGER},
+               </if>
+               <if test="record.provinceId != null">
+                    province_id = #{record.provinceId,jdbcType=INTEGER},
+               </if>
+               <if test="record.cityId != null">
+                    city_id = #{record.cityId,jdbcType=INTEGER},
+               </if>
+               <if test="record.areaId != null">
+                    area_id = #{record.areaId,jdbcType=INTEGER},
+               </if>
+               <if test="record.address != null">
+                    address = #{record.address,jdbcType=VARCHAR},
+               </if>
+               <if test="record.qq != null">
+                    qq = #{record.qq,jdbcType=VARCHAR},
+               </if>
+               <if test="record.email != null">
+                    email = #{record.email,jdbcType=VARCHAR},
+               </if>
+               <if test="record.fax != null">
+                    fax = #{record.fax,jdbcType=VARCHAR},
+               </if>
+               <if test="record.zipcode != null">
+                    zipcode = #{record.zipcode,jdbcType=VARCHAR},
+               </if>
+               <if test="record.emergencyLinkMan != null">
+                    emergency_link_man = #{record.emergencyLinkMan,jdbcType=VARCHAR},
+               </if>
+               <if test="record.emergencyLinkTel != null">
+                    emergency_link_tel = #{record.emergencyLinkTel,jdbcType=VARCHAR},
+               </if>
+               <if test="record.createBy != null">
+                    create_by = #{record.createBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.createDt != null">
+                    create_dt = #{record.createDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.lastUpdateBy != null">
+                    last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.lastUpdateDt != null">
+                    last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.sts != null">
+                    sts = #{record.sts,jdbcType=CHAR},
+               </if>
+               <if test="record.linkmanDuty != null">
+                    linkman_duty = #{record.linkmanDuty,jdbcType=VARCHAR},
+               </if>
+               <if test="record.saleEmail != null">
+                    sale_email = #{record.saleEmail,jdbcType=VARCHAR},
+               </if>
+               <if test="record.userId != null">
+                    user_id = #{record.userId,jdbcType=INTEGER},
+               </if>
+               <if test="record.auditSts != null">
+                    audit_sts = #{record.auditSts,jdbcType=CHAR},
+               </if>
+               <if test="record.rejectReason != null">
+                    reject_reason = #{record.rejectReason,jdbcType=VARCHAR},
+               </if>
+          </set>
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByQuery" parameterType="map">
+          update crm_ent_info
+          set id = #{record.id,jdbcType=INTEGER},
+               name = #{record.name,jdbcType=VARCHAR},
+               busi_license = #{record.busiLicense,jdbcType=VARCHAR},
+               corp_social_no = #{record.corpSocialNo,jdbcType=VARCHAR},
+               type = #{record.type,jdbcType=VARCHAR},
+               link_phone = #{record.linkPhone,jdbcType=VARCHAR},
+               link_man = #{record.linkMan,jdbcType=VARCHAR},
+               link_tel = #{record.linkTel,jdbcType=VARCHAR},
+               country_id = #{record.countryId,jdbcType=INTEGER},
+               province_id = #{record.provinceId,jdbcType=INTEGER},
+               city_id = #{record.cityId,jdbcType=INTEGER},
+               area_id = #{record.areaId,jdbcType=INTEGER},
+               address = #{record.address,jdbcType=VARCHAR},
+               qq = #{record.qq,jdbcType=VARCHAR},
+               email = #{record.email,jdbcType=VARCHAR},
+               fax = #{record.fax,jdbcType=VARCHAR},
+               zipcode = #{record.zipcode,jdbcType=VARCHAR},
+               emergency_link_man = #{record.emergencyLinkMan,jdbcType=VARCHAR},
+               emergency_link_tel = #{record.emergencyLinkTel,jdbcType=VARCHAR},
+               create_by = #{record.createBy,jdbcType=INTEGER},
+               create_dt = #{record.createDt,jdbcType=TIMESTAMP},
+               last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               sts = #{record.sts,jdbcType=CHAR},
+               linkman_duty = #{record.linkmanDuty,jdbcType=VARCHAR},
+               sale_email = #{record.saleEmail,jdbcType=VARCHAR},
+               user_id = #{record.userId,jdbcType=INTEGER},
+               audit_sts = #{record.auditSts,jdbcType=CHAR},
+               reject_reason = #{record.rejectReason,jdbcType=VARCHAR}
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByPrimaryKeySelective" parameterType="com.ygjt.gdn.ftisp.model.EntInfoDo">
+          update crm_ent_info
+          <set>
+               <if test="name != null">
+                    name = #{name,jdbcType=VARCHAR},
+               </if>
+               <if test="busiLicense != null">
+                    busi_license = #{busiLicense,jdbcType=VARCHAR},
+               </if>
+               <if test="corpSocialNo != null">
+                    corp_social_no = #{corpSocialNo,jdbcType=VARCHAR},
+               </if>
+               <if test="type != null">
+                    type = #{type,jdbcType=VARCHAR},
+               </if>
+               <if test="linkPhone != null">
+                    link_phone = #{linkPhone,jdbcType=VARCHAR},
+               </if>
+               <if test="linkMan != null">
+                    link_man = #{linkMan,jdbcType=VARCHAR},
+               </if>
+               <if test="linkTel != null">
+                    link_tel = #{linkTel,jdbcType=VARCHAR},
+               </if>
+               <if test="countryId != null">
+                    country_id = #{countryId,jdbcType=INTEGER},
+               </if>
+               <if test="provinceId != null">
+                    province_id = #{provinceId,jdbcType=INTEGER},
+               </if>
+               <if test="cityId != null">
+                    city_id = #{cityId,jdbcType=INTEGER},
+               </if>
+               <if test="areaId != null">
+                    area_id = #{areaId,jdbcType=INTEGER},
+               </if>
+               <if test="address != null">
+                    address = #{address,jdbcType=VARCHAR},
+               </if>
+               <if test="qq != null">
+                    qq = #{qq,jdbcType=VARCHAR},
+               </if>
+               <if test="email != null">
+                    email = #{email,jdbcType=VARCHAR},
+               </if>
+               <if test="fax != null">
+                    fax = #{fax,jdbcType=VARCHAR},
+               </if>
+               <if test="zipcode != null">
+                    zipcode = #{zipcode,jdbcType=VARCHAR},
+               </if>
+               <if test="emergencyLinkMan != null">
+                    emergency_link_man = #{emergencyLinkMan,jdbcType=VARCHAR},
+               </if>
+               <if test="emergencyLinkTel != null">
+                    emergency_link_tel = #{emergencyLinkTel,jdbcType=VARCHAR},
+               </if>
+               <if test="createBy != null">
+                    create_by = #{createBy,jdbcType=INTEGER},
+               </if>
+               <if test="createDt != null">
+                    create_dt = #{createDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="sts != null">
+                    sts = #{sts,jdbcType=CHAR},
+               </if>
+               <if test="linkmanDuty != null">
+                    linkman_duty = #{linkmanDuty,jdbcType=VARCHAR},
+               </if>
+               <if test="saleEmail != null">
+                    sale_email = #{saleEmail,jdbcType=VARCHAR},
+               </if>
+               <if test="userId != null">
+                    user_id = #{userId,jdbcType=INTEGER},
+               </if>
+               <if test="auditSts != null">
+                    audit_sts = #{auditSts,jdbcType=CHAR},
+               </if>
+               <if test="rejectReason != null">
+                    reject_reason = #{rejectReason,jdbcType=VARCHAR},
+               </if>
+          </set>
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+     <update id="updateByPrimaryKey" parameterType="com.ygjt.gdn.ftisp.model.EntInfoDo">
+          update crm_ent_info
+          set name = #{name,jdbcType=VARCHAR},
+               busi_license = #{busiLicense,jdbcType=VARCHAR},
+               corp_social_no = #{corpSocialNo,jdbcType=VARCHAR},
+               type = #{type,jdbcType=VARCHAR},
+               link_phone = #{linkPhone,jdbcType=VARCHAR},
+               link_man = #{linkMan,jdbcType=VARCHAR},
+               link_tel = #{linkTel,jdbcType=VARCHAR},
+               country_id = #{countryId,jdbcType=INTEGER},
+               province_id = #{provinceId,jdbcType=INTEGER},
+               city_id = #{cityId,jdbcType=INTEGER},
+               area_id = #{areaId,jdbcType=INTEGER},
+               address = #{address,jdbcType=VARCHAR},
+               qq = #{qq,jdbcType=VARCHAR},
+               email = #{email,jdbcType=VARCHAR},
+               fax = #{fax,jdbcType=VARCHAR},
+               zipcode = #{zipcode,jdbcType=VARCHAR},
+               emergency_link_man = #{emergencyLinkMan,jdbcType=VARCHAR},
+               emergency_link_tel = #{emergencyLinkTel,jdbcType=VARCHAR},
+               create_by = #{createBy,jdbcType=INTEGER},
+               create_dt = #{createDt,jdbcType=TIMESTAMP},
+               last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               sts = #{sts,jdbcType=CHAR},
+               linkman_duty = #{linkmanDuty,jdbcType=VARCHAR},
+               sale_email = #{saleEmail,jdbcType=VARCHAR},
+               user_id = #{userId,jdbcType=INTEGER},
+               audit_sts = #{auditSts,jdbcType=CHAR},
+               reject_reason = #{rejectReason,jdbcType=VARCHAR}
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+
+     <select id="getByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+          select
+          <include refid="Base_Column_List" />
+          from crm_ent_info where user_id = #{id}
+     </select>
+
+     <select id="queryEnterPrise" parameterType="com.ygjt.gdn.ftisp.model.vo.po.EnterPriseInfoPo" resultMap="BaseResultMap">
+          select
+          <include refid="Base_Column_List" />
+          FROM crm_ent_info
+          where 1=1
+          <if test="name != null and name != ''">
+               and name = #{name}
+          </if>
+          <if test="userId != null and userId != ''">
+               and user_id = #{userId}
+          </if>
+          <if test="linkMan != null and linkMan != ''">
+               and link_man = #{linkMan}
+          </if>
+          <if test="provinceId != null and provinceId != ''">
+               and province_id = #{provinceId}
+          </if>
+          <if test="cityId != null and cityId != ''">
+               and city_id = #{cityId}
+          </if>
+          <if test="areaId != null and areaId != ''">
+               and area_id = #{areaId}
+          </if>
+          <if test="sts != null and sts != ''">
+               and sts = #{sts}
+          </if>
+          <if test="linkPhone != null and linkPhone != ''">
+               and link_phone = #{linkPhone}
+          </if>
+          <if test="corpSocialNo != null and corpSocialNo != ''">
+               and corp_social_no = #{corpSocialNo}
+          </if>
+          <if test="auditSts != null and auditSts != ''">
+               and audit_sts = #{auditSts}
+          </if>
+          <if test="sort != null and sort != ''">
+               order by ${sort}
+          </if>
+          <if test="order != null and order != ''">
+               ${order}
+          </if>
+     </select>
+
+     <select id="querySimpleEnt" parameterType="com.ygjt.gdn.ftisp.model.vo.po.EnterPriseInfoPo" resultType="com.ygjt.gdn.ftisp.model.vo.EnterPriseSimpleVo">
+          select id ,name
+          from crm_ent_info
+          where 1=1
+          <if test="id != null">
+               and id = #{id}
+          </if>
+     </select>
+</mapper>

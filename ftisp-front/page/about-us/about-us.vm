@@ -1,0 +1,40 @@
+#extends("layout/frame-blue.vm")
+    #style()
+        #require("./about-us.scss")
+    #end
+    #block("content")
+        <div class="about-us-top">
+            <div class="container">
+                <div class="title">
+                    <span>
+                        <p>关于我们</p>
+                        <p>ABOUT US</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="about-us-content">
+            <div class="about-us-content-left1 content-text">
+                <p>
+                    天津航空物流发展有限公司成立于2014年7月，由天津保税区投资控股集团有限公司（以下简称“天保控股”）和天津航空有限责任公司（以下简称“天津航空”）共同出资组建，公司注册资本金5亿元人民币，其中天保控股出自3亿元人民币，占注册资本的60%，天津航空出资2亿元人民币，占注册资本的40%。今后还将吸引首都机场集团有限公司、中国邮政总公司等优势企业加入，将公司的注册资本金扩大到15亿元人民币。其中天保控股出资6亿元，天津航空出资5亿元，中国邮政出资2亿元，首都机场出资2亿元。</p>
+            </div>
+            <div class="about-us-content-right1">
+                <img class="img-responsive center-block" src="../assets/img/about_us_airplane.png">
+            </div>
+            <div class="about-us-content-left2">
+                <img class="img-responsive center-block" src="../assets/img/about_us_airport.png">
+            </div>
+            <div class="about-us-content-right2 content-text">
+                <p>
+                    公司以“促进产业生态构建、服务航空经济发展”为使命，把握自由贸易试验区、京津冀协同发展、国家自主创新示范区、“一带一路”战略、与滨海新区开发开放的五大战略机遇，按市场化运作机制，走平台、协会、基金“三位一体”协同发展的道路，以功能高度复合的轻资产运营模式，发挥“杠杆”和“引擎”作用，大力发展航空运输、邮件快递、电子商务、航空金融、商务服务、航空维修、教育培训、综合服务等，满足日益增长的客户需求，成为优质高效的现代航空物流服务集成商，全面服务于天津市打造全链条航空产业的目标。</p>
+            </div>
+            <div class="about-us-content-left3 content-text">
+                <p>
+                    天津跨境电商外贸综合服务平台通过互联网与线下服务相结合为电商企业提供通关、物流、检验、退税、外汇、金融等所有外贸交易所需的各环节服务，改变传统外贸经营模式，通过集约化改变跨境电商因小而散带来的个体在整体市场环境中所处的不利地位，为电商企业防范交易风险、降低经营成本、解决融资难题，从而达到共同成长、共享价值的目标。平台的使命是解决跨境电商的一切困难，通过先进的商业模式和优质的快捷服务赢得客户信任，后发先至，实现成为国内外跨境电商综合服务提供商行业领先者的宏大愿景。</p>
+            </div>
+            <div class="about-us-content-right3">
+                <img class="img-responsive center-block" src="../assets/img/about_us_umbrella.png">
+            </div>
+        </div>
+#end
+#end

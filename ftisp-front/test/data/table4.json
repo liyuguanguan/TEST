@@ -1,0 +1,44 @@
+{
+	"code": "200",
+	"message": "success",
+	"data": {
+		"id": 1001,
+		"chName": "商品001",
+		"enName": "good001",
+		"code": "SP001",
+		"spec": "GH",
+		"model": "HH",
+		"brand": "GG",
+		"hasHranded": "Y",
+		"hasHattery": "Y",
+		"batteryType": "lithium",
+		"keywords": [
+			"string","s1","s2"
+		],
+		"pics": [
+			{
+				"id": 11,
+				"filePath": "uploads/c477d6ea-cd4f-4c8c-8f34-82e9075e79cb.jpg"
+			},
+			{
+				"id": 12,
+				"filePath": "uploads/31d43069-3d3a-410c-9173-63f59a9a5b8b.jpg"
+			}
+		],
+		"regLength": 10.1,
+		"regWidth": 10.2,
+		"regHeight": 10.3,
+		"regGrossWeight": 10.4,
+		"isFoam": "Y",
+		"feeWeight": 10.4,
+		"hsCode": "001",
+		"manageType": "1",
+		"exportGoodsTax": "001",
+		"importCountry": "中国",
+		"declaredPrice": 11,
+		"importGoodsPrice": 12,
+		"deliveryCycle": 10,
+		"detailWebsite": "http://www.ebay.cn/goods/1",
+		"summary": "<h3>备注后就开始叫接口数据<b>就开始就开</b>始基督教圣诞快<span style='background-color: rgb(255, 255, 0);'>乐监考老</span>师经典款了</h3>"
+	}
+}

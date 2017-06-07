@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygjt.gdn.ftisp.persistence.NewsDao">
+     <resultMap id="BaseResultMap" type="com.ygjt.gdn.ftisp.model.NewsDo">
+          <id column="ID" jdbcType="INTEGER" property="id" />
+          <result column="CREATED_DT" jdbcType="TIMESTAMP" property="createdDt" />
+          <result column="CREATED_BY" jdbcType="INTEGER" property="createdBy" />
+          <result column="LASTUPDATE_DT" jdbcType="TIMESTAMP" property="lastupdateDt" />
+          <result column="LASTUPDATE_BY" jdbcType="INTEGER" property="lastupdateBy" />
+          <result column="TYPE" jdbcType="INTEGER" property="type" />
+          <result column="TITLE" jdbcType="VARCHAR" property="title" />
+          <result column="AUTHER" jdbcType="VARCHAR" property="auther" />
+          <result column="SUMMARY" jdbcType="VARCHAR" property="summary" />
+          <result column="PICTURE_PATH" jdbcType="VARCHAR" property="picturePath" />
+          <result column="POINT_COUNT" jdbcType="INTEGER" property="pointCount" />
+          <result column="URL" jdbcType="VARCHAR" property="url" />
+          <result column="RELEASE_TIME" jdbcType="TIMESTAMP" property="releaseTime" />
+          <result column="RELEASE_USER" jdbcType="INTEGER" property="releaseUser" />
+          <result column="STAT" jdbcType="CHAR" property="stat" />
+          <result column="IS_HEAD" jdbcType="INTEGER" property="isHead" />
+          <result column="CATEGORY" jdbcType="CHAR" property="category" />
+     </resultMap>
+     <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ygjt.gdn.ftisp.model.NewsDo">
+          <result column="CONTENT" jdbcType="LONGVARCHAR" property="content" />
+     </resultMap>
+     <sql id="Query_Where_Clause">
+          <where>
+               <foreach collection="oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Update_By_Query_Where_Clause">
+          <where>
+               <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Base_Column_List">
+          ID, CREATED_DT, CREATED_BY, LASTUPDATE_DT, LASTUPDATE_BY, TYPE, TITLE, AUTHER, SUMMARY, 
+          PICTURE_PATH, POINT_COUNT, URL, RELEASE_TIME, RELEASE_USER, STAT, IS_HEAD, CATEGORY
+     </sql>
+     <sql id="Blob_Column_List">
+          CONTENT
+     </sql>
+     <select id="selectByQueryWithBLOBs" parameterType="com.ygjt.gdn.ftisp.model.Query.NewsQuery" resultMap="ResultMapWithBLOBs">
+          select
+          <if test="distinct">
+               distinct
+          </if>
+          <include refid="Base_Column_List" />
+          ,
+          <include refid="Blob_Column_List" />
+          from crm_news
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+          <if test="orderByClause != null">
+               order by ${orderByClause}
+          </if>
+     </select>
+     <select id="selectByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.NewsQuery" resultMap="BaseResultMap">
+          select
+          <if test="distinct">
+               distinct
+          </if>
+          <include refid="Base_Column_List" />
+          from crm_news
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+          <if test="orderByClause != null">
+               order by ${orderByClause}
+          </if>
+     </select>
+     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+          select 
+          <include refid="Base_Column_List" />
+          ,
+          <include refid="Blob_Column_List" />
+          from crm_news
+          where ID = #{id,jdbcType=INTEGER}
+     </select>
+     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+          delete from crm_news
+          where ID = #{id,jdbcType=INTEGER}
+     </delete>
+     <delete id="deleteByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.NewsQuery">
+          delete from crm_news
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </delete>
+     <insert id="insert" parameterType="com.ygjt.gdn.ftisp.model.NewsDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into crm_news (CREATED_DT, CREATED_BY, LASTUPDATE_DT, 
+               LASTUPDATE_BY, TYPE, TITLE, 
+               AUTHER, SUMMARY, PICTURE_PATH, 
+               POINT_COUNT, URL, RELEASE_TIME, 
+               RELEASE_USER, STAT, IS_HEAD, 
+               CATEGORY, CONTENT)
+          values (#{createdDt,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=INTEGER}, #{lastupdateDt,jdbcType=TIMESTAMP}, 
+               #{lastupdateBy,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+               #{auther,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, #{picturePath,jdbcType=VARCHAR}, 
+               #{pointCount,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{releaseTime,jdbcType=TIMESTAMP}, 
+               #{releaseUser,jdbcType=INTEGER}, #{stat,jdbcType=CHAR}, #{isHead,jdbcType=INTEGER}, 
+               #{category,jdbcType=CHAR}, #{content,jdbcType=LONGVARCHAR})
+     </insert>
+     <insert id="insertSelective" parameterType="com.ygjt.gdn.ftisp.model.NewsDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into crm_news
+          <trim prefix="(" suffix=")" suffixOverrides=",">
+               <if test="createdDt != null">
+                    CREATED_DT,
+               </if>
+               <if test="createdBy != null">
+                    CREATED_BY,
+               </if>
+               <if test="lastupdateDt != null">
+                    LASTUPDATE_DT,
+               </if>
+               <if test="lastupdateBy != null">
+                    LASTUPDATE_BY,
+               </if>
+               <if test="type != null">
+                    TYPE,
+               </if>
+               <if test="title != null">
+                    TITLE,
+               </if>
+               <if test="auther != null">
+                    AUTHER,
+               </if>
+               <if test="summary != null">
+                    SUMMARY,
+               </if>
+               <if test="picturePath != null">
+                    PICTURE_PATH,
+               </if>
+               <if test="pointCount != null">
+                    POINT_COUNT,
+               </if>
+               <if test="url != null">
+                    URL,
+               </if>
+               <if test="releaseTime != null">
+                    RELEASE_TIME,
+               </if>
+               <if test="releaseUser != null">
+                    RELEASE_USER,
+               </if>
+               <if test="stat != null">
+                    STAT,
+               </if>
+               <if test="isHead != null">
+                    IS_HEAD,
+               </if>
+               <if test="category != null">
+                    CATEGORY,
+               </if>
+               <if test="content != null">
+                    CONTENT,
+               </if>
+          </trim>
+          <trim prefix="values (" suffix=")" suffixOverrides=",">
+               <if test="createdDt != null">
+                    #{createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="createdBy != null">
+                    #{createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastupdateDt != null">
+                    #{lastupdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastupdateBy != null">
+                    #{lastupdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="type != null">
+                    #{type,jdbcType=INTEGER},
+               </if>
+               <if test="title != null">
+                    #{title,jdbcType=VARCHAR},
+               </if>
+               <if test="auther != null">
+                    #{auther,jdbcType=VARCHAR},
+               </if>
+               <if test="summary != null">
+                    #{summary,jdbcType=VARCHAR},
+               </if>
+               <if test="picturePath != null">
+                    #{picturePath,jdbcType=VARCHAR},
+               </if>
+               <if test="pointCount != null">
+                    #{pointCount,jdbcType=INTEGER},
+               </if>
+               <if test="url != null">
+                    #{url,jdbcType=VARCHAR},
+               </if>
+               <if test="releaseTime != null">
+                    #{releaseTime,jdbcType=TIMESTAMP},
+               </if>
+               <if test="releaseUser != null">
+                    #{releaseUser,jdbcType=INTEGER},
+               </if>
+               <if test="stat != null">
+                    #{stat,jdbcType=CHAR},
+               </if>
+               <if test="isHead != null">
+                    #{isHead,jdbcType=INTEGER},
+               </if>
+               <if test="category != null">
+                    #{category,jdbcType=CHAR},
+               </if>
+               <if test="content != null">
+                    #{content,jdbcType=LONGVARCHAR},
+               </if>
+          </trim>
+     </insert>
+     <select id="countByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.NewsQuery" resultType="java.lang.Long">
+          select count(*) from crm_news
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </select>
+     <update id="updateByQuerySelective" parameterType="map">
+          update crm_news
+          <set>
+               <if test="record.id != null">
+                    ID = #{record.id,jdbcType=INTEGER},
+               </if>
+               <if test="record.createdDt != null">
+                    CREATED_DT = #{record.createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.createdBy != null">
+                    CREATED_BY = #{record.createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.lastupdateDt != null">
+                    LASTUPDATE_DT = #{record.lastupdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.lastupdateBy != null">
+                    LASTUPDATE_BY = #{record.lastupdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.type != null">
+                    TYPE = #{record.type,jdbcType=INTEGER},
+               </if>
+               <if test="record.title != null">
+                    TITLE = #{record.title,jdbcType=VARCHAR},
+               </if>
+               <if test="record.auther != null">
+                    AUTHER = #{record.auther,jdbcType=VARCHAR},
+               </if>
+               <if test="record.summary != null">
+                    SUMMARY = #{record.summary,jdbcType=VARCHAR},
+               </if>
+               <if test="record.picturePath != null">
+                    PICTURE_PATH = #{record.picturePath,jdbcType=VARCHAR},
+               </if>
+               <if test="record.pointCount != null">
+                    POINT_COUNT = #{record.pointCount,jdbcType=INTEGER},
+               </if>
+               <if test="record.url != null">
+                    URL = #{record.url,jdbcType=VARCHAR},
+               </if>
+               <if test="record.releaseTime != null">
+                    RELEASE_TIME = #{record.releaseTime,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.releaseUser != null">
+                    RELEASE_USER = #{record.releaseUser,jdbcType=INTEGER},
+               </if>
+               <if test="record.stat != null">
+                    STAT = #{record.stat,jdbcType=CHAR},
+               </if>
+               <if test="record.isHead != null">
+                    IS_HEAD = #{record.isHead,jdbcType=INTEGER},
+               </if>
+               <if test="record.category != null">
+                    CATEGORY = #{record.category,jdbcType=CHAR},
+               </if>
+               <if test="record.content != null">
+                    CONTENT = #{record.content,jdbcType=LONGVARCHAR},
+               </if>
+          </set>
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByQueryWithBLOBs" parameterType="map">
+          update crm_news
+          set ID = #{record.id,jdbcType=INTEGER},
+               CREATED_DT = #{record.createdDt,jdbcType=TIMESTAMP},
+               CREATED_BY = #{record.createdBy,jdbcType=INTEGER},
+               LASTUPDATE_DT = #{record.lastupdateDt,jdbcType=TIMESTAMP},
+               LASTUPDATE_BY = #{record.lastupdateBy,jdbcType=INTEGER},
+               TYPE = #{record.type,jdbcType=INTEGER},
+               TITLE = #{record.title,jdbcType=VARCHAR},
+               AUTHER = #{record.auther,jdbcType=VARCHAR},
+               SUMMARY = #{record.summary,jdbcType=VARCHAR},
+               PICTURE_PATH = #{record.picturePath,jdbcType=VARCHAR},
+               POINT_COUNT = #{record.pointCount,jdbcType=INTEGER},
+               URL = #{record.url,jdbcType=VARCHAR},
+               RELEASE_TIME = #{record.releaseTime,jdbcType=TIMESTAMP},
+               RELEASE_USER = #{record.releaseUser,jdbcType=INTEGER},
+               STAT = #{record.stat,jdbcType=CHAR},
+               IS_HEAD = #{record.isHead,jdbcType=INTEGER},
+               CATEGORY = #{record.category,jdbcType=CHAR},
+               CONTENT = #{record.content,jdbcType=LONGVARCHAR}
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByQuery" parameterType="map">
+          update crm_news
+          set ID = #{record.id,jdbcType=INTEGER},
+               CREATED_DT = #{record.createdDt,jdbcType=TIMESTAMP},
+               CREATED_BY = #{record.createdBy,jdbcType=INTEGER},
+               LASTUPDATE_DT = #{record.lastupdateDt,jdbcType=TIMESTAMP},
+               LASTUPDATE_BY = #{record.lastupdateBy,jdbcType=INTEGER},
+               TYPE = #{record.type,jdbcType=INTEGER},
+               TITLE = #{record.title,jdbcType=VARCHAR},
+               AUTHER = #{record.auther,jdbcType=VARCHAR},
+               SUMMARY = #{record.summary,jdbcType=VARCHAR},
+               PICTURE_PATH = #{record.picturePath,jdbcType=VARCHAR},
+               POINT_COUNT = #{record.pointCount,jdbcType=INTEGER},
+               URL = #{record.url,jdbcType=VARCHAR},
+               RELEASE_TIME = #{record.releaseTime,jdbcType=TIMESTAMP},
+               RELEASE_USER = #{record.releaseUser,jdbcType=INTEGER},
+               STAT = #{record.stat,jdbcType=CHAR},
+               IS_HEAD = #{record.isHead,jdbcType=INTEGER},
+               CATEGORY = #{record.category,jdbcType=CHAR}
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByPrimaryKeySelective" parameterType="com.ygjt.gdn.ftisp.model.NewsDo">
+          update crm_news
+          <set>
+               <if test="createdDt != null">
+                    CREATED_DT = #{createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="createdBy != null">
+                    CREATED_BY = #{createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastupdateDt != null">
+                    LASTUPDATE_DT = #{lastupdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastupdateBy != null">
+                    LASTUPDATE_BY = #{lastupdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="type != null">
+                    TYPE = #{type,jdbcType=INTEGER},
+               </if>
+               <if test="title != null">
+                    TITLE = #{title,jdbcType=VARCHAR},
+               </if>
+               <if test="auther != null">
+                    AUTHER = #{auther,jdbcType=VARCHAR},
+               </if>
+               <if test="summary != null">
+                    SUMMARY = #{summary,jdbcType=VARCHAR},
+               </if>
+               <if test="picturePath != null">
+                    PICTURE_PATH = #{picturePath,jdbcType=VARCHAR},
+               </if>
+               <if test="pointCount != null">
+                    POINT_COUNT = #{pointCount,jdbcType=INTEGER},
+               </if>
+               <if test="url != null">
+                    URL = #{url,jdbcType=VARCHAR},
+               </if>
+               <if test="releaseTime != null">
+                    RELEASE_TIME = #{releaseTime,jdbcType=TIMESTAMP},
+               </if>
+               <if test="releaseUser != null">
+                    RELEASE_USER = #{releaseUser,jdbcType=INTEGER},
+               </if>
+               <if test="stat != null">
+                    STAT = #{stat,jdbcType=CHAR},
+               </if>
+               <if test="isHead != null">
+                    IS_HEAD = #{isHead,jdbcType=INTEGER},
+               </if>
+               <if test="category != null">
+                    CATEGORY = #{category,jdbcType=CHAR},
+               </if>
+               <if test="content != null">
+                    CONTENT = #{content,jdbcType=LONGVARCHAR},
+               </if>
+          </set>
+          where ID = #{id,jdbcType=INTEGER}
+     </update>
+     <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ygjt.gdn.ftisp.model.NewsDo">
+          update crm_news
+          set CREATED_DT = #{createdDt,jdbcType=TIMESTAMP},
+               CREATED_BY = #{createdBy,jdbcType=INTEGER},
+               LASTUPDATE_DT = #{lastupdateDt,jdbcType=TIMESTAMP},
+               LASTUPDATE_BY = #{lastupdateBy,jdbcType=INTEGER},
+               TYPE = #{type,jdbcType=INTEGER},
+               TITLE = #{title,jdbcType=VARCHAR},
+               AUTHER = #{auther,jdbcType=VARCHAR},
+               SUMMARY = #{summary,jdbcType=VARCHAR},
+               PICTURE_PATH = #{picturePath,jdbcType=VARCHAR},
+               POINT_COUNT = #{pointCount,jdbcType=INTEGER},
+               URL = #{url,jdbcType=VARCHAR},
+               RELEASE_TIME = #{releaseTime,jdbcType=TIMESTAMP},
+               RELEASE_USER = #{releaseUser,jdbcType=INTEGER},
+               STAT = #{stat,jdbcType=CHAR},
+               IS_HEAD = #{isHead,jdbcType=INTEGER},
+               CATEGORY = #{category,jdbcType=CHAR},
+               CONTENT = #{content,jdbcType=LONGVARCHAR}
+          where ID = #{id,jdbcType=INTEGER}
+     </update>
+     <update id="updateByPrimaryKey" parameterType="com.ygjt.gdn.ftisp.model.NewsDo">
+          update crm_news
+          set CREATED_DT = #{createdDt,jdbcType=TIMESTAMP},
+               CREATED_BY = #{createdBy,jdbcType=INTEGER},
+               LASTUPDATE_DT = #{lastupdateDt,jdbcType=TIMESTAMP},
+               LASTUPDATE_BY = #{lastupdateBy,jdbcType=INTEGER},
+               TYPE = #{type,jdbcType=INTEGER},
+               TITLE = #{title,jdbcType=VARCHAR},
+               AUTHER = #{auther,jdbcType=VARCHAR},
+               SUMMARY = #{summary,jdbcType=VARCHAR},
+               PICTURE_PATH = #{picturePath,jdbcType=VARCHAR},
+               POINT_COUNT = #{pointCount,jdbcType=INTEGER},
+               URL = #{url,jdbcType=VARCHAR},
+               RELEASE_TIME = #{releaseTime,jdbcType=TIMESTAMP},
+               RELEASE_USER = #{releaseUser,jdbcType=INTEGER},
+               STAT = #{stat,jdbcType=CHAR},
+               IS_HEAD = #{isHead,jdbcType=INTEGER},
+               CATEGORY = #{category,jdbcType=CHAR}
+          where ID = #{id,jdbcType=INTEGER}
+     </update>
+     <select id="selectListByQuery" resultType="com.ygjt.gdn.ftisp.model.vo.NewsListVO">
+          SELECT
+          a.id id,
+          a.title title,
+          a.release_time releaseTime,
+          a.type type,
+          a.auther auther,
+          a.summary summary,
+          a.is_head isHead,
+          a.picture_path picturePath
+          FROM crm_news a
+          WHERE a.stat = '1'
+          <if test="type != null and type != '' "> and a.type = #{type} </if>
+          <if test="title != null and title != '' "> and a.title = #{title} </if>
+          <if test="isHead != null and isHead != '' "> and a.is_head = #{isHead} </if>
+          <if test="auther != null and auther != '' "> and a.auther = #{auther} </if>
+          <if test="releaseTime != null and releaseTime != '' "> and a.release_time = #{releaseTime} </if>
+          <if test="orderByClause != null and orderByClause != ''">
+               order by ${orderByClause}
+          </if>
+     </select>
+
+     <select id="selectSliderPicture" resultType="com.ygjt.gdn.ftisp.model.vo.NewsPictureVO">
+          SELECT
+          a.PICTURE_PATH picturePath
+          FROM crm_news a
+          WHERE a.stat = '1'
+          AND a.IS_HEAD = 1
+          <if test="orderByClause != null and orderByClause != ''">
+               order by ${orderByClause}
+          </if>
+          <if test="num != null and num != '' ">
+               LIMIT ${num}
+          </if>
+     </select>
+</mapper>

@@ -1,0 +1,88 @@
+#set($menuKey ="地址管理")
+#extends("/page/layout/frame-user-center.vm")
+#block("content")
+#script()
+require(['./address-detail.js'])
+#end
+<div class="content-top col-xs-12">
+    <input type="hidden" id="pageName" value="inOut">
+    <span class="title">地址详情</span>
+    <button role="button" class="btn btn-fix btn-primary" onclick="history.go(-1)">返回</button>
+</div>
+<div class="content-bottom col-xs-12">
+    <div class="form-box">
+        <form id="address_form">
+            <div class="col-xs-12 form-chapter" >
+                <div class="form-group col-xs-12" >
+                    <label  class="col-xs-2 form-label">类别：</label>
+                    <div class="col-xs-7">
+                        <select name="type" class="form-control">
+                            <option value="pickup">提货地址</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>国家：</label>
+                    <div class="col-xs-7">
+                        <input name="country"  class="form-control">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>地址：</label>
+                    <div class="col-xs-2">
+                        <input name="province"  class="form-control">
+                    </div>
+                    <div class="col-xs-2">
+                        <input name="city"  class="form-control">
+                    </div>
+                    <div class="col-xs-3">
+                        <input name="area" class="form-control">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>详细地址：</label>
+                    <div class="col-xs-7 unit-box">
+                        <input name="address" type="text" class="form-control">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>邮编：</label>
+                    <div class="col-xs-7 unit-box">
+                        <input name="zipCode" type="text" class="form-control">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>Email：</label>
+                    <div class="col-xs-7 unit-box">
+                        <input name="email" type="text" class="form-control">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>联系人：</label>
+                    <div class="col-xs-7 unit-box">
+                        <input name="linkMan" type="text" class="form-control">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>联系电话：</label>
+                    <div class="col-xs-7 unit-box">
+                        <input name="linkPhone" type="text" class="form-control">
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 text-center submit-box">
+            </div>
+        </form>
+    </div>
+</div>
+#end## end of body
+#end

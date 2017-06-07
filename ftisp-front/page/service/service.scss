@@ -1,0 +1,113 @@
+@import "../assets/scss/variable";
+
+.service-top {
+  width: inherit;
+  height: 269px;
+  background: url("#{$image-url}/service_bg.png") no-repeat center;
+  .container {
+    height: inherit;
+    position: relative;
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -52px;
+      margin-left: -91px;
+      @media (min-width: 768px) {
+        margin-left: -91px;
+      }
+      @media (min-width: 992px) {
+        margin-left: 120px;
+      }
+      @media (min-width: 1200px) {
+        margin-left: 200px;
+      }
+      span {
+        display: inline-block;
+        p {
+          font-family: 微软雅黑;
+          color: #fff;
+          &:first-child {
+            font-size: 36px;
+            letter-spacing: 10px;
+          }
+          &:last-child {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+.service-content {
+  line-height: 1.8;
+  font-size: 14px;
+  .title {
+    color: $blue-color;
+    letter-spacing: 2px;
+    font-family: $head-font-famliy;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .item1 {
+    .left {
+      display: inline-block;
+      width: 65%;
+      margin-top: 60px;
+    }
+    .right {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 34%;
+      img {
+        width: 90%;
+      }
+    }
+   }
+  .item2 {
+    .title {
+      margin-top: 15px;
+    }
+    .left {
+      display: inline-block;
+      width: 65%;
+    }
+    .right {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 34%;
+      img {
+        width: 90%;
+      }
+    }
+  }
+  .item3 {
+    .title {
+      margin-top: 15px;
+    }
+    margin-bottom: 50px;
+    .left {
+      display: inline-block;
+      width: 65%;
+    }
+    .right {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 34%;
+      img {
+        width: 90%;
+      }
+    }
+  }
+  .left {
+    @media screen and (max-width: 991px) {
+      width: 90%!important;
+    }
+  }
+  .right {
+    @media screen and (max-width: 991px) {
+      margin-top: 10px;
+      width: 80%!important;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "code": "200",
+  "message": "string",
+  "data": [
+    {
+      "id": 11,
+      "nameCn": "阳光捷通",
+      "nameEn": "YangGuangJieTong"
+    }
+  ]
+}

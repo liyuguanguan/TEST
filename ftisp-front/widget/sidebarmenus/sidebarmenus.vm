@@ -1,0 +1,18 @@
+<div #if($platform == '用户中心')#else style="display: none" #end>
+    <div class="title"></div>
+    <a class="item" href="javascript:;"><span>基本信息管理</span></a>
+    <a class="item child#if($menuKey == '企业信息管理') active#end" href="$!{request.contextPath}/enterprise"><i class="iconfont icon-geren"></i><span>企业信息管理</span></a>
+    <a class="item child#if($menuKey == '商品管理') active#end" href="$!{request.contextPath}/commodity"><i class="iconfont icon-piliangcaozuo"></i><span>商品管理</span></a>
+    <a class="item child#if($menuKey == '地址管理') active#end" href="$!{request.contextPath}/address"><i class="iconfont icon-dizhi"></i><span>地址管理</span></a>
+    <a class="item" href="javascript:;"><span>订单管理</span></a>
+    <a class="item child#if($menuKey == '海外仓订单') active#end" href="$!{request.contextPath}/in-order"><i class="iconfont icon-cf-c55"></i><span>海外仓订单</span></a>
+    <a class="item" href="javascript:;"><span>海外仓管理</span></a>
+    <a class="item child#if($menuKey == '海外仓发货订单') active#end" href="$!{request.contextPath}/deliver-order"><i class="iconfont icon-cf-c54"></i><span>海外仓发货订单</span></a>
+    <a class="item child#if($menuKey == '海外仓库存') active#end" href="$!{request.contextPath}/stock"><i class="iconfont icon-kucunguanli"></i><span>海外仓库存</span></a>
+</div>
+<div #if($platform == '后台管理')#else style="display: none" #end>
+    <div class="title"></div>
+    <a class="item" href="javascript:;"><span>基本管理</span></a>
+    <a class="item child#if($menuKey == '后台企业管理') active#end" href="$!{request.contextPath}/back-enterprise"><i class="iconfont icon-enterprise"></i><span>企业管理</span></a>
+    <a class="item child#if($menuKey == '后台文章管理') active#end" href="$!{request.contextPath}/back-article"><i class="iconfont icon-book"></i><span>文章管理</span></a>
+</div>

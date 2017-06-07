@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:oauth2="http://www.springframework.org/schema/security/oauth2"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-3.2.xsd
+        http://www.springframework.org/schema/security/oauth2 http://www.springframework.org/schema/security/spring-security-oauth2-1.0.xsd
+">
+
+    <!-- 国际化信息 -->
+    <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
+        <!--<property name="basename" value="classpath*:META-INF/language/messages"/>-->
+        <!--<property name="defaultEncoding" value="utf-8"/>-->
+    <!--</bean>-->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:security.properties</value>
+        </property>
+    </bean>
+
+    <sec:http pattern="/oauth/token" create-session="stateless"
+              authentication-manager-ref="clientAuthenticationManager"
+              entry-point-ref="oauth2AuthenticationEntryPoint">
+        <sec:intercept-url pattern="/oauth/token" access="IS_AUTHENTICATED_FULLY" />
+        <sec:anonymous enabled="false" />
+        <sec:http-basic entry-point-ref="oauth2AuthenticationEntryPoint" />
+        <sec:custom-filter ref="clientCredentialsTokenEndpointFilter"
+                           before="BASIC_AUTH_FILTER" />
+        <sec:access-denied-handler ref="oauthAccessDeniedHandler" />
+    </sec:http>
+
+
+
+    <sec:http pattern="/api/*/m/**" create-session="never" access-decision-manager-ref="oauth2AccessDecisionManager"
+              entry-point-ref="oauth2AuthenticationEntryPoint">
+        <sec:anonymous enabled="false" />
+        <sec:custom-filter ref="filterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR" />
+        <sec:custom-filter ref="mobileResourceServer" before="PRE_AUTH_FILTER"/>
+        <sec:access-denied-handler ref="oauthAccessDeniedHandler" />
+    </sec:http>
+
+
+    <oauth2:authorization-server
+            client-details-service-ref="clientDetailsService" token-services-ref="tokenServices"
+            user-approval-handler-ref="oauthUserApprovalHandler"
+            user-approval-page="approval" error-page="/403">
+        <oauth2:authorization-code authorization-code-services-ref="codeServices"/>
+        <oauth2:implicit />
+        <oauth2:refresh-token />
+        <oauth2:client-credentials />
+        <oauth2:password />
+    </oauth2:authorization-server>
+
+
+    <oauth2:resource-server id="mobileResourceServer" resource-id="mobile-resource" token-services-ref="tokenServices"/>
+
+    <bean id="oauthUserApprovalHandler" class="org.springframework.security.oauth2.provider.approval.TokenStoreUserApprovalHandler">
+        <property name="tokenStore" ref="tokenStore"/>
+        <property name="clientDetailsService" ref="clientDetailsService"/>
+        <property name="requestFactory" ref="oAuth2RequestFactory"/>
+    </bean>
+
+
+    <bean class="org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory"
+          id="oAuth2RequestFactory">
+        <constructor-arg name="clientDetailsService" ref="clientDetailsService"/>
+    </bean>
+
+
+    <bean id="oauth2ClientDetailsUserService"
+          class="org.springframework.security.oauth2.provider.client.ClientDetailsUserDetailsService">
+        <constructor-arg ref="clientDetailsService" />
+    </bean>
+    <sec:authentication-manager id="clientAuthenticationManager">
+        <sec:authentication-provider user-service-ref="oauth2ClientDetailsUserService" />
+    </sec:authentication-manager>
+
+
+    <bean id="oauth2AuthenticationEntryPoint"
+          class="org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint" />
+    <bean id="clientCredentialsTokenEndpointFilter"
+          class="org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter">
+        <property name="authenticationManager" ref="clientAuthenticationManager" />
+    </bean>
+
+
+    <bean id="oauthAccessDeniedHandler"
+          class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler" />
+
+
+    <bean id="tokenServices" class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">
+        <property name="tokenStore" ref="tokenStore"/>
+        <property name="clientDetailsService" ref="clientDetailsService"/>
+        <property name="supportRefreshToken" value="true"/>
+    </bean>
+
+
+
+    <bean id="clientDetailsService" class="com.ygjt.gdn.ftisp.auth.security.oauth.CustomClientDetailsService"/>
+
+    <bean id="tokenStore" class="com.ygjt.gdn.ftisp.auth.security.oauth.CustomTokenStore"/>
+    <bean id="codeServices" class="com.ygjt.gdn.ftisp.auth.security.oauth.AuthCodeService"/>
+
+
+    <bean id="oauth2AccessDecisionManager" class="org.springframework.security.access.vote.UnanimousBased">
+        <constructor-arg>
+            <list>
+                <bean class="org.springframework.security.oauth2.provider.vote.ScopeVoter"/>
+                <bean class="org.springframework.security.access.vote.RoleVoter"/>
+                <bean class="org.springframework.security.access.vote.AuthenticatedVoter"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- 配置不过滤的资源（静态资源及登录相关） -->
+    <sec:http pattern="/**/*.css" security="none"></sec:http>
+    <sec:http pattern="/**/*.jpg" security="none"></sec:http>
+    <sec:http pattern="/**/*.jpeg" security="none"></sec:http>
+    <sec:http pattern="/**/*.gif" security="none"></sec:http>
+    <sec:http pattern="/**/*.png" security="none"></sec:http>
+    <sec:http pattern="/**/*.js" security="none"></sec:http>
+    <sec:http pattern="/static/**" security="none"></sec:http>
+
+    <!--druid 监控-->
+    <sec:http pattern="/druid/**" security="none"></sec:http>
+
+    <!--<sec:http pattern="/login" security="none"></sec:http>-->
+    <sec:http pattern="/register" security="none"></sec:http><!--不过滤注册-->
+    <sec:http pattern="/forget-password" security="none"></sec:http>
+    <sec:http pattern="/validEmail" security="none"></sec:http>
+    <sec:http pattern="/getCode" security="none" /><!-- 不过滤验证码 -->
+    <sec:http pattern="/403" security="none" /><!-- 不过滤验证码 -->
+    <sec:http pattern="/ueditor/dispatch" security="none" /><!-- 不过滤新闻 -->
+    <sec:http pattern="/api/v1/p/ftisp/unlogin/**" security="none" /><!-- 未登陆可调用接口 -->
+    <!--<sec:http pattern="/test/**" security="none"></sec:http>&lt;!&ndash; 不过滤测试内容 &ndash;&gt;-->
+
+    <bean id="customUserDetailsService" class="com.ygjt.gdn.ftisp.auth.security.DefaultUserDetailsService"></bean>
+    <bean id="authenticationSuccessHandler" class="com.ygjt.gdn.ftisp.auth.security.SimpleLoginSuccessHandler">
+        <property name="defaultTargetUrl" value="${success.url}"></property>
+        <property name="forwardToDestination" value="false"></property>
+    </bean>
+    <bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <property name="loginFormUrl" value="/login" />
+    </bean>
+    <sec:http access-decision-manager-ref="accessDecisionManager"
+              entry-point-ref="authenticationEntryPoint">
+
+        <sec:access-denied-handler ref="accessDeniedHandler"/>
+
+        <sec:session-management invalid-session-url="/login" />
+
+        <!--<sec:form-login login-page="/login"
+                        login-processing-url="/login.do"
+                        authentication-failure-url="/login"
+                        authentication-success-handler-ref="authenticationSuccessHandler"
+                        username-parameter="username"
+                        password-parameter="password"
+
+        />-->
+        <!--<sec:logout logout-url="/logout" logout-success-url="/login" invalidate-session="true" delete-cookies="remember_me"/>-->
+        <sec:custom-filter ref="internationalizationFilter" before="FORM_LOGIN_FILTER"  />
+        <sec:custom-filter ref="logoutFilter" position="LOGOUT_FILTER" />
+        <sec:custom-filter ref="loginFilter" position="FORM_LOGIN_FILTER"/>
+        <sec:custom-filter ref="rememberMeFilter" position="REMEMBER_ME_FILTER"/>
+        <sec:custom-filter ref="filterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR"/>
+    </sec:http>
+    <bean id="internationalizationFilter" class="com.ygjt.gdn.ftisp.auth.security.filter.InternationalizationFilter">
+        <constructor-arg name="localeParam" value="Language"/>
+        <constructor-arg name="localeResolver" ref="localeResolver"/>
+    </bean>
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="cookieMaxAge" value="604800"/>
+        <property name="cookieName" value="Language"/>
+    </bean>
+    <!--<bean id="rememberMeServices"-->
+    <!--class="org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices">-->
+    <!--<property name="key" value="abcd"/>-->
+    <!--<property name="parameter" value="remember_me"/>-->
+    <!--<property name="cookieName" value="remember_me"/>-->
+    <!--&lt;!&ndash; You must refer to a bean that implements UserDetailsService-->
+    <!--in this example the bean id is userDetailsService &ndash;&gt;-->
+    <!--<property name="userDetailsService" ref="customUserDetailsService"/>-->
+    <!--</bean>-->
+    <bean id="rememberMeFilter"
+          class="org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter">
+        <property name="rememberMeServices" ref="rememberMeServices" />
+        <property name="authenticationManager" ref="authenticationManager" />
+    </bean>
+    <!-- RememberMeServices的实现 -->
+    <bean id="rememberMeServices"
+          class="com.ygjt.gdn.ftisp.auth.security.CustomTokenBasedRememberMeServices">
+        <property name="userDetailsService" ref="customUserDetailsService" />
+        <property name="tokenValiditySeconds" value="43200"/>
+        <property name="key" value="abcd"/>
+        <property name="cookieName" value="remember_me"/>
+        <!-- 指定request中包含的用户是否选择了记住我的参数名 -->
+        <property name="parameter" value="remember_me"/>
+        <property name="alwaysRemember" value="true"/>
+        <property name="rootPah" value="false"/>
+    </bean>
+    <!-- key值需与对应的RememberMeServices保持一致 -->
+    <bean id="rememberMeAuthenticationProvider"
+          class="org.springframework.security.authentication.RememberMeAuthenticationProvider">
+        <property name="key" value="abcd" />
+    </bean>
+
+    <bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <property name="filterProcessesUrl" value="/logout"/>
+        <constructor-arg index="0"  value="/login"/>
+        <constructor-arg index="1">
+            <list>
+                <bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"></bean>
+                <bean class="com.ygjt.gdn.ftisp.auth.security.CustomCookieClearingLogoutHandler">
+                    <constructor-arg>
+                        <list>
+                            <value>JSESSIONID</value>
+                            <value>JSESSIONID</value>
+                            <value>JSESSIONID</value>
+                            <value>remember_me</value>
+                        </list>
+                    </constructor-arg>
+                    <property name="splitChar" value="@"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="loginFilter" class="com.ygjt.gdn.ftisp.auth.security.DefaultUsernamePasswordAuthenticationFilter">
+        <property name="usernameParameter" value="username"></property>
+        <property name="passwordParameter" value="password"></property>
+        <property name="filterProcessesUrl" value="/login.do"></property>
+        <property name="authenticationManager"  ref="authenticationManager"/>
+        <property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
+        <property name="rememberMeServices" ref="rememberMeServices"/>
+        <property name="authenticationFailureHandler">
+            <bean class="com.ygjt.gdn.ftisp.auth.security.CustomUrlAuthenticationFailureHandler">
+                <property name="defaultFailureUrl" value="/login"></property>
+            </bean>
+        </property>
+    </bean>
+    <bean id="filterSecurityInterceptor" class="com.ygjt.gdn.ftisp.auth.security.CustomFilterSecurityInterceptor">
+        <property name="accessDecisionManager" ref="accessDecisionManager" />
+        <property name="authenticationManager" ref="authenticationManager" />
+        <property name="securityMetadataSource" ref="securityMetadataSource" />
+    </bean>
+
+    <bean id="securityMetadataSource"
+          class="com.ygjt.gdn.ftisp.auth.security.URLFilterInvocationSecurityMetadataSource"/>
+
+    <!-- 自定义权限不足处理程序 -->
+    <bean id="accessDeniedHandler" class="com.ygjt.gdn.ftisp.auth.security.DefaultAccessDeniedHandler">
+        <property name="errorPage" value="/403"></property>
+    </bean>
+
+    <sec:authentication-manager alias="authenticationManager">
+        <sec:authentication-provider ref="authenticationProvider" />
+        <sec:authentication-provider ref="rememberMeAuthenticationProvider"/>
+    </sec:authentication-manager>
+
+
+    <bean id="authenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <property name="hideUserNotFoundExceptions" value="false" />
+        <property name="userDetailsService" ref="customUserDetailsService" />
+        <property name="passwordEncoder" ref="passwordEncode" />
+        <!--<property name="saltSource" ref="saltSource" />-->
+    </bean>
+
+
+
+    <bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+        <constructor-arg name="decisionVoters">
+            <list>
+                <ref bean="roleVoter"/>
+                <ref bean="authenticatedVoter"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+        <property name="rolePrefix" value=""></property>
+    </bean>
+
+    <bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter" />
+
+    <!-- 配置密码加密类 -->
+    <bean id="passwordEncode" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+    <!--<bean id="passwordEncode" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />-->
+    <bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+        <property name="userPropertyToUse" value="username"/>
+    </bean>
+</beans>

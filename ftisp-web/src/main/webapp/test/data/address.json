@@ -1,0 +1,22 @@
+{
+	"code": "200",
+	"message": "success",
+	"data": {
+		"id": "1001",
+		"isDefault": "Y",
+		"type": "pickup",
+		"countryId": 1,
+		"country": "中国",
+		"provinceId": 2,
+		"province": "浙江",
+		"cityId": 2,
+		"city": "杭州",
+		"areaId": 2,
+		"area": "西湖区",
+		"address": "文一西路522号",
+		"zipCode": 100000,
+		"email": "596514@qq.com",
+		"linkMan": "王先生",
+		"linkPhone": 15858112234
+	}
+}

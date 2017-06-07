@@ -1,0 +1,2525 @@
+{
+    "res": {
+        "components/bootstrap/affix.js": {
+            "uri": "/ftisp/static/components/bootstrap/affix.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/affix"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "components/bootstrap/alert.js": {
+            "uri": "/ftisp/static/components/bootstrap/alert.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/alert"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/transition.js"
+            ]
+        },
+        "components/bootstrap/bootstrap.js": {
+            "uri": "/ftisp/static/components/bootstrap/bootstrap.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/bootstrap"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/alert.js",
+                "components/bootstrap/button.js",
+                "components/bootstrap/carousel.js",
+                "components/bootstrap/collapse.js",
+                "components/bootstrap/dropdown.js",
+                "components/bootstrap/modal.js",
+                "components/bootstrap/tooltip.js",
+                "components/bootstrap/popover.js",
+                "components/bootstrap/scrollspy.js",
+                "components/bootstrap/tab.js",
+                "components/bootstrap/affix.js"
+            ]
+        },
+        "components/bootstrap/button.js": {
+            "uri": "/ftisp/static/components/bootstrap/button.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/button"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "components/bootstrap/carousel.js": {
+            "uri": "/ftisp/static/components/bootstrap/carousel.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/carousel"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/transition.js"
+            ]
+        },
+        "components/bootstrap/collapse.js": {
+            "uri": "/ftisp/static/components/bootstrap/collapse.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/collapse"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/transition.js"
+            ]
+        },
+        "components/bootstrap/css/bootstrap-theme.css": {
+            "uri": "/ftisp/static/components/bootstrap/css/bootstrap-theme.css",
+            "type": "css",
+            "extras": {}
+        },
+        "components/bootstrap/css/bootstrap.css": {
+            "uri": "/ftisp/static/components/bootstrap/css/bootstrap.css",
+            "type": "css",
+            "extras": {}
+        },
+        "components/bootstrap/dropdown.js": {
+            "uri": "/ftisp/static/components/bootstrap/dropdown.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/dropdown"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "components/bootstrap/modal.js": {
+            "uri": "/ftisp/static/components/bootstrap/modal.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/modal"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/transition.js"
+            ]
+        },
+        "components/bootstrap/popover.js": {
+            "uri": "/ftisp/static/components/bootstrap/popover.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/popover"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/tooltip.js"
+            ]
+        },
+        "components/bootstrap/scrollspy.js": {
+            "uri": "/ftisp/static/components/bootstrap/scrollspy.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/scrollspy"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "components/bootstrap/tab.js": {
+            "uri": "/ftisp/static/components/bootstrap/tab.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/tab"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/transition.js"
+            ]
+        },
+        "components/bootstrap/tooltip.js": {
+            "uri": "/ftisp/static/components/bootstrap/tooltip.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/tooltip"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/bootstrap/transition.js"
+            ]
+        },
+        "components/bootstrap/transition.js": {
+            "uri": "/ftisp/static/components/bootstrap/transition.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/bootstrap/transition"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "components/jquery-validation/additional-methods.js": {
+            "uri": "/ftisp/static/components/jquery-validation/additional-methods.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/additional-methods"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/jquery.validate.js": {
+            "uri": "/ftisp/static/components/jquery-validation/jquery.validate.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/jquery.validate"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_ar.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_ar.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_ar"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_bg.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_bg.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_bg"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_ca.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_ca.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_ca"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_cs.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_cs.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_cs"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_da.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_da.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_da"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_de.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_de.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_de"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_el.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_el.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_el"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_es_AR.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_es_AR.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_es_AR"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_es.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_es.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_es"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_et.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_et.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_et"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_eu.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_eu.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_eu"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_fa.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_fa.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_fa"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_fi.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_fi.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_fi"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_fr.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_fr.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_fr"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_gl.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_gl.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_gl"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_he.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_he.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_he"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_hr.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_hr.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_hr"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_hu.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_hu.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_hu"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_id.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_id.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_id"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_is.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_is.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_is"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_it.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_it.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_it"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_ja.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_ja.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_ja"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_ka.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_ka.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_ka"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_kk.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_kk.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_kk"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_ko.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_ko.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_ko"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_lt.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_lt.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_lt"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_lv.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_lv.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_lv"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_my.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_my.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_my"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_nl.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_nl.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_nl"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_no.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_no.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_no"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_pl.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_pl.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_pl"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_pt_BR.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_pt_BR.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_pt_BR"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_pt_PT.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_pt_PT.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_pt_PT"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_ro.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_ro.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_ro"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_ru.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_ru.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_ru"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_si.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_si.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_si"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_sk.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_sk.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_sk"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_sl.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_sl.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_sl"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_sr_lat.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_sr_lat.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_sr_lat"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_sr.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_sr.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_sr"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_sv.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_sv.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_sv"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_th.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_th.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_th"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_tj.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_tj.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_tj"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_tr.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_tr.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_tr"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_uk.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_uk.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_uk"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_vi.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_vi.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_vi"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_zh_TW.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_zh_TW.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_zh_TW"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/messages_zh.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/messages_zh.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/messages_zh"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/methods_de.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/methods_de.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/methods_de"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/methods_es_CL.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/methods_es_CL.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/methods_es_CL"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/methods_fi.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/methods_fi.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/methods_fi"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/methods_nl.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/methods_nl.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/methods_nl"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery-validation/localization/methods_pt.js": {
+            "uri": "/ftisp/static/components/jquery-validation/localization/methods_pt.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery-validation/localization/methods_pt"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "components/jquery-validation/jquery.validate.js"
+            ]
+        },
+        "components/jquery/jquery.js": {
+            "uri": "/ftisp/static/components/jquery/jquery.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "components/jquery/jquery"
+            }
+        },
+        "page/about-us/about-us.scss": {
+            "uri": "/ftisp/static/css/about-us.css",
+            "type": "css"
+        },
+        "page/about-us/about-us.vm": {
+            "uri": "/page/about-us/about-us.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true
+            }
+        },
+        "page/article/article-detail.js": {
+            "uri": "/ftisp/static/page/article/article-detail.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/article/article-detail"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/article/article-detail.scss": {
+            "uri": "/ftisp/static/css/article-detail.css",
+            "type": "css"
+        },
+        "page/article/article-detail.vm": {
+            "uri": "/page/article/article-detail.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/article/article-detail.js"
+                ]
+            }
+        },
+        "page/article/article.js": {
+            "uri": "/ftisp/static/page/article/article.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/article/article"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js",
+                "static/libs/pagination.js",
+                "static/libs/pager-fill.js",
+                "static/libs/article-fill.js"
+            ]
+        },
+        "page/article/article.scss": {
+            "uri": "/ftisp/static/css/article.css",
+            "type": "css"
+        },
+        "page/article/article.vm": {
+            "uri": "/page/article/article.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/article/article.js"
+                ]
+            }
+        },
+        "page/assets/scss/drag.scss": {
+            "uri": "/ftisp/static/css/drag.css",
+            "type": "css"
+        },
+        "page/assets/scss/global.scss": {
+            "uri": "/ftisp/static/css/global.css",
+            "type": "css"
+        },
+        "page/assets/scss/normalize.css": {
+            "uri": "/ftisp/static/css/normalize.css",
+            "type": "css"
+        },
+        "page/backstage/back-article/back-article-add.js": {
+            "uri": "/ftisp/static/page/backstage/back-article/back-article-add.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/backstage/back-article/back-article-add",
+                "async": [
+                    "static/modules/ueditor/ueditor.all.js",
+                    "static/modules/ueditor/ueditor.config.js"
+                ]
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/validator.js",
+                "static/libs/alert.js",
+                "static/libs/confirm.js",
+                "static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard.js"
+            ]
+        },
+        "page/backstage/back-article/back-article-add.vm": {
+            "uri": "/page/backstage/back-article/back-article-add.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/backstage/back-article/back-article-add.js"
+                ]
+            }
+        },
+        "page/backstage/back-article/back-article-detail.js": {
+            "uri": "/ftisp/static/page/backstage/back-article/back-article-detail.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/backstage/back-article/back-article-detail",
+                "async": [
+                    "static/modules/ueditor/ueditor.all.js",
+                    "static/modules/ueditor/ueditor.config.js"
+                ]
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js",
+                "static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard.js"
+            ]
+        },
+        "page/backstage/back-article/back-article-detail.vm": {
+            "uri": "/page/backstage/back-article/back-article-detail.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/backstage/back-article/back-article-detail.js"
+                ]
+            }
+        },
+        "page/backstage/back-article/back-article.js": {
+            "uri": "/ftisp/static/page/backstage/back-article/back-article.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/backstage/back-article/back-article"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/confirm.js",
+                "static/libs/alert.js",
+                "static/libs/table-init.js"
+            ]
+        },
+        "page/backstage/back-article/back-article.vm": {
+            "uri": "/page/backstage/back-article/back-article.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/backstage/back-article/back-article.js"
+                ]
+            }
+        },
+        "page/backstage/back-enterprise/back-enterprise-detail.js": {
+            "uri": "/ftisp/static/page/backstage/back-enterprise/back-enterprise-detail.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/backstage/back-enterprise/back-enterprise-detail"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/backstage/back-enterprise/back-enterprise-detail.vm": {
+            "uri": "/page/backstage/back-enterprise/back-enterprise-detail.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/backstage/back-enterprise/back-enterprise-detail.js"
+                ]
+            }
+        },
+        "page/backstage/back-enterprise/back-enterprise.js": {
+            "uri": "/ftisp/static/page/backstage/back-enterprise/back-enterprise.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/backstage/back-enterprise/back-enterprise"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/table-init.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/backstage/back-enterprise/back-enterprise.vm": {
+            "uri": "/page/backstage/back-enterprise/back-enterprise.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/backstage/back-enterprise/back-enterprise.js"
+                ]
+            }
+        },
+        "page/backstage/backstage.scss": {
+            "uri": "/ftisp/static/css/backstage.css",
+            "type": "css"
+        },
+        "page/index.js": {
+            "uri": "/ftisp/static/page/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/index"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/index.scss": {
+            "uri": "/ftisp/static/css/index.css",
+            "type": "css"
+        },
+        "page/index.vm": {
+            "uri": "/page/index.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/index.js"
+                ]
+            }
+        },
+        "page/layout/frame-backstage.vm": {
+            "uri": "/page/layout/frame-backstage.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "static/modules/dataTables/js/jquery.dataTables.min.js",
+                    "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js",
+                    "static/modules/summernote/summernote.js",
+                    "static/libs/global.js"
+                ]
+            }
+        },
+        "page/layout/frame-blue.vm": {
+            "uri": "/page/layout/frame-blue.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true
+            }
+        },
+        "page/layout/frame-user-center.vm": {
+            "uri": "/page/layout/frame-user-center.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "static/modules/dataTables/js/jquery.dataTables.min.js",
+                    "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js",
+                    "static/modules/summernote/summernote.js",
+                    "static/libs/global.js"
+                ]
+            }
+        },
+        "page/layout/frame-white.vm": {
+            "uri": "/page/layout/frame-white.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true
+            }
+        },
+        "page/layout/frame.vm": {
+            "uri": "/page/layout/frame.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "components/bootstrap/bootstrap.js",
+                    "static/libs/jquery-extensions.js"
+                ]
+            }
+        },
+        "page/service/service.scss": {
+            "uri": "/ftisp/static/css/service.css",
+            "type": "css"
+        },
+        "page/service/service.vm": {
+            "uri": "/page/service/service.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true
+            }
+        },
+        "page/start/forget-password.js": {
+            "uri": "/ftisp/static/page/start/forget-password.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/start/forget-password"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/validator.js",
+                "static/libs/count-down.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/start/forget-password.vm": {
+            "uri": "/page/start/forget-password.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/start/forget-password.js"
+                ]
+            }
+        },
+        "page/start/login.js": {
+            "uri": "/ftisp/static/page/start/login.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/start/login"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "page/start/login.scss": {
+            "uri": "/ftisp/static/css/login.css",
+            "type": "css"
+        },
+        "page/start/login.vm": {
+            "uri": "/page/start/login.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/start/login.js"
+                ]
+            }
+        },
+        "page/start/register-and-forget-password.scss": {
+            "uri": "/ftisp/static/css/register-and-forget-password.css",
+            "type": "css"
+        },
+        "page/start/register.js": {
+            "uri": "/ftisp/static/page/start/register.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/start/register"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/validator.js",
+                "static/libs/count-down.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/start/register.vm": {
+            "uri": "/page/start/register.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/start/register.js"
+                ]
+            }
+        },
+        "page/user-center/domestic/in-order/in-order-add.js": {
+            "uri": "/ftisp/static/page/user-center/domestic/in-order/in-order-add.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/domestic/in-order/in-order-add"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/modules/uploadify/jquery.uploadify.js",
+                "static/libs/alert.js",
+                "static/libs/validator.js",
+                "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js",
+                "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js",
+                "static/libs/bootstrap-typeahead.js"
+            ]
+        },
+        "page/user-center/domestic/in-order/in-order-add.vm": {
+            "uri": "/page/user-center/domestic/in-order/in-order-add.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/domestic/in-order/in-order-add.js"
+                ]
+            }
+        },
+        "page/user-center/domestic/in-order/in-order-detail.js": {
+            "uri": "/ftisp/static/page/user-center/domestic/in-order/in-order-detail.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/domestic/in-order/in-order-detail"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/user-center/domestic/in-order/in-order-detail.vm": {
+            "uri": "/page/user-center/domestic/in-order/in-order-detail.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/domestic/in-order/in-order-detail.js"
+                ]
+            }
+        },
+        "page/user-center/domestic/in-order/in-order.js": {
+            "uri": "/ftisp/static/page/user-center/domestic/in-order/in-order.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/domestic/in-order/in-order"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js",
+                "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js",
+                "static/libs/alert.js",
+                "static/libs/confirm.js",
+                "static/libs/table-init.js"
+            ]
+        },
+        "page/user-center/domestic/in-order/in-order.vm": {
+            "uri": "/page/user-center/domestic/in-order/in-order.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/domestic/in-order/in-order.js"
+                ]
+            }
+        },
+        "page/user-center/info/address/address-add.js": {
+            "uri": "/ftisp/static/page/user-center/info/address/address-add.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/address/address-add"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/validator.js",
+                "static/libs/alert.js",
+                "static/libs/confirm.js"
+            ]
+        },
+        "page/user-center/info/address/address-add.vm": {
+            "uri": "/page/user-center/info/address/address-add.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/address/address-add.js"
+                ]
+            }
+        },
+        "page/user-center/info/address/address-detail.js": {
+            "uri": "/ftisp/static/page/user-center/info/address/address-detail.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/address/address-detail"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js",
+                "static/libs/confirm.js"
+            ]
+        },
+        "page/user-center/info/address/address-detail.vm": {
+            "uri": "/page/user-center/info/address/address-detail.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/address/address-detail.js"
+                ]
+            }
+        },
+        "page/user-center/info/address/address.js": {
+            "uri": "/ftisp/static/page/user-center/info/address/address.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/address/address"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/confirm.js",
+                "static/libs/alert.js",
+                "static/libs/table-init.js",
+                "static/libs/validator.js"
+            ]
+        },
+        "page/user-center/info/address/address.vm": {
+            "uri": "/page/user-center/info/address/address.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/address/address.js"
+                ]
+            }
+        },
+        "page/user-center/info/commodity/commodity-add.js": {
+            "uri": "/ftisp/static/page/user-center/info/commodity/commodity-add.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/commodity/commodity-add"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/modules/uploadify/jquery.uploadify.js",
+                "static/libs/validator.js",
+                "static/modules/summernote/lang/summernote-zh-CN.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/user-center/info/commodity/commodity-add.vm": {
+            "uri": "/page/user-center/info/commodity/commodity-add.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/commodity/commodity-add.js"
+                ]
+            }
+        },
+        "page/user-center/info/commodity/commodity-detail.js": {
+            "uri": "/ftisp/static/page/user-center/info/commodity/commodity-detail.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/commodity/commodity-detail"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js",
+                "static/modules/summernote/lang/summernote-zh-CN.js"
+            ]
+        },
+        "page/user-center/info/commodity/commodity-detail.vm": {
+            "uri": "/page/user-center/info/commodity/commodity-detail.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/commodity/commodity-detail.js"
+                ]
+            }
+        },
+        "page/user-center/info/commodity/commodity.js": {
+            "uri": "/ftisp/static/page/user-center/info/commodity/commodity.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/commodity/commodity"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/modules/uploadify/jquery.uploadify.js",
+                "static/libs/confirm.js",
+                "static/libs/alert.js",
+                "static/libs/table-init.js",
+                "static/libs/validator.js"
+            ]
+        },
+        "page/user-center/info/commodity/commodity.vm": {
+            "uri": "/page/user-center/info/commodity/commodity.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/commodity/commodity.js"
+                ]
+            }
+        },
+        "page/user-center/info/enterprise/enterprise-update.js": {
+            "uri": "/ftisp/static/page/user-center/info/enterprise/enterprise-update.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/enterprise/enterprise-update"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/modules/uploadify/jquery.uploadify.js",
+                "static/libs/alert.js",
+                "static/libs/validator.js"
+            ]
+        },
+        "page/user-center/info/enterprise/enterprise-update.vm": {
+            "uri": "/page/user-center/info/enterprise/enterprise-update.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/enterprise/enterprise-update.js"
+                ]
+            }
+        },
+        "page/user-center/info/enterprise/enterprise.js": {
+            "uri": "/ftisp/static/page/user-center/info/enterprise/enterprise.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/info/enterprise/enterprise"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/alert.js"
+            ]
+        },
+        "page/user-center/info/enterprise/enterprise.vm": {
+            "uri": "/page/user-center/info/enterprise/enterprise.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/info/enterprise/enterprise.js"
+                ]
+            }
+        },
+        "page/user-center/overseas/deliver-order/deliver-order-add.js": {
+            "uri": "/ftisp/static/page/user-center/overseas/deliver-order/deliver-order-add.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/overseas/deliver-order/deliver-order-add"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/validator.js",
+                "static/libs/alert.js",
+                "static/libs/bootstrap-typeahead.js"
+            ]
+        },
+        "page/user-center/overseas/deliver-order/deliver-order-add.vm": {
+            "uri": "/page/user-center/overseas/deliver-order/deliver-order-add.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/overseas/deliver-order/deliver-order-add.js"
+                ]
+            }
+        },
+        "page/user-center/overseas/deliver-order/deliver-order-detail.js": {
+            "uri": "/ftisp/static/page/user-center/overseas/deliver-order/deliver-order-detail.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/overseas/deliver-order/deliver-order-detail"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/validator.js",
+                "static/libs/alert.js",
+                "static/libs/bootstrap-typeahead.js"
+            ]
+        },
+        "page/user-center/overseas/deliver-order/deliver-order-detail.vm": {
+            "uri": "/page/user-center/overseas/deliver-order/deliver-order-detail.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/overseas/deliver-order/deliver-order-detail.js"
+                ]
+            }
+        },
+        "page/user-center/overseas/deliver-order/deliver-order-update.js": {
+            "uri": "/ftisp/static/page/user-center/overseas/deliver-order/deliver-order-update.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/overseas/deliver-order/deliver-order-update"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/validator.js",
+                "static/libs/alert.js",
+                "static/libs/bootstrap-typeahead.js"
+            ]
+        },
+        "page/user-center/overseas/deliver-order/deliver-order-update.vm": {
+            "uri": "/page/user-center/overseas/deliver-order/deliver-order-update.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/overseas/deliver-order/deliver-order-update.js"
+                ]
+            }
+        },
+        "page/user-center/overseas/deliver-order/deliver-order.js": {
+            "uri": "/ftisp/static/page/user-center/overseas/deliver-order/deliver-order.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/overseas/deliver-order/deliver-order"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/modules/uploadify/jquery.uploadify.js",
+                "static/libs/confirm.js",
+                "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js",
+                "static/libs/alert.js",
+                "static/libs/table-init.js",
+                "static/libs/validator.js"
+            ]
+        },
+        "page/user-center/overseas/deliver-order/deliver-order.vm": {
+            "uri": "/page/user-center/overseas/deliver-order/deliver-order.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/overseas/deliver-order/deliver-order.js"
+                ]
+            }
+        },
+        "page/user-center/overseas/stock/stock.js": {
+            "uri": "/ftisp/static/page/user-center/overseas/stock/stock.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "page/user-center/overseas/stock/stock"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/table-init.js"
+            ]
+        },
+        "page/user-center/overseas/stock/stock.vm": {
+            "uri": "/page/user-center/overseas/stock/stock.vm",
+            "type": "vm",
+            "extras": {
+                "isPage": true,
+                "async": [
+                    "page/user-center/overseas/stock/stock.js"
+                ]
+            }
+        },
+        "page/user-center/user-center.scss": {
+            "uri": "/ftisp/static/css/user-center.css",
+            "type": "css"
+        },
+        "static/css/animate.min.css": {
+            "uri": "/ftisp/static/css/animate.min.css",
+            "type": "css"
+        },
+        "static/iconfont/iconfont.css": {
+            "uri": "/ftisp/static/iconfont/iconfont.css",
+            "type": "css"
+        },
+        "static/js/require.js": {
+            "uri": "/ftisp/static/js/require.js",
+            "type": "js"
+        },
+        "static/libs/ajaxfileupload.js": {
+            "uri": "/ftisp/static/libs/ajaxfileupload.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/ajaxfileupload"
+            }
+        },
+        "static/libs/alert.js": {
+            "uri": "/ftisp/static/libs/alert.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/alert"
+            },
+            "deps": [
+                "components/bootstrap/bootstrap.js",
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/area-init.js": {
+            "uri": "/ftisp/static/libs/area-init.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/area-init"
+            }
+        },
+        "static/libs/article-fill.js": {
+            "uri": "/ftisp/static/libs/article-fill.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/article-fill"
+            },
+            "deps": [
+                "components/bootstrap/bootstrap.js",
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/bootstrap-typeahead.js": {
+            "uri": "/ftisp/static/libs/bootstrap-typeahead.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/bootstrap-typeahead"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/confirm.js": {
+            "uri": "/ftisp/static/libs/confirm.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/confirm"
+            },
+            "deps": [
+                "components/bootstrap/bootstrap.js",
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/count-down.js": {
+            "uri": "/ftisp/static/libs/count-down.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/count-down"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/global.js": {
+            "uri": "/ftisp/static/libs/global.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/global"
+            }
+        },
+        "static/libs/jquery-extensions.js": {
+            "uri": "/ftisp/static/libs/jquery-extensions.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/jquery-extensions"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/pager-fill.js": {
+            "uri": "/ftisp/static/libs/pager-fill.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/pager-fill"
+            },
+            "deps": [
+                "components/bootstrap/bootstrap.js",
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/pagination.js": {
+            "uri": "/ftisp/static/libs/pagination.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/pagination"
+            },
+            "deps": [
+                "components/bootstrap/bootstrap.js"
+            ]
+        },
+        "static/libs/pjax.js": {
+            "uri": "/ftisp/static/libs/pjax.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/pjax"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/libs/table-init.js": {
+            "uri": "/ftisp/static/libs/table-init.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/table-init"
+            }
+        },
+        "static/libs/validator.js": {
+            "uri": "/ftisp/static/libs/validator.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/libs/validator"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "static/libs/ajaxfileupload.js",
+                "components/jquery-validation/jquery.validate.js",
+                "components/jquery-validation/localization/messages_zh.js"
+            ]
+        },
+        "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.css": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.css",
+            "type": "css"
+        },
+        "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css",
+            "type": "css"
+        },
+        "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ar.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ar.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.az.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.az.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.bg.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.bg.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.bn.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.bn.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ca.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ca.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.cs.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.cs.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.da.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.da.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.de.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.de.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ee.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ee.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.el.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.el.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.es.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.es.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.fi.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.fi.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.fr.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.fr.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.he.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.he.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.hr.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.hr.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.hu.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.hu.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.hy.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.hy.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.id.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.id.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.is.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.is.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.it.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.it.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ja.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ja.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ka.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ka.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ko.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ko.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.lt.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.lt.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.lv.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.lv.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ms.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ms.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.nb.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.nb.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.nl.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.nl.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.no.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.no.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pl.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pl.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pt-BR.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pt-BR.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pt.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pt.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ro.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ro.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.rs-latin.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.rs-latin.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.rs.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.rs.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ru.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ru.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sk.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sk.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sl.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sl.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sv.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sv.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sw.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.sw.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.th.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.th.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.tr.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.tr.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ua.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ua.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.uk.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.uk.js",
+            "type": "js"
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN"
+            },
+            "deps": [
+                "static/modules/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"
+            ]
+        },
+        "static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-TW.js": {
+            "uri": "/ftisp/static/modules/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-TW.js",
+            "type": "js"
+        },
+        "static/modules/dataTables/css/dataTables.bootstrap.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.bootstrap.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.bootstrap.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.bootstrap.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.bootstrap4.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.bootstrap4.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.bootstrap4.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.bootstrap4.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.foundation.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.foundation.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.foundation.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.foundation.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.jqueryui.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.jqueryui.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.jqueryui.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.jqueryui.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.material.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.material.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.material.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.material.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.semanticui.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.semanticui.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.semanticui.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.semanticui.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.uikit.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.uikit.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/dataTables.uikit.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/dataTables.uikit.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/jquery.dataTables_themeroller.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/jquery.dataTables_themeroller.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/jquery.dataTables.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/jquery.dataTables.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/css/jquery.dataTables.min.css": {
+            "uri": "/ftisp/static/modules/dataTables/css/jquery.dataTables.min.css",
+            "type": "css"
+        },
+        "static/modules/dataTables/js/dataTables.bootstrap.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.bootstrap.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.bootstrap"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.bootstrap.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.bootstrap.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.bootstrap.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.bootstrap4.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.bootstrap4.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.bootstrap4"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.bootstrap4.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.bootstrap4.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.bootstrap4.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.foundation.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.foundation.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.foundation"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.foundation.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.foundation.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.foundation.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.jqueryui.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.jqueryui.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.jqueryui"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.jqueryui.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.jqueryui.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.jqueryui.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.material.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.material.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.material"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.material.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.material.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.material.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.semanticui.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.semanticui.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.semanticui"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.semanticui.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.semanticui.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.semanticui.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.uikit.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.uikit.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.uikit"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/dataTables.uikit.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/dataTables.uikit.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/dataTables.uikit.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js",
+                "datatables.net"
+            ]
+        },
+        "static/modules/dataTables/js/jquery.dataTables.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/jquery.dataTables.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/jquery.dataTables"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/modules/dataTables/js/jquery.dataTables.min.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/jquery.dataTables.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/jquery.dataTables.min"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/modules/dataTables/js/jquery.js": {
+            "uri": "/ftisp/static/modules/dataTables/js/jquery.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/dataTables/js/jquery"
+            }
+        },
+        "static/modules/summernote/lang/summernote-zh-CN.js": {
+            "uri": "/ftisp/static/modules/summernote/lang/summernote-zh-CN.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/summernote/lang/summernote-zh-CN"
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/modules/summernote/summernote.css": {
+            "uri": "/ftisp/static/modules/summernote/summernote.css",
+            "type": "css"
+        },
+        "static/modules/summernote/summernote.js": {
+            "uri": "/ftisp/static/modules/summernote/summernote.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/summernote/summernote",
+                "async": [
+                    "codemirror"
+                ]
+            },
+            "deps": [
+                "components/jquery/jquery.js"
+            ]
+        },
+        "static/modules/ueditor/lang/en/en.js": {
+            "uri": "/ftisp/static/modules/ueditor/lang/en/en.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/lang/zh-cn/zh-cn.js": {
+            "uri": "/ftisp/static/modules/ueditor/lang/zh-cn/zh-cn.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/themes/default/css/ueditor.css": {
+            "uri": "/ftisp/static/modules/ueditor/themes/default/css/ueditor.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/themes/default/css/ueditor.min.css": {
+            "uri": "/ftisp/static/modules/ueditor/themes/default/css/ueditor.min.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/themes/default/dialogbase.css": {
+            "uri": "/ftisp/static/modules/ueditor/themes/default/dialogbase.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/themes/iframe.css": {
+            "uri": "/ftisp/static/modules/ueditor/themes/iframe.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/third-party/codemirror/codemirror.css": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/codemirror/codemirror.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/third-party/codemirror/codemirror.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/codemirror/codemirror.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/adapters/mootools-adapter.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/adapters/mootools-adapter.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/adapters/prototype-adapter.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/adapters/prototype-adapter.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/adapters/standalone-framework.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/adapters/standalone-framework.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/adapters/standalone-framework.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/adapters/standalone-framework.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/highcharts-more.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/highcharts-more.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/highcharts-more.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/highcharts-more.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/highcharts.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/highcharts.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/highcharts.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/highcharts.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/annotations.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/annotations.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/annotations.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/annotations.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/canvas-tools.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/canvas-tools.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/canvas-tools.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/canvas-tools.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/data.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/data.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/data.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/data.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/drilldown.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/drilldown.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/drilldown.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/drilldown.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/exporting.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/exporting.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/exporting.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/exporting.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/funnel.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/funnel.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/funnel.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/funnel.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/heatmap.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/heatmap.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/heatmap.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/heatmap.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/map.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/map.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/map.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/map.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/no-data-to-display.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/no-data-to-display.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/modules/no-data-to-display.src.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/modules/no-data-to-display.src.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/themes/dark-blue.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/themes/dark-blue.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/themes/dark-green.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/themes/dark-green.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/themes/gray.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/themes/gray.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/themes/grid.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/themes/grid.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/highcharts/themes/skies.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/highcharts/themes/skies.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/jquery-1.10.2.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/jquery-1.10.2.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/jquery-1.10.2"
+            }
+        },
+        "static/modules/ueditor/third-party/jquery-1.10.2.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/jquery-1.10.2.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/jquery-1.10.2.min"
+            }
+        },
+        "static/modules/ueditor/third-party/SyntaxHighlighter/shCore.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/SyntaxHighlighter/shCore.js",
+            "type": "js",
+            "deps": [
+                "XRegExp"
+            ]
+        },
+        "static/modules/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/third-party/video-js/video-js.css": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/video-js/video-js.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/third-party/video-js/video-js.min.css": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/video-js/video-js.min.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/third-party/video-js/video.dev.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/video-js/video.dev.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/video-js/video.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/video-js/video.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.css": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.css",
+            "type": "css"
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.custom.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.custom.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.custom"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.custom.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.custom.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.custom.min"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.flashonly.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.flashonly.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.flashonly"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.flashonly.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.flashonly.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.flashonly.min"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.html5only.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.html5only.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.html5only"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.html5only.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.html5only.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.html5only.min"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.min"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.withoutimage.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.withoutimage.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.withoutimage"
+            }
+        },
+        "static/modules/ueditor/third-party/webuploader/webuploader.withoutimage.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/webuploader/webuploader.withoutimage.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/webuploader/webuploader.withoutimage.min"
+            }
+        },
+        "static/modules/ueditor/third-party/xss.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/xss.min.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard"
+            }
+        },
+        "static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/ueditor/third-party/zeroclipboard/ZeroClipboard.min"
+            }
+        },
+        "static/modules/ueditor/ueditor.all.js": {
+            "uri": "/ftisp/static/modules/ueditor/ueditor.all.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/ueditor.all.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/ueditor.all.min.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/ueditor.config.js": {
+            "uri": "/ftisp/static/modules/ueditor/ueditor.config.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/ueditor.parse.js": {
+            "uri": "/ftisp/static/modules/ueditor/ueditor.parse.js",
+            "type": "js"
+        },
+        "static/modules/ueditor/ueditor.parse.min.js": {
+            "uri": "/ftisp/static/modules/ueditor/ueditor.parse.min.js",
+            "type": "js"
+        },
+        "static/modules/uploadify/jquery.uploadify.js": {
+            "uri": "/ftisp/static/modules/uploadify/jquery.uploadify.js",
+            "type": "js"
+        },
+        "static/modules/uploadify/jquery.uploadify.min.js": {
+            "uri": "/ftisp/static/modules/uploadify/jquery.uploadify.min.js",
+            "type": "js"
+        },
+        "static/modules/uploadify/uploadify.css": {
+            "uri": "/ftisp/static/modules/uploadify/uploadify.css",
+            "type": "css"
+        },
+        "widget/footer/footer-blue.vm": {
+            "uri": "/widget/footer/footer-blue.vm",
+            "type": "vm"
+        },
+        "widget/footer/footer-white.vm": {
+            "uri": "/widget/footer/footer-white.vm",
+            "type": "vm"
+        },
+        "widget/header/header-user-center.vm": {
+            "uri": "/widget/header/header-user-center.vm",
+            "type": "vm"
+        },
+        "widget/header/header.vm": {
+            "uri": "/widget/header/header.vm",
+            "type": "vm"
+        },
+        "widget/modal/exportModal.vm": {
+            "uri": "/widget/modal/exportModal.vm",
+            "type": "vm"
+        },
+        "widget/modal/goodsExportModal.vm": {
+            "uri": "/widget/modal/goodsExportModal.vm",
+            "type": "vm"
+        },
+        "widget/modal/goodsPrintModal.vm": {
+            "uri": "/widget/modal/goodsPrintModal.vm",
+            "type": "vm"
+        },
+        "widget/modal/printModal.vm": {
+            "uri": "/widget/modal/printModal.vm",
+            "type": "vm"
+        },
+        "widget/modal/uploadCompanyModal.vm": {
+            "uri": "/widget/modal/uploadCompanyModal.vm",
+            "type": "vm"
+        },
+        "widget/modal/uploadModal.vm": {
+            "uri": "/widget/modal/uploadModal.vm",
+            "type": "vm"
+        },
+        "widget/sidebarmenus/sidebarmenus.vm": {
+            "uri": "/widget/sidebarmenus/sidebarmenus.vm",
+            "type": "vm"
+        }
+    },
+    "pkg": {}
+}

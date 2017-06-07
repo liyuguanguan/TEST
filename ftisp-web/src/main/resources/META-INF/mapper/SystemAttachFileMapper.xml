@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygjt.gdn.ftisp.persistence.SystemAttachFileDao">
+     <resultMap id="BaseResultMap" type="com.ygjt.gdn.ftisp.model.SystemAttachFileDo">
+          <id column="id" jdbcType="INTEGER" property="id" />
+          <result column="object_id" jdbcType="INTEGER" property="objectId" />
+          <result column="object_type" jdbcType="VARCHAR" property="objectType" />
+          <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+          <result column="file_type" jdbcType="VARCHAR" property="fileType" />
+          <result column="file_size" jdbcType="DOUBLE" property="fileSize" />
+          <result column="file_path" jdbcType="VARCHAR" property="filePath" />
+          <result column="file_real_name" jdbcType="VARCHAR" property="fileRealName" />
+          <result column="file_memo" jdbcType="VARCHAR" property="fileMemo" />
+          <result column="create_dt" jdbcType="TIMESTAMP" property="createDt" />
+          <result column="create_by" jdbcType="INTEGER" property="createBy" />
+          <result column="last_update_dt" jdbcType="TIMESTAMP" property="lastUpdateDt" />
+          <result column="last_update_by" jdbcType="INTEGER" property="lastUpdateBy" />
+          <result column="sts" jdbcType="CHAR" property="sts" />
+     </resultMap>
+     <sql id="Query_Where_Clause">
+          <where>
+               <foreach collection="oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Update_By_Query_Where_Clause">
+          <where>
+               <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Base_Column_List">
+          id, object_id, object_type, file_name, file_type, file_size, file_path, file_real_name, 
+          file_memo, create_dt, create_by, last_update_dt, last_update_by, sts
+     </sql>
+     <select id="selectByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.SystemAttachFileQuery" resultMap="BaseResultMap">
+          select
+          <if test="distinct">
+               distinct
+          </if>
+          <include refid="Base_Column_List" />
+          from p_system_attach_file
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+          <if test="orderByClause != null">
+               order by ${orderByClause}
+          </if>
+     </select>
+     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+          select 
+          <include refid="Base_Column_List" />
+          from p_system_attach_file
+          where id = #{id,jdbcType=INTEGER}
+     </select>
+     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+          delete from p_system_attach_file
+          where id = #{id,jdbcType=INTEGER}
+     </delete>
+     <delete id="deleteByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.SystemAttachFileQuery">
+          delete from p_system_attach_file
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </delete>
+     <insert id="insert" parameterType="com.ygjt.gdn.ftisp.model.SystemAttachFileDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into p_system_attach_file (object_id, object_type, file_name, 
+               file_type, file_size, file_path, 
+               file_real_name, file_memo, create_dt, 
+               create_by, last_update_dt, last_update_by, 
+               sts)
+          values (#{objectId,jdbcType=INTEGER}, #{objectType,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}, 
+               #{fileType,jdbcType=VARCHAR}, #{fileSize,jdbcType=DOUBLE}, #{filePath,jdbcType=VARCHAR}, 
+               #{fileRealName,jdbcType=VARCHAR}, #{fileMemo,jdbcType=VARCHAR}, #{createDt,jdbcType=TIMESTAMP}, 
+               #{createBy,jdbcType=INTEGER}, #{lastUpdateDt,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=INTEGER}, 
+               #{sts,jdbcType=CHAR})
+     </insert>
+     <insert id="insertSelective" parameterType="com.ygjt.gdn.ftisp.model.SystemAttachFileDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into p_system_attach_file
+          <trim prefix="(" suffix=")" suffixOverrides=",">
+               <if test="objectId != null">
+                    object_id,
+               </if>
+               <if test="objectType != null">
+                    object_type,
+               </if>
+               <if test="fileName != null">
+                    file_name,
+               </if>
+               <if test="fileType != null">
+                    file_type,
+               </if>
+               <if test="fileSize != null">
+                    file_size,
+               </if>
+               <if test="filePath != null">
+                    file_path,
+               </if>
+               <if test="fileRealName != null">
+                    file_real_name,
+               </if>
+               <if test="fileMemo != null">
+                    file_memo,
+               </if>
+               <if test="createDt != null">
+                    create_dt,
+               </if>
+               <if test="createBy != null">
+                    create_by,
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt,
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by,
+               </if>
+               <if test="sts != null">
+                    sts,
+               </if>
+          </trim>
+          <trim prefix="values (" suffix=")" suffixOverrides=",">
+               <if test="objectId != null">
+                    #{objectId,jdbcType=INTEGER},
+               </if>
+               <if test="objectType != null">
+                    #{objectType,jdbcType=VARCHAR},
+               </if>
+               <if test="fileName != null">
+                    #{fileName,jdbcType=VARCHAR},
+               </if>
+               <if test="fileType != null">
+                    #{fileType,jdbcType=VARCHAR},
+               </if>
+               <if test="fileSize != null">
+                    #{fileSize,jdbcType=DOUBLE},
+               </if>
+               <if test="filePath != null">
+                    #{filePath,jdbcType=VARCHAR},
+               </if>
+               <if test="fileRealName != null">
+                    #{fileRealName,jdbcType=VARCHAR},
+               </if>
+               <if test="fileMemo != null">
+                    #{fileMemo,jdbcType=VARCHAR},
+               </if>
+               <if test="createDt != null">
+                    #{createDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="createBy != null">
+                    #{createBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="sts != null">
+                    #{sts,jdbcType=CHAR},
+               </if>
+          </trim>
+     </insert>
+     <select id="countByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.SystemAttachFileQuery" resultType="java.lang.Long">
+          select count(*) from p_system_attach_file
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </select>
+     <update id="updateByQuerySelective" parameterType="map">
+          update p_system_attach_file
+          <set>
+               <if test="record.id != null">
+                    id = #{record.id,jdbcType=INTEGER},
+               </if>
+               <if test="record.objectId != null">
+                    object_id = #{record.objectId,jdbcType=INTEGER},
+               </if>
+               <if test="record.objectType != null">
+                    object_type = #{record.objectType,jdbcType=VARCHAR},
+               </if>
+               <if test="record.fileName != null">
+                    file_name = #{record.fileName,jdbcType=VARCHAR},
+               </if>
+               <if test="record.fileType != null">
+                    file_type = #{record.fileType,jdbcType=VARCHAR},
+               </if>
+               <if test="record.fileSize != null">
+                    file_size = #{record.fileSize,jdbcType=DOUBLE},
+               </if>
+               <if test="record.filePath != null">
+                    file_path = #{record.filePath,jdbcType=VARCHAR},
+               </if>
+               <if test="record.fileRealName != null">
+                    file_real_name = #{record.fileRealName,jdbcType=VARCHAR},
+               </if>
+               <if test="record.fileMemo != null">
+                    file_memo = #{record.fileMemo,jdbcType=VARCHAR},
+               </if>
+               <if test="record.createDt != null">
+                    create_dt = #{record.createDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.createBy != null">
+                    create_by = #{record.createBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.lastUpdateDt != null">
+                    last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.lastUpdateBy != null">
+                    last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.sts != null">
+                    sts = #{record.sts,jdbcType=CHAR},
+               </if>
+          </set>
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByQuery" parameterType="map">
+          update p_system_attach_file
+          set id = #{record.id,jdbcType=INTEGER},
+               object_id = #{record.objectId,jdbcType=INTEGER},
+               object_type = #{record.objectType,jdbcType=VARCHAR},
+               file_name = #{record.fileName,jdbcType=VARCHAR},
+               file_type = #{record.fileType,jdbcType=VARCHAR},
+               file_size = #{record.fileSize,jdbcType=DOUBLE},
+               file_path = #{record.filePath,jdbcType=VARCHAR},
+               file_real_name = #{record.fileRealName,jdbcType=VARCHAR},
+               file_memo = #{record.fileMemo,jdbcType=VARCHAR},
+               create_dt = #{record.createDt,jdbcType=TIMESTAMP},
+               create_by = #{record.createBy,jdbcType=INTEGER},
+               last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               sts = #{record.sts,jdbcType=CHAR}
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByPrimaryKeySelective" parameterType="com.ygjt.gdn.ftisp.model.SystemAttachFileDo">
+          update p_system_attach_file
+          <set>
+               <if test="objectId != null">
+                    object_id = #{objectId,jdbcType=INTEGER},
+               </if>
+               <if test="objectType != null">
+                    object_type = #{objectType,jdbcType=VARCHAR},
+               </if>
+               <if test="fileName != null">
+                    file_name = #{fileName,jdbcType=VARCHAR},
+               </if>
+               <if test="fileType != null">
+                    file_type = #{fileType,jdbcType=VARCHAR},
+               </if>
+               <if test="fileSize != null">
+                    file_size = #{fileSize,jdbcType=DOUBLE},
+               </if>
+               <if test="filePath != null">
+                    file_path = #{filePath,jdbcType=VARCHAR},
+               </if>
+               <if test="fileRealName != null">
+                    file_real_name = #{fileRealName,jdbcType=VARCHAR},
+               </if>
+               <if test="fileMemo != null">
+                    file_memo = #{fileMemo,jdbcType=VARCHAR},
+               </if>
+               <if test="createDt != null">
+                    create_dt = #{createDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="createBy != null">
+                    create_by = #{createBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="sts != null">
+                    sts = #{sts,jdbcType=CHAR},
+               </if>
+          </set>
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+     <update id="updateByPrimaryKey" parameterType="com.ygjt.gdn.ftisp.model.SystemAttachFileDo">
+          update p_system_attach_file
+          set object_id = #{objectId,jdbcType=INTEGER},
+               object_type = #{objectType,jdbcType=VARCHAR},
+               file_name = #{fileName,jdbcType=VARCHAR},
+               file_type = #{fileType,jdbcType=VARCHAR},
+               file_size = #{fileSize,jdbcType=DOUBLE},
+               file_path = #{filePath,jdbcType=VARCHAR},
+               file_real_name = #{fileRealName,jdbcType=VARCHAR},
+               file_memo = #{fileMemo,jdbcType=VARCHAR},
+               create_dt = #{createDt,jdbcType=TIMESTAMP},
+               create_by = #{createBy,jdbcType=INTEGER},
+               last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               sts = #{sts,jdbcType=CHAR}
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+
+     <select id="selectByGoodId" parameterType="com.ygjt.gdn.ftisp.model.SystemAttachFileDo" resultMap="BaseResultMap">
+          SELECT
+          <include refid="Base_Column_List" />
+          FROM p_system_attach_file
+          where 1=1
+          <if test="id != null and id != ''">
+               and id = #{id}
+          </if>
+          <if test="objectId != null and objectId != ''">
+               and object_id = #{objectId}
+          </if>
+          <if test="objectType != null and objectType != ''">
+               and object_type = #{objectType}
+          </if>
+          and object_type is NOT null
+     </select>
+
+     <resultMap id="SimpleReaultMap" type="com.ygjt.gdn.ftisp.model.vo.SystemAttachFileSimple">
+          <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+          <result column="file_type" jdbcType="VARCHAR" property="fileType" />
+          <result column="file_size" jdbcType="DOUBLE" property="fileSize" />
+          <result column="file_path" jdbcType="VARCHAR" property="filePath" />
+          <result column="file_real_name" jdbcType="VARCHAR" property="fileRealName" />
+     </resultMap>
+     <sql id="Simple_Column_List">
+          object_type, file_name, file_type, file_size, file_path, file_real_name
+     </sql>
+     <select id="selectSimpleByQuery" resultType="com.ygjt.gdn.ftisp.model.vo.SystemAttachFileSimple" resultMap="SimpleReaultMap">
+          select
+          <if test="distinct">
+               distinct
+          </if>
+          <include refid="Simple_Column_List" />
+          from p_system_attach_file
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+          <if test="orderByClause != null">
+               order by ${orderByClause}
+          </if>
+     </select>
+</mapper>

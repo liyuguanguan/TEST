@@ -1,0 +1,46 @@
+#set($menuKey ="地址管理")
+#extends("layout/frame-user-center.vm")
+#style()
+#end
+#script()
+require(['./address.js']);
+#end
+#block("content")
+<div class="content-top">
+    <span class="title">地址列表</span>
+    <button role="button" class="btn btn-fix btn-primary" onclick="window.location.href='$!{request.contextPath}/address-add'">新增</button>
+</div>
+<div class="content-search">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>联系人：</label>
+            <input id="linkMan" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>类型：</label>
+            <select id="type" class="form-control">
+                <option value="pickup">提货地址</option>
+            </select>
+        </div>
+        <button id="search" type="submit" class="btn btn-fix btn-primary">查询</button>
+    </form>
+</div>
+<div class="content-table-top" style="display: none">
+</div>
+<div class="content-body">
+    <table id="main-table" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>默认</th>
+            <th>联系人</th>
+            <th>中文地址</th>
+            <th>电话</th>
+            <th>类型</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+#end
+#end

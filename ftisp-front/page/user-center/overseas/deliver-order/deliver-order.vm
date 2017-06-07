@@ -1,0 +1,132 @@
+#set($menuKey ="海外仓发货订单")
+#extends("layout/frame-user-center.vm")
+#style()
+#end
+#script()
+require(['./deliver-order.js']);
+#end
+#block("content")
+<div class="content-top">
+    <span class="title">海外发货订单管理</span>
+    <button role="button" class="btn btn-fix btn-primary" onclick="window.location.href='$!{request.contextPath}/deliver-order-add'">新增</button>
+</div>
+<div class="content-search">
+    <form id="search-form" class="form-inline">
+        <input name="jsonString" type="hidden">
+        <div class="form-group">
+            <label>海外仓：</label>
+            <select id="warehouseId" name="warehouseId" class="form-control">
+            </select>
+        </div>
+        <div class="form-group">
+            <label>电商平台：</label>
+            <select id="platType" class="form-control">
+                <option value="">请选择</option>
+                <option value="ebay">ebay</option>
+                <option value="aliexpress">aliexpress</option>
+                <option value="amazon">amazon</option>
+                <option value="wish">wish</option>
+                <option value="others">others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>订单状态：</label>
+            <select id="status" class="form-control">
+                <option value="all">全部</option>
+                <option value="commit">已提交</option>
+                <option value="uncommit">未提交</option>
+                <option value="pick">已拣货</option>
+                <option value="pack">已打包</option>
+                <option value="weight">已称重</option>
+                <option value="outroom">已出库</option>
+                <option value="outstock">缺货</option>
+            </select>
+        </div>
+        <div class="form-group iteam date-search">
+            <label>下单时间：</label>
+            <span class="date form_date " for="dtp_input2"  data-date="" data-date-format="yyyy MM dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+            <input id="dtp_input2" class="form-control" style="width: 100%" size="16" type="text" value="" readonly>
+            <span class="input-group-addon delete"><span class="glyphicon glyphicon-remove"></span></span>
+            <span class="input-group-addon time"><span class="glyphicon glyphicon-calendar"></span></span>
+        </span>
+            -
+            <!-- 年月日 -->
+            <span class=" date form_date " for="dtp_input3"  data-date="" data-date-format="yyyy MM dd" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
+            <input id="dtp_input3" class="form-control" style="width: 100%" size="16" type="text" value="" readonly>
+            <span class="input-group-addon delete"><span class="glyphicon glyphicon-remove"></span></span>
+            <span class="input-group-addon time"><span class="glyphicon glyphicon-calendar"></span></span>
+        </span>
+        </div>
+        <div class="form-group" style="margin-top: 10px">
+            <label>订单号：</label>
+            <textarea id="orderNo" class="form-control" style="height: 86px;" placeholder="多个订单号之间用'，'隔开,最多30条"></textarea>
+        </div>
+        <button id="search" type="submit" class="btn btn-fix btn-primary">查询</button>
+    </form>
+</div>
+<div class="content-table-top">
+    <button id="bundle-submit" role="button" class="btn btn-fix btn-default">批量提交</button>
+    <button id="bundle-export" role="button" class="btn btn-fix btn-default">批量导出</button>
+    <button role="button" class="btn btn-fix btn-default" onclick="window.location.href='/upload/template/批量导入出库单模板.xls'">下载导入模板</button>
+    <button class="btn btn-fix btn-default" data-toggle="modal" data-target="#export" title="单次上传出库单不得超过1000条">上传批量导入文件</button>
+</div>
+<div class="content-body">
+    <table id="main-table" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th><input type="checkbox" id="checkAll"></th>
+            <th>订单号</th>
+            <th>海外仓</th>
+            <th>电商平台</th>
+            <th>买家</th>
+            <th>发货方式</th>
+            <th>物流单号</th>
+            <th>订单状态</th>
+            <th>下单时间</th>
+            <th>出库时间</th>
+            <th>发货重量</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div class="modal fade" id="printLable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >打印标签</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-box row" >
+                    <form id="print_form" method="post" action="api/v1/p/ftisp/goods/labelPrint" target="_blank"> <input type="hidden" name="code">
+                        <div class="col-xs-12 form-chapter" >
+                            <div class="form-group col-xs-12">
+                                <label  class="col-xs-3 form-label">商品编码：</label>
+                                <label  class="col-xs-3 form-label"><spam id="goodsCode"></spam></label>
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <label  class="col-xs-3 form-label">打印数目：</label>
+                                <div class="col-xs-5">
+                                    <input name="num"  value="" class="form-control">
+                                    </input>
+                                </div>
+                                <div class="col-xs-4 error"></div>
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <label  class="col-xs-4 form-label"></label>
+                                <button id="print" class="btn btn-default"> 打印</button>
+                                <button class="btn btn-default" data-dismiss="modal"> 取消</button>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+#widget("/widget/modal/exportModal.vm")
+#widget("/widget/modal/printModal.vm")
+#end
+#end

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygjt.gdn.ftisp.persistence.EmailCodeDao">
+     <resultMap id="BaseResultMap" type="com.ygjt.gdn.ftisp.model.EmailCodeDo">
+          <id column="id" jdbcType="INTEGER" property="id" />
+          <result column="created_by" jdbcType="INTEGER" property="createdBy" />
+          <result column="created_dt" jdbcType="TIMESTAMP" property="createdDt" />
+          <result column="last_update_by" jdbcType="INTEGER" property="lastUpdateBy" />
+          <result column="last_update_dt" jdbcType="TIMESTAMP" property="lastUpdateDt" />
+          <result column="sts" jdbcType="CHAR" property="sts" />
+          <result column="email" jdbcType="VARCHAR" property="email" />
+          <result column="code" jdbcType="VARCHAR" property="code" />
+          <result column="actived" jdbcType="CHAR" property="actived" />
+          <result column="expire_date" jdbcType="TIMESTAMP" property="expireDate" />
+          <result column="send_num" jdbcType="INTEGER" property="sendNum" />
+          <result column="recent_send_date" jdbcType="TIMESTAMP" property="recentSendDate" />
+          <result column="type" jdbcType="CHAR" property="type" />
+     </resultMap>
+     <sql id="Query_Where_Clause">
+          <where>
+               <foreach collection="oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Update_By_Query_Where_Clause">
+          <where>
+               <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                         <trim prefix="(" prefixOverrides="and" suffix=")">
+                              <foreach collection="criteria.criteria" item="criterion">
+                                   <choose>
+                                        <when test="criterion.noValue">
+                                             and ${criterion.condition}
+                                        </when>
+                                        <when test="criterion.singleValue">
+                                             and ${criterion.condition} #{criterion.value}
+                                        </when>
+                                        <when test="criterion.betweenValue">
+                                             and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                        </when>
+                                        <when test="criterion.listValue">
+                                             and ${criterion.condition}
+                                             <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                                  #{listItem}
+                                             </foreach>
+                                        </when>
+                                   </choose>
+                              </foreach>
+                         </trim>
+                    </if>
+               </foreach>
+          </where>
+     </sql>
+     <sql id="Base_Column_List">
+          id, created_by, created_dt, last_update_by, last_update_dt, sts, email, code, actived, 
+          expire_date, send_num, recent_send_date, type
+     </sql>
+     <select id="selectByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.EmailCodeQuery" resultMap="BaseResultMap">
+          select
+          <if test="distinct">
+               distinct
+          </if>
+          <include refid="Base_Column_List" />
+          from p_email_code
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+          <if test="orderByClause != null">
+               order by ${orderByClause}
+          </if>
+     </select>
+     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+          select 
+          <include refid="Base_Column_List" />
+          from p_email_code
+          where id = #{id,jdbcType=INTEGER}
+     </select>
+     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+          delete from p_email_code
+          where id = #{id,jdbcType=INTEGER}
+     </delete>
+     <delete id="deleteByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.EmailCodeQuery">
+          delete from p_email_code
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </delete>
+     <insert id="insert" parameterType="com.ygjt.gdn.ftisp.model.EmailCodeDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into p_email_code (created_by, created_dt, last_update_by, 
+               last_update_dt, sts, email, 
+               code, actived, expire_date, 
+               send_num, recent_send_date, type
+               )
+          values (#{createdBy,jdbcType=INTEGER}, #{createdDt,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=INTEGER}, 
+               #{lastUpdateDt,jdbcType=TIMESTAMP}, #{sts,jdbcType=CHAR}, #{email,jdbcType=VARCHAR}, 
+               #{code,jdbcType=VARCHAR}, #{actived,jdbcType=CHAR}, #{expireDate,jdbcType=TIMESTAMP}, 
+               #{sendNum,jdbcType=INTEGER}, #{recentSendDate,jdbcType=TIMESTAMP}, #{type,jdbcType=CHAR}
+               )
+     </insert>
+     <insert id="insertSelective" parameterType="com.ygjt.gdn.ftisp.model.EmailCodeDo">
+          <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+               SELECT LAST_INSERT_ID()
+          </selectKey>
+          insert into p_email_code
+          <trim prefix="(" suffix=")" suffixOverrides=",">
+               <if test="createdBy != null">
+                    created_by,
+               </if>
+               <if test="createdDt != null">
+                    created_dt,
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by,
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt,
+               </if>
+               <if test="sts != null">
+                    sts,
+               </if>
+               <if test="email != null">
+                    email,
+               </if>
+               <if test="code != null">
+                    code,
+               </if>
+               <if test="actived != null">
+                    actived,
+               </if>
+               <if test="expireDate != null">
+                    expire_date,
+               </if>
+               <if test="sendNum != null">
+                    send_num,
+               </if>
+               <if test="recentSendDate != null">
+                    recent_send_date,
+               </if>
+               <if test="type != null">
+                    type,
+               </if>
+          </trim>
+          <trim prefix="values (" suffix=")" suffixOverrides=",">
+               <if test="createdBy != null">
+                    #{createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="createdDt != null">
+                    #{createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="sts != null">
+                    #{sts,jdbcType=CHAR},
+               </if>
+               <if test="email != null">
+                    #{email,jdbcType=VARCHAR},
+               </if>
+               <if test="code != null">
+                    #{code,jdbcType=VARCHAR},
+               </if>
+               <if test="actived != null">
+                    #{actived,jdbcType=CHAR},
+               </if>
+               <if test="expireDate != null">
+                    #{expireDate,jdbcType=TIMESTAMP},
+               </if>
+               <if test="sendNum != null">
+                    #{sendNum,jdbcType=INTEGER},
+               </if>
+               <if test="recentSendDate != null">
+                    #{recentSendDate,jdbcType=TIMESTAMP},
+               </if>
+               <if test="type != null">
+                    #{type,jdbcType=CHAR},
+               </if>
+          </trim>
+     </insert>
+     <select id="countByQuery" parameterType="com.ygjt.gdn.ftisp.model.Query.EmailCodeQuery" resultType="java.lang.Long">
+          select count(*) from p_email_code
+          <if test="_parameter != null">
+               <include refid="Query_Where_Clause" />
+          </if>
+     </select>
+     <update id="updateByQuerySelective" parameterType="map">
+          update p_email_code
+          <set>
+               <if test="record.id != null">
+                    id = #{record.id,jdbcType=INTEGER},
+               </if>
+               <if test="record.createdBy != null">
+                    created_by = #{record.createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.createdDt != null">
+                    created_dt = #{record.createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.lastUpdateBy != null">
+                    last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="record.lastUpdateDt != null">
+                    last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.sts != null">
+                    sts = #{record.sts,jdbcType=CHAR},
+               </if>
+               <if test="record.email != null">
+                    email = #{record.email,jdbcType=VARCHAR},
+               </if>
+               <if test="record.code != null">
+                    code = #{record.code,jdbcType=VARCHAR},
+               </if>
+               <if test="record.actived != null">
+                    actived = #{record.actived,jdbcType=CHAR},
+               </if>
+               <if test="record.expireDate != null">
+                    expire_date = #{record.expireDate,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.sendNum != null">
+                    send_num = #{record.sendNum,jdbcType=INTEGER},
+               </if>
+               <if test="record.recentSendDate != null">
+                    recent_send_date = #{record.recentSendDate,jdbcType=TIMESTAMP},
+               </if>
+               <if test="record.type != null">
+                    type = #{record.type,jdbcType=CHAR},
+               </if>
+          </set>
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByQuery" parameterType="map">
+          update p_email_code
+          set id = #{record.id,jdbcType=INTEGER},
+               created_by = #{record.createdBy,jdbcType=INTEGER},
+               created_dt = #{record.createdDt,jdbcType=TIMESTAMP},
+               last_update_by = #{record.lastUpdateBy,jdbcType=INTEGER},
+               last_update_dt = #{record.lastUpdateDt,jdbcType=TIMESTAMP},
+               sts = #{record.sts,jdbcType=CHAR},
+               email = #{record.email,jdbcType=VARCHAR},
+               code = #{record.code,jdbcType=VARCHAR},
+               actived = #{record.actived,jdbcType=CHAR},
+               expire_date = #{record.expireDate,jdbcType=TIMESTAMP},
+               send_num = #{record.sendNum,jdbcType=INTEGER},
+               recent_send_date = #{record.recentSendDate,jdbcType=TIMESTAMP},
+               type = #{record.type,jdbcType=CHAR}
+          <if test="_parameter != null">
+               <include refid="Update_By_Query_Where_Clause" />
+          </if>
+     </update>
+     <update id="updateByPrimaryKeySelective" parameterType="com.ygjt.gdn.ftisp.model.EmailCodeDo">
+          update p_email_code
+          <set>
+               <if test="createdBy != null">
+                    created_by = #{createdBy,jdbcType=INTEGER},
+               </if>
+               <if test="createdDt != null">
+                    created_dt = #{createdDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="lastUpdateBy != null">
+                    last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               </if>
+               <if test="lastUpdateDt != null">
+                    last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               </if>
+               <if test="sts != null">
+                    sts = #{sts,jdbcType=CHAR},
+               </if>
+               <if test="email != null">
+                    email = #{email,jdbcType=VARCHAR},
+               </if>
+               <if test="code != null">
+                    code = #{code,jdbcType=VARCHAR},
+               </if>
+               <if test="actived != null">
+                    actived = #{actived,jdbcType=CHAR},
+               </if>
+               <if test="expireDate != null">
+                    expire_date = #{expireDate,jdbcType=TIMESTAMP},
+               </if>
+               <if test="sendNum != null">
+                    send_num = #{sendNum,jdbcType=INTEGER},
+               </if>
+               <if test="recentSendDate != null">
+                    recent_send_date = #{recentSendDate,jdbcType=TIMESTAMP},
+               </if>
+               <if test="type != null">
+                    type = #{type,jdbcType=CHAR},
+               </if>
+          </set>
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+     <update id="updateByPrimaryKey" parameterType="com.ygjt.gdn.ftisp.model.EmailCodeDo">
+          update p_email_code
+          set created_by = #{createdBy,jdbcType=INTEGER},
+               created_dt = #{createdDt,jdbcType=TIMESTAMP},
+               last_update_by = #{lastUpdateBy,jdbcType=INTEGER},
+               last_update_dt = #{lastUpdateDt,jdbcType=TIMESTAMP},
+               sts = #{sts,jdbcType=CHAR},
+               email = #{email,jdbcType=VARCHAR},
+               code = #{code,jdbcType=VARCHAR},
+               actived = #{actived,jdbcType=CHAR},
+               expire_date = #{expireDate,jdbcType=TIMESTAMP},
+               send_num = #{sendNum,jdbcType=INTEGER},
+               recent_send_date = #{recentSendDate,jdbcType=TIMESTAMP},
+               type = #{type,jdbcType=CHAR}
+          where id = #{id,jdbcType=INTEGER}
+     </update>
+</mapper>

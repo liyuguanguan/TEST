@@ -1,0 +1,14 @@
+{
+  "name": "ftisp-front",
+  "version": "0.0.1",
+  "description": "ftisp front",
+  "keywords": [
+    "ftisp"
+  ],
+  "dependencies": {
+    "fis3-hook-amd": "~0.1.2",
+    "fis-parser-node-sass": "^0.2.0",
+    "fis3-jello": "~1.0.2",
+    "fis3-packager-deps-pack": "~0.0.1"
+  }
+}

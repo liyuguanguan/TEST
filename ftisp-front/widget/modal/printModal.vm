@@ -1,0 +1,45 @@
+<div class="modal fade" id="printLable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >打印标签</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-box row" >
+                    <form id="print_form" method="post" action="api/v1/p/crm/goods/labelPrint" target="_blank"> <input type="hidden" name="code">
+                    <div class="col-xs-12 form-chapter" >
+                     <div class="form-group col-xs-12">
+                          <label  class="col-xs-3 form-label">商品编码：</label>
+                         <label  class="col-xs-3 form-label"><spam id="goodsCode"></spam></label>
+                     </div>
+                 <div class="form-group col-xs-12">
+                    <label  class="col-xs-3 form-label">打印数目：</label>
+                    <div class="col-xs-6">
+                        <input name="num"  value="" class="form-control">
+                        </input>
+                    </div>
+                     <div class="col-xs-3"></div>
+                </div>
+                      #*<div class="form-group col-xs-12">
+                                <label  class="col-xs-3 form-label">打印尺寸：</label>
+                                <div class="col-xs-7">
+                                   <select name="labelSize"  class="form-control">
+                                         <option value="LS10060">LS10060</option>
+                                         <option value="LS100100">LS100100</option>
+                                         <option value="LS150150">LS150150</option>
+                                   </select>
+                                </div>
+                      </div>*#
+                      <div class="form-group col-xs-12">
+                            <label  class="col-xs-3 form-label"></label>
+                            <button id="print" class="btn btn-default"> 打印</button>
+                            <button class="btn btn-default" data-dismiss="modal"> 取消</button>
+                      </div>
+                 </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

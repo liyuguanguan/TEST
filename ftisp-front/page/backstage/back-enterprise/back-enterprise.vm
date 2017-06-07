@@ -1,0 +1,128 @@
+#set($menuKey ="后台企业管理")
+#extends("layout/frame-backstage.vm")
+#style()
+#end
+#script()
+require(['./back-enterprise.js']);
+#end
+#block("content")
+<div class="content-top">
+    <span class="title">电商企业管理</span>
+</div>
+<div class="content-search">
+    <form id="search-form" class="form-inline">
+        <div class="form-group">
+            <label>企业名称：</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label>联系人：</label>
+            <input type="text" class="form-control" id="linkMan" name="linkMan">
+        </div>
+        <div class="form-group">
+            <label>企业状态：</label>
+            <select class="form-control" id="auditSts" name="auditSts">
+                <option value="">全部</option>
+                <option value="C">待审核</option>
+                <option value="P">审核通过</option>
+                <option value="R">审核失败</option>
+            </select>
+        </div>
+        <button id="search" type="submit" class="btn btn-fix btn-primary">查询</button>
+    </form>
+</div>
+<div class="content-body">
+    <table id="main-table" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th><input type="checkbox" id="checkAll"></th>
+            <th>企业名称</th>
+            <th>地址</th>
+            <th>联系人</th>
+            <th>联系号码</th>
+            <th>社会征信号</th>
+            <th>企业状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div id="review" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">企业审核</h4>
+            </div>
+            <div id="test" class="modal-body">
+                <div class="col-xs-12 col-md-6 left-body">
+                    <div class="item">
+                        <label>企业名称：</label>
+                        <p id="r_name">阳光捷通</p>
+                    </div>
+                    <div class="item">
+                        <label>邮编：</label>
+                        <p id="r_zipcode">312131</p>
+                    </div>
+                    <div class="item">
+                        <label>联系人：</label>
+                        <p id="r_linkman">黄腾</p>
+                    </div>
+                    <div class="item">
+                        <label>营业执照注册号：</label>
+                        <p id="r_license">license141142</p>
+                    </div>
+                    <div class="item">
+                        <label>营业执照：</label>
+                        <img src="page/assets/img/certificates-4.png" width="200px" alt="无图">
+                    </div>
+                    <div class="item">
+                        <label>组织机构代码证：</label>
+                        <img src="page/assets/img/certificates-4.png" width="200px" alt="无图">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 right-body">
+                    <div class="item">
+                        <label>开户类型：</label>
+                        <p id="r_type">企业客户</p>
+                    </div>
+                    <div class="item">
+                        <label>地址：</label>
+                        <p id="r_address">浙江永康市市辖区创业园225号4幢一单元</p>
+                    </div>
+                    <div class="item">
+                        <label>联系号码：</label>
+                        <p id="r_phone">12431411412</p>
+                    </div>
+                    <div class="item">
+                        <label>社会征信号：</label>
+                        <p id="r_social">121314314141</p>
+                    </div>
+                    <div class="item">
+                        <label>税务登记证：</label>
+                        <div style="display: inline-block">
+                            <img src="page/assets/img/certificates-4.png" width="200px" alt="无图">
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom-body" class="col-xs-12 bottom-body" style="display: none">
+                    <label>不通过原因：</label><div class="error"></div>
+                    <textarea id="reason" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <label>审核结果：</label>
+                <select id="result" class="form-control" style="width: 100px">
+                    <option value="P">通过</option>
+                    <option value="R">不通过</option>
+                </select>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button id="r_submit" type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+#end
+#end

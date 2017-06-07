@@ -1,0 +1,30 @@
+{
+	"code": "200",
+	"message": "string",
+	"data": {
+		"page": 0,
+		"count": 0,
+		"total": 10,
+		"rows": [
+			{
+				"id": 0,
+				"name": "string",
+				"channelId": 0,
+				"fromWarehouseId": 0,
+				"fromWarehouseName": "string",
+				"toWarehouseId": 0,
+				"toWarehouseName": "string",
+				"logisticsId": 0,
+				"logisticsName": "string",
+				"logisticsType": "string",
+				"estimateLeaveDt": "string",
+				"estimateArriveDt": "string",
+				"estimateDays": 0,
+				"lastOrderDt": "string",
+				"lastCollectDt": "string",
+				"providerId": 0,
+				"memo": "string"
+			}
+		]
+	}
+}

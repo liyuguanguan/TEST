@@ -1,0 +1,44 @@
+#extends("layout/frame-white.vm")
+    #script()
+    require(['./login.js']);
+    #end
+    #style()
+    #require("./login.scss")
+    #end
+    #block("content")
+        <div class="container-fluid bg-login">
+            <div class="rect-login">
+                <strong>用户登录</strong><span style="color: ">login</span>
+                <form class="clearfix" action="$!{request.contextPath}/login.do" method="post">
+                    <div class="login-error" #if($error) style="display: block;" #end>
+                        <img src="../assets/img/error_icon.png" alt="error">
+                        <span>#if($error) $error.message #end</span>
+                    </div>
+                    <div class="form-group" style="margin-top: 15px">
+                        <label class="sr-only" for="username">Name</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="请输入邮箱或用户名">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="password">Name</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="validateCode">Name</label>
+                        <div class="input-group" style="width: 100%;">
+                            <input type="text" class="form-control" id="validateCode" name="validateCode" placeholder="请输入验证码">
+                            <div class="input-group-addon captcha">
+                                <img id="login-code" class="login-code" src="$!{request.contextPath}/getCode" onclick="this.src='$!{request.contextPath}/getCode?t=' + Math.random();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-captcha"><img src="../assets/img/refresh.png"><a href="">换一张</a></div>
+                    <button type="button" class="btn btn-block blue-button-fix">登录</button>
+                    <div class="login-footer">
+                        <a class="pull-left forget-text" href="$!{request.contextPath}/forget-password">忘记密码？</a>
+                        <a class="pull-right register-text" href="$!{request.contextPath}/register">免费注册</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    #end
+#end

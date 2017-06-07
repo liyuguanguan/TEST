@@ -1,0 +1,14 @@
+{
+	"code": "200",
+	"message": "success",
+	"data": [
+		{
+			"warehouseId": 1,
+			"warehouseName": "义乌集货仓"
+		},
+		{
+			"warehouseId": 3,
+			"warehouseName": "AU Warehouse"
+		}
+	]
+}

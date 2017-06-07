@@ -1,0 +1,241 @@
+#set($menuKey = "海外仓发货订单")
+#extends("page/layout/frame-user-center.vm")
+#block("content")
+#script()
+require(["page/user-center/overseas/deliver-order/deliver-order-detail"])
+#end
+<div class="content-top col-xs-12">
+    <input type="hidden" id="pageName" value="inOut">
+    <span class="title">发货单详情</span>
+    <button role="button" class="btn btn-fix btn-primary" onclick="history.go(-1)">返回</button>
+</div>
+<div class="content-bottom col-xs-12">
+    <div class="form-box">
+        <form id="outstore_form">
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">选择海外仓和电商平台</h4>
+                <div class="form-group col-xs-12" >
+                    <label  class="col-xs-2 form-label"><i class="import">*</i>海外仓：</label>
+                    <div class="col-xs-7">
+                        <select id="warehouseId" name="warehouseId" class="form-control" disabled>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i class="import">*</i>电商平台：</label>
+                    <div class="col-xs-7">
+                        <select id="platType" name="platType" class="form-control" disabled>
+                            <option value="">请选择</option>
+                            <option value="ebay">ebay</option>
+                            <option value="aliexpress">aliexpress</option>
+                            <option value="amazon">amazon</option>
+                            <option value="wish">wish</option>
+                            <option value="others">others</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">电商平台订单号：</label>
+                    <div class="col-xs-7">
+                        <input id="platOrderNo" name="platOrderNo" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">收件人信息</h4>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>姓名：</label>
+                    <div class="col-xs-7 unit-box">
+                        <input id="name" name="name" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>国家：</label>
+                    <div class="col-xs-7 unit-box">
+                        <select id="country" name="recipientCountryId" class="form-control" disabled>
+                            <option>国家</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>州：</label>
+                    <div class="col-xs-7">
+                        <input id="recipientRegionName" name="recipientRegionName" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>城市：</label>
+                    <div class="col-xs-7">
+                        <input id="recipientCityName" name="recipientCityName" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>邮编：</label>
+                    <div class="col-xs-7">
+                        <input id="recipientZipcode" name="recipientZipcode" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>地址一：</label>
+                    <div class="col-xs-7">
+                        <input id="recipientAddress1" name="recipientAddress1" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label">地址二：</label>
+                    <div class="col-xs-7">
+                        <input id="recipientAddress2" name="recipientAddress2" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label  class="col-xs-2 form-label"><i>*</i>联系电话：</label>
+                    <div class="col-xs-7">
+                        <input id="recipientPhone" name="recipientPhone" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">商品信息</h4>
+                <div class="col-xs-12 form-goods-info">
+                    <div class="col-xs-6">
+                        <span class="list">共添加了<strong>0</strong>个商品</span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                    </div>
+                    <div class="col-xs-12">
+                        <table id="outstore_table" class="table" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>商品id</th>
+                                <th>商品编号</th>
+                                <th>中文名称</th>
+                                <th>规格，型号</th>
+                                <th>数量</th>
+                                <th>重量(Kg)</th>
+                                <th>重量(Lbs)</th>
+                                <th>包装码</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-chapter">
+                <h4 class="col-xs-12">物流信息</h4>
+                <div class="form-group col-xs-12" >
+                    <label  class="col-xs-2 form-label"><i class="import">*</i>发货方式：</label>
+                    <div class="col-xs-7">
+                        <select id="delivery" name="delivery" class="form-control" disabled>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+                <div  id="doorplate" class="form-group col-xs-12" >
+                    <label  class="col-xs-2 form-label">自提区域：</label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" id="doorplatenumbers" name="doorplatenumbers" disabled>
+                    </div>
+                    <div class="col-xs-3 error"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- 添加商品 -->
+#*<div class="modal fade bs-example-modal-lg" id="tableAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">商品添加</h4>
+            </div>
+            <form id="goods_add_table">
+                <div class="modal-body row form-box">
+                    <div class="form-group col-xs-12">
+                        <label  class="col-xs-3 form-label"><i>*</i>商品编号：</label>
+                        <div class="col-xs-6">
+                            <input id="order_code" name="code" type="text" class="form-control">
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label  class="col-xs-3 form-label">商品库存：</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" disabled>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label  class="col-xs-3 form-label">中文名称：</label>
+                        <div class="col-xs-6 ">
+                            <input type="text" class="form-control" disabled>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label  class="col-xs-3 form-label">规格，型号：</label>
+                        <div class="col-xs-6 input-group">
+                            <input type="text" class="form-control" disabled>
+                            <div class="input-group-addon">cm</div>
+                            <div style="display: none"></div>
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label  class="col-xs-3 form-label"><i>*</i>数量：</label>
+                        <div class="col-xs-6 ">
+                            <input type="text" name="nums" class="form-control">
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label  class="col-xs-3 form-label">重量(Kg)：</label>
+                        <div class="col-xs-6 input-group">
+                            <input type="text" class="form-control" disabled>
+                            <div class="input-group-addon">Kg</div>
+                            <input type="hidden" class="form-control">
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label  class="col-xs-3 form-label">重量(Lbs)：</label>
+                        <div class="col-xs-6 input-group">
+                            <input type="text" class="form-control" disabled>
+                            <div class="input-group-addon">Lbs</div>
+                            <input type="hidden" class="form-control">
+                        </div>
+                        <div class="col-xs-3 error"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-danger">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>*#
+<!-- 添加商品END -->
+#end## end of body
+
+  ## auto inject by fis3-preprocess-extlang
+  #require("page/user-center/overseas/deliver-order/deliver-order-detail.vm")
+#end

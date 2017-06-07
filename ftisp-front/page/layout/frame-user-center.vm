@@ -1,0 +1,34 @@
+## 两栏布局有左边栏 ##
+#set($platform ="用户中心")
+#extends("./frame.vm")
+#style()
+#require('static/modules/dataTables/css/dataTables.bootstrap.min.css');
+#require('datetimepicker-css');
+#require('summernote-css');
+#require('uploadify-css');
+#require("page/user-center/user-center.scss");
+#end
+    #block("body")
+        #block("header")
+            #widget("/widget/header/header-user-center.vm")
+        #end
+
+        <div id="middle" class="user-container">
+            <div class="row">
+                <div id="left-menu" class="left-menu">
+                    #block("sidebar")
+                        #widget("/widget/sidebarmenus/sidebarmenus.vm")
+                    #end
+                </div>
+                <div id="content" class="content">
+                    #block("content")#end
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    #end
+#script()
+##启用 bootstrap
+require(['dataTables','datetimepicker','summernote','libs/global.js']);
+#end
+#end

@@ -1,0 +1,80 @@
+@import "../assets/scss/variable";
+
+.bg-login {
+  background-image: url("#{$image-url}/bg_login.png");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  position: relative;
+  height: 554px;
+}
+.rect-login {
+  float: right;
+  padding: 20px 20px;
+  @include border-radius(10px);
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.878;
+  box-shadow: 0px 0px 7px 0px rgb( 13, 5, 9 );
+  position: relative;
+  right: 8%;
+  top: 70px;
+  width: 341px;
+  height: 400px;
+  z-index: 17;
+  &>strong {
+    margin-left: 10px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+  }
+  &>span {
+    margin: 5px;
+    font-size: 16px;
+    color: $deep-gray-color;
+  }
+  &>form {
+    margin-top: 8px;
+    border-top: 1px solid $gray-color;
+    padding: 10px 10px;
+  }
+  .login-footer {
+    margin-top: 20px;
+    .forget-text {
+      color: #656565;
+    }
+    .register-text {
+      color: $blue-color;
+    }
+  }
+}
+.login-error {
+  display:none;
+  border: 1px solid $red-color;
+  background-color: #ffe7e7;
+  line-height: 26px;
+  padding: 0 10px;
+  color: $red-color;
+  &>span {
+    margin-left: 5px;
+  }
+}
+.form-control {
+  height: 40px;
+  @include border-radius(0px);
+}
+.captcha {
+  padding: 0px !important;
+  width: 85px;
+  @include border-radius(0px);
+}
+.next-captcha {
+  float: right;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  img {
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
+  a {
+    color: $deep-gray-color;
+    font-size: 12px;
+  }
+}

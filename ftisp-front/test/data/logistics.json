@@ -1,0 +1,13 @@
+{
+	"code": "200",
+	"message": "success",
+	"data": [
+		{
+			"logisticsId": 2,
+			"name": "空运特快"
+		},{
+			"logisticsId": 102,
+			"name": "经济型快递-美国"
+		}
+	]
+}

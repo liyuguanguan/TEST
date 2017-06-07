@@ -1,0 +1,15 @@
+{
+	"code": "200",
+	"message": "success",
+	"data": [
+		{
+            "goodsId":"1",
+			"goodsCode":"1",
+			"goodsName":"jjj"
+		},{
+            "goodsId":"2",
+			"goodsCode":"2",
+			"goodsName":"jjj"
+		}
+	]
+}

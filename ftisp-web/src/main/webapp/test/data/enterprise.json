@@ -1,0 +1,54 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "id": 29,
+    "name": "燕文欧洲专线",
+    "busiLicense": "Q132313",
+    "corpSocialNo": "33030100112230223",
+    "type": "E",
+    "linkPhone": "12345678901",
+    "linkMan": "大熊",
+    "linkTel": "-",
+    "countryId": 4,
+    "provinceId": 1,
+    "cityId": 2,
+    "areaId": 3,
+    "address": "浙江永康市市辖区创业园225号4幢一单元",
+    "qq": "",
+    "email": "11@sian.com",
+    "fax": "",
+    "zipcode": "312312",
+    "emergencyLinkMan": "111",
+    "emergencyLinkTel": "11111",
+    "createBy": 17,
+    "createDt": "2016-11-30 15:07:22",
+    "lastUpdateBy": 17,
+    "lastUpdateDt": "2016-11-30 16:22:57",
+    "sts": "Y",
+    "linkmanDuty": "111",
+    "saleEmail": "",
+    "userId": 17,
+    "enterPics": [
+      {
+        "id": 305,
+        "objectType": "EnterBsLicense",
+        "filePath": "/upload/EnterBsLicense/20161130/276b8568-0c61-4576-9e83-cb36f542b61e.jpg"
+      },
+      {
+        "id": 321,
+        "objectType": "EnterTax",
+        "filePath": "/upload/EnterTax/20161130/999e3d7d-ccd1-4c3b-9217-2c1e943d4bce.jpg"
+      },
+      {
+        "id": 324,
+        "objectType": "EnterTax",
+        "filePath": "/upload/EnterTax/20161130/0ff51fa0-b7b4-416c-82fc-9fd355689819.jpg"
+      }
+    ],
+    "country": "中国",
+    "province": "浙江",
+    "city": "杭州",
+    "area": "西湖"
+  }
+}
